@@ -3,7 +3,7 @@ package 线程共享变量;
 import java.util.Date;
 
 public class ThreadLocal共享线程变量 {
-
+//线程内共享变量
 	public static ThreadLocal<PubParam> tl = new ThreadLocal<PubParam>();
 
 	public static void main(String[] args) throws InterruptedException {

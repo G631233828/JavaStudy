@@ -63,7 +63,6 @@ class OutPut{
 	public static void out(String name){
 		while(true){
 		System.out.print(name);
-		System.out.println();
 		}
 	}
 	
