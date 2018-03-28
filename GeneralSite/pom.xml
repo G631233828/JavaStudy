@@ -24,5 +24,6 @@
   <modules>
   	<module>JaveNet</module>
   	<module>JavaConcurrent</module>
+  	<module>Collections_Study</module>
   </modules>
 </project>

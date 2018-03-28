@@ -11,15 +11,7 @@ public class test {
 		for(int i =0;i<10;i++){
 			 new Thread(new countThread(cv)).start();
 		}
-		
-		
-		
-		
 	}
-	
-	
-	
-
 }
 
 
