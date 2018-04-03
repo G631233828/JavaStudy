@@ -39,5 +39,7 @@
 		<module>JavaConcurrent</module>
 		<module>JavaRss</module>
 		<module>ActiveMQ</module>
+		<module>RabbitMQ</module>
+		<module>kafaka</module>
 	</modules>
 </project>
