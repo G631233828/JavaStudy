@@ -18,16 +18,12 @@ public class Test {
 	
 	 public static void main(String[] args) {
 	        try {
-	            parseXml(new URL("http://tgw.qpedu.cn/info/rss.jsp?cat_id=10068&tm_id=321&cur_page=1&size=0"));
+	            parseXml(new URL("http://feed.cnblogs.com/blog/sitehome/rss"));
 	        } catch (Exception e) {
 	            // TODO Auto-generated catch block
 	            e.printStackTrace();
 	        }
 	    }
-	
-	
-	
-	
 	
 
 	  private static void parseString(String xml) throws Exception {
@@ -72,8 +68,12 @@ public class Test {
 	            for (int i = 0; i < entries.size(); i++) {
 	                SyndEntry entry = (SyndEntry) entries.get(i);
 	                System.out.println(entry.getTitle());
+	                
 	                System.out.println(entry.getLink());
 	                System.out.println(entry.getDescription());
+	                System.out.println(entry.getPublishedDate());
+	                System.out.println("×÷Õß£º"+entry.getAuthor());
+	                
 		            System.out.println("-----------------------------------------------");
 	            }
 	            System.out.println("feed size:" + feed.getEntries().size());

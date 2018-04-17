@@ -23,7 +23,8 @@ public class Sender {
 		connection.start();
 		
 		//第三步，通过connection对象创建session会话（上下文环境对象），用于接受消息，参数配置1为是否启用事务，参数配置2为签收模式，一般我们设置自动签收
-		Session session = connection.createSession(Boolean.TRUE, Session.AUTO_ACKNOWLEDGE);//自动签收模式 Boolean.TRUE 为支持事务提交
+		//自动签收模式 Boolean.TRUE 为支持事务提交
+		Session session = connection.createSession(Boolean.TRUE, Session.AUTO_ACKNOWLEDGE);
 		//Session session = connection.createSession(Boolean.TRUE, Session.CLIENT_ACKNOWLEDGE);//客户端必须签收
 		
 		
@@ -41,6 +42,11 @@ public class Sender {
 		for(int i =1;i<10;i++){
 			TextMessage msg = session.createTextMessage("我是消息内容"+i);
 			//producer.send(destination,msg);
+			//第一个参数目标地址
+			//第二个参数具体的数据信息
+			//第三个参数传达数据的模式（持久化和非持久化）
+			//第四个参数优先级
+			//第五个参数过期时间
 			  producer.send(destination, msg, DeliveryMode.PERSISTENT, i, 1000*20);//i是优先级，20000存活时间
 		}
 		TimeUnit.SECONDS.sleep(3);
