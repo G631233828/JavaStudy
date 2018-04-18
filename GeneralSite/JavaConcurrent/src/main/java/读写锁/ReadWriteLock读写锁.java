@@ -1,8 +1,5 @@
 package ¶ÁÐ´Ëø;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class ReadWriteLock¶ÁÐ´Ëø {
@@ -28,7 +25,14 @@ public class ReadWriteLock¶ÁÐ´Ëø {
 				
 			}
 		}).start();
-	
+	new Thread(new Runnable() {
+		
+		public void run() {
+			r.get();
+		
+			
+		}
+	}).start();
 		
 
 	}

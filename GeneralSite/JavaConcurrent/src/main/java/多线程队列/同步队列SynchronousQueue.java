@@ -34,7 +34,6 @@ public class 同步队列SynchronousQueue {
 		for(int i=0;i<10;i++){
 			String a =""+i;
 			queue.put(a);
-			Thread.sleep(1000);
 		}
 		
 		
