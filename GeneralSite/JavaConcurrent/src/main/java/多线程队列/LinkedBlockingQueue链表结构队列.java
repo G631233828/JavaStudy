@@ -29,8 +29,9 @@ public class LinkedBlockingQueue链表结构队列 {
 		 * 
 		 * while(lbq.size()>0){ System.out.println(lbq.take()); }
 		 */
+		final long start = System.currentTimeMillis();
 		final LinkedBlockingQueue<Students> lbq = new LinkedBlockingQueue<Students>();
-		for (int i = 0; i < 1000; i++) {
+		for (int i = 0; i < 100000; i++) {
 			Students s = new Students();
 			s.setAge(i);
 			s.setHeart((int) (Math.random() * 150));
@@ -40,7 +41,7 @@ public class LinkedBlockingQueue链表结构队列 {
 
 		// 创建线程池用来获取数据
 
-		ExecutorService es = Executors.newFixedThreadPool(2);//消耗时间：17481
+		ExecutorService es = Executors.newFixedThreadPool(5);//消耗时间：
 
 		final File f = new File("D:/test.txt");
 		if (f.exists()) {
@@ -51,8 +52,7 @@ public class LinkedBlockingQueue链表结构队列 {
 			f.createNewFile();
 		}
 
-		final long start = System.currentTimeMillis();
-		for (int i = 0; i <2; i++) {
+		for (int i = 0; i <5; i++) { //1个线程 22494毫秒  10个线程 7779毫秒  5个线程 7989毫秒     3个线程  8829
 
 			Runnable ru = new Thread(new Runnable() {
 
@@ -65,11 +65,14 @@ public class LinkedBlockingQueue链表结构队列 {
 
 							fw = new FileWriter(f, true);
 							BufferedWriter bw = new BufferedWriter(fw);
-							
 							bw.write("[Thread:" + Thread.currentThread().getName() + "],name:" + student.getName()
-									+ "heart:" + student.getHeart() + "age:" + student.getAge()+"\r");
+									+ "heart:" + student.getHeart() + "age:" + student.getAge() + "\n\t");
 							long end = System.currentTimeMillis();
-							System.out.println("[Thread:" + Thread.currentThread().getName() +"消耗时间：" + (end - start));
+							
+							if(lbq.size()<=1){
+								System.out.println("[Thread:" + Thread.currentThread().getName() + "],name:" + student.getName()
+								+ "heart:" + student.getHeart() + "age:" + student.getAge() + "\n\t"+"消耗时间：" + (end - start));
+							}
 							bw.flush();
 							bw.close();
 						}
@@ -86,7 +89,9 @@ public class LinkedBlockingQueue链表结构队列 {
 			});
 
 			es.execute(ru);
+
 		}
+
 
 	}
 
@@ -112,6 +117,7 @@ public class LinkedBlockingQueue链表结构队列 {
 		}
 		return str;
 	}
+
 }
 
 class Students {
