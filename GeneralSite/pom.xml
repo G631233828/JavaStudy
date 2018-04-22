@@ -64,5 +64,6 @@
 		<module>RabbitMQ</module>
 		<module>kafaka</module>
 		<module>Netty</module>
+		<module>Algorithm</module>
 	</modules>
 </project>
