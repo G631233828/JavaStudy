@@ -8,7 +8,11 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-
+/**
+ * 
+ * @author fliay
+ *
+ */
 public class Server {
 
 	
@@ -37,20 +41,21 @@ public class Server {
 		b.group(pGroup, cGroup)//绑定两个线程组
 		.channel(NioServerSocketChannel.class)//指定NIO的模式
 		.option(ChannelOption.SO_BACKLOG, 1024)//设置tcp缓冲区的大小
-		.option(ChannelOption.SO_SNDBUF, 32*1024)//设置发送缓冲区大小
+		.option(ChannelOption.SO_SNDBUF, 32*1024)//设置发送缓冲区大小 buffer缓冲区大小
 		.option(ChannelOption.SO_RCVBUF, 30*1024)//设置接收缓冲区大小
 		.option(ChannelOption.SO_KEEPALIVE, true)//保持连接
-		.childHandler(new ChannelInitializer<SocketChannel>(){
+		.childHandler(new ChannelInitializer<SocketChannel>(){//获取客户端连接通道
 
 			@Override
 			protected void initChannel(SocketChannel sc) throws Exception {
-
-				sc.pipeline().addLast(new ServerHandler());//在这里配置具体数据接收方法的处理
+				//过滤数据，编码，解码
+				//在这里配置具体数据接收方法的处理
+				sc.pipeline().addLast(new ServerHandler());
 			}
 			
 		});
 		
-		ChannelFuture cf1 = b.bind(5200).sync();//进行版定
+		ChannelFuture cf1 = b.bind(5200).sync();//进行绑定（异步通道）
 		
 		cf1.channel().closeFuture().sync();//等待关闭
 		

@@ -1,4 +1,4 @@
-package com.mq.p2p;
+package com.mq.testMQ;
 
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
@@ -10,17 +10,6 @@ import javax.jms.Session;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 public class Consumer {
-
-	//public final String SELECTOR_0 ="age > 25";
-	
-	public final String SELECTOR_1="color = 'blue'";
-	
-	public final String SELECTOR_2="color = 'blue' AND money>2000";
-	
-	public final String SELECTOR_3="receiver = 'A'";
-	
-	//public final String SELECTOR_4 = "receiver = 'B'";
-	
 	
 	//1连接工厂
 	private ConnectionFactory connectionFactory;

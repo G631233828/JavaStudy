@@ -39,17 +39,5 @@ public class ServerHandler extends ChannelHandlerAdapter  {
     	ctx.writeAndFlush(Unpooled.copiedBuffer(response.getBytes()));
 	}
 
-	@Override
-	public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
-		// TODO Auto-generated method stub
-		super.handlerRemoved(ctx);
-	}
-
-	@Override
-	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-		ctx.close();
-	}
-
-	
 
 }

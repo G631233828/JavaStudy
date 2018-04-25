@@ -1,4 +1,4 @@
-package com.mq.p2p;
+package com.mq.testMQ;
 
 import java.io.UnsupportedEncodingException;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -25,10 +25,7 @@ public class Lintener implements MessageListener {
 		//创建线程池
 		ExecutorService executor = new ThreadPoolExecutor(Runtime.getRuntime().availableProcessors(), 20, 120L, TimeUnit.SECONDS, queue);
 		
-		
-	
-	
-	
+
 	
 	
 	public void onMessage(Message message) {
