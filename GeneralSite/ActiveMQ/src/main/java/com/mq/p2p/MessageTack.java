@@ -26,25 +26,19 @@ public class MessageTack implements Runnable {
 				
 				TextMessage ret = (TextMessage) message;
 				System.out.println(ret.getText());
-//				JSONObject json = JSONObject.fromObject(ret);
-//				System.out.println(json.toString());
+			JSONObject json = JSONObject.fromObject(ret);
+				System.out.println(json.toString());
 			}
 			if (message instanceof MapMessage) {
 				MapMessage ret = (MapMessage) message;
-				/*
-				 * msg3.setString("name", "mary"); msg3.setString("age", "30");
-				 * msg3.setStringProperty("color","black");
-				 * msg3.setIntProperty("money", 3500);
-				 */
-				/*
-				 * System.out.println(ret.toString());
-				 * System.out.println(ret.getString("name"));
-				 * System.out.println(ret.getString("age"));
-				 * System.out.println(ret.getStringProperty("color"));
-				 * System.out.println(ret.getStringProperty("money"));
-				 */
-				JSONObject json = JSONObject.fromObject(ret);
-				System.out.println(json.toString());
+				
+			
+				  System.out.println(ret.toString());
+				  System.out.println(ret.getString("name"));
+				  System.out.println(ret.getString("age"));
+				 System.out.println(ret.getStringProperty("color"));
+				  System.out.println(ret.getStringProperty("money"));
+				 
 
 			}
 			if (message instanceof BytesMessage) {

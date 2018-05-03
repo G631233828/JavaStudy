@@ -52,6 +52,18 @@
 				<classifier>jdk15</classifier>
 			</dependency>
 
+			<!-- get the system message cpu and so on -->
+			<!-- https://mvnrepository.com/artifact/org.fusesource/sigar -->
+			<dependency>
+				<groupId>org.fusesource</groupId>
+				<artifactId>sigar</artifactId>
+				<version>1.6.4</version>
+			</dependency>
+
+
+
+
+
 
 		</dependencies>
 
@@ -74,5 +86,6 @@
 		<module>Netty5</module>
 		<module>Algorithm</module>
 		<module>JavaNIO</module>
+		<module>JavaAIO</module>
 	</modules>
 </project>

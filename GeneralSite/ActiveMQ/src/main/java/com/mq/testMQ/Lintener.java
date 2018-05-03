@@ -23,9 +23,8 @@ public class Lintener implements MessageListener {
 		BlockingQueue<Runnable> queue = new ArrayBlockingQueue<Runnable>(10000);
 		
 		//创建线程池
-		ExecutorService executor = new ThreadPoolExecutor(Runtime.getRuntime().availableProcessors(), 20, 120L, TimeUnit.SECONDS, queue);
+		ExecutorService executor = new ThreadPoolExecutor(Runtime.getRuntime().availableProcessors(),20, 99999L, TimeUnit.DAYS, queue);
 		
-
 	
 	
 	public void onMessage(Message message) {

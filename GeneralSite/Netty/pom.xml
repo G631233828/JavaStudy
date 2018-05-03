@@ -17,6 +17,12 @@
 			<groupId>io.netty</groupId>
 			<artifactId>netty-all</artifactId>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.fusesource/sigar -->
+		<!-- 获取系统的信息 cpu 磁盘空间 等 -->
+		<dependency>
+			<groupId>org.fusesource</groupId>
+			<artifactId>sigar</artifactId>
+		</dependency>
 
 
 	</dependencies>

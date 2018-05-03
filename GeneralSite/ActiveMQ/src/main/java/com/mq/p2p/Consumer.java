@@ -15,7 +15,7 @@ public class Consumer {
 	
 	public final String SELECTOR_1="color = 'blue'";
 	
-	public final String SELECTOR_2="color = 'blue' AND money>2000";
+	public final String SELECTOR_2="age = '30' AND money>0";
 	
 	public final String SELECTOR_3="receiver = 'A'";
 	

@@ -16,7 +16,7 @@ public class Receiver {
 
 		// 第一步，建立ConnectionFactory工厂对象，需要填入用户名，密码，以及链接地址，均使用默认即可，默认端口为：tcp://localhost:61616
 		ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("admin",
-				"admin", "tcp://localhost:61616");
+				"admin", "tcp://121.40.57.56:61616");
 
 		// 第二步，通过ConnectionFactory工程对象我们创建一个Connection连接，并且调用Connection的start方法开启链接，Connection默认是关闭的
 		Connection connection = connectionFactory.createConnection();

@@ -28,7 +28,7 @@ public class Producer {
 	//创建无参构造器
 	public Producer(){
 		try{
-			this.connectionFactory = new ActiveMQConnectionFactory("admin", "admin", "tcp://localhost:61616");
+			this.connectionFactory = new ActiveMQConnectionFactory("admin", "admin", "tcp://121.40.57.56:61616");
 			this.connection = this.connectionFactory.createConnection();
 			this.connection.start();
 			this.session= this.connection.createSession(Boolean.FALSE, Session.AUTO_ACKNOWLEDGE);//设置不需要事务支持，并且自动接收
@@ -46,7 +46,7 @@ public class Producer {
 	
 	public void send1(){
 		try {
-			Destination destination = this.session.createQueue("first");//创建队列
+			Destination destination = this.session.createQueue("test123");//创建队列
 			//创建消息队列
 			MapMessage msg1 = this.session.createMapMessage();
 			msg1.setString("name", "fliay");

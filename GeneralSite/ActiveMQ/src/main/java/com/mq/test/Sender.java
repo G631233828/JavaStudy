@@ -17,7 +17,7 @@ public class Sender {
 	public static void main(String[] args) throws JMSException, InterruptedException {
 		// 第一步，建立ConnectionFactory工厂对象，需要填入用户名，密码，以及要连接的地址，均使用默认的即可，默认端口：“tcp://localhost:616161”
 		ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("admin",
-				"admin", "tcp://localhost:61616");
+				"admin", "tcp://121.40.57.56:61616");
 		// 第二步，简历ConnectionFactory工厂对象我们创建一个connection链接，并且调用Connection的start方法开启链接，Connection默认是关闭的
 		Connection connection = connectionFactory.createConnection();
 		connection.start();
