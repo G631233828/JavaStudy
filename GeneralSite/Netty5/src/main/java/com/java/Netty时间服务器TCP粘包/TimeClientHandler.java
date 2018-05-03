@@ -8,38 +8,34 @@ import io.netty.channel.ChannelHandlerContext;
 public class TimeClientHandler extends ChannelHandlerAdapter {
 
 	// 改造
-	private int counter;
-	private byte[] req;
+	   private int counter;
 
-	@Override
-	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-		// TODO Auto-generated method stub
-		super.exceptionCaught(ctx, cause);
-	}
+	    private byte[] req;
 
-	@Override
-	public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+	    public TimeClientHandler() {
+	        req = ("QUERY TIME ORDER" + System.getProperty("line.separator")).getBytes();
+	    }
 
-		ByteBuf buf = (ByteBuf) msg;
-		req = new byte[buf.readableBytes()];
-		buf.readBytes(req);
+	    @Override
+	    public void channelActive(ChannelHandlerContext ctx) {
+	        ByteBuf message = null;
+	        for(int i = 0; i < 100; i++) {
+	            message = Unpooled.buffer(req.length);
+	            message.writeBytes(req);
+	            ctx.writeAndFlush(message);
+	        }
+	    }
 
-		String body = new String(req, "UTF-8");
+	    @Override
+	    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+	        String body = (String) msg;
+	        // counter的作用是标记这是第几次收到客户端的请求
+	        System.out.println("Now is : " + body + " ; the counter is : " + ++counter);
+	    }
 
-		// System.out.println("Now is:" + body);
-		System.out.println("Now is:" + body + ";the counter is:" + ++counter);
-	}
-
-	@Override
-	public void channelActive(ChannelHandlerContext ctx) throws Exception {
-
-		/*
-		 * ByteBuf message = null; for (int i = 0; i < 100; i++) { message =
-		 * Unpooled.copiedBuffer(req); message.writeBytes(req);
-		 * ctx.writeAndFlush(message); }
-		 */for (int i = 0; i < 100; i++) {
-			ctx.writeAndFlush(Unpooled.copiedBuffer("QUERY TIME ORDER".getBytes()));
-		}
-	}
+	    @Override
+	    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+	        ctx.close();
+	    }
 
 }
