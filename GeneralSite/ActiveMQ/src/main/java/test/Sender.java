@@ -60,7 +60,7 @@ public class Sender {
 		        s.setRemark("到校通知"+i);
 		        s.setSchoolAddress("上海浦东");
 		        s.setTitle("安全达到学校");
-		        s.setWeChatToken("o7v5z0pFRaqQywZE0DT_zcKarwZ8");
+		        s.setWeChatToken("o7v5z0pFRaqQywZE0DT_zcKarwZ8,o7v5z0khNgYrkYkzZ1Hoo2SmqKCY");
 				//ooiMKv9R-aufq7Fdp7GTmbF8y_1g
 		        //ooiMKv7cqR-2EgkeC9LdATpr-mbY
 				JSONObject json = JSONObject.fromObject(s);

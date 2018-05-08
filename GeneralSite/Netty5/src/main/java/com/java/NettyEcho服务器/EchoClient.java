@@ -11,6 +11,7 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.DelimiterBasedFrameDecoder;
+import io.netty.handler.codec.FixedLengthFrameDecoder;
 import io.netty.handler.codec.string.StringDecoder;
 
 public class EchoClient {
@@ -25,14 +26,17 @@ public class EchoClient {
 		Bootstrap b = new Bootstrap();
 
 		try {
-			b.group(cGroup).channel(NioSocketChannel.class).option(ChannelOption.TCP_NODELAY, true)
-					.handler(new ChannelInitializer<SocketChannel>() {
+			b.group(cGroup).channel(NioSocketChannel.class)
+			.option(ChannelOption.TCP_NODELAY, true)
+			.handler(new ChannelInitializer<SocketChannel>() {
 
 						@Override
 						protected void initChannel(SocketChannel ch) throws Exception {
-							ByteBuf delimiter = Unpooled.copiedBuffer("$_".getBytes());
-
-							ch.pipeline().addLast(new DelimiterBasedFrameDecoder(1024, delimiter));
+				/*			ByteBuf delimiter = Unpooled.copiedBuffer("$_".getBytes());
+							ch.pipeline().addLast(new DelimiterBasedFrameDecoder(1024, delimiter));*/
+							
+							//FixedLengthFrameDecoder固定长度解码器，能够按照指定的长度对消息进行自动解码
+							ch.pipeline().addLast(new FixedLengthFrameDecoder(20));
 							ch.pipeline().addLast(new StringDecoder());
 							ch.pipeline().addLast(new EchoClientHandler());
 						}

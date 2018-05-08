@@ -60,7 +60,13 @@
 				<version>1.6.4</version>
 			</dependency>
 
-
+			<!-- https://mvnrepository.com/artifact/org.msgpack/msgpack -->
+			<!--  MessagePack 编码解码器-->
+			<dependency>
+				<groupId>org.msgpack</groupId>
+				<artifactId>msgpack</artifactId>
+				<version>0.6.12</version>
+			</dependency>
 
 
 
