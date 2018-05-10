@@ -1,10 +1,16 @@
 package pojo;
 
+import java.io.Serializable;
+
 import org.msgpack.annotation.Message;
 
-@Message
-public class Student {
+//@Message
+public class Student implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7374810513092521835L;
 	private int id;
 	private String name;
 	private String code;
@@ -36,6 +42,13 @@ public class Student {
 	@Override
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + ", code=" + code + ", age=" + age + "]";
+	}
+	public Student(int id, String name, String code, int age) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.code = code;
+		this.age = age;
 	}
 	
 	

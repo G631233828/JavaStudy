@@ -39,14 +39,14 @@ public class EchoClientHandler extends ChannelHandlerAdapter {
 //            ctx.writeAndFlush(user);
 //        }
     	
-    	for(int i=0;i<sendNumber;i++){
-    		Student s = new Student();
-    		s.setAge(21);
-    		s.setCode(" "+i);
-    		s.setId(i);
-    		s.setName("fliay-----"+i);
-    		ctx.write(s);
-    	}
+//    	for(int i=0;i<sendNumber;i++){
+//    		Student s = new Student();
+//    		s.setAge(21);
+//    		s.setCode(" "+i);
+//    		s.setId(i);
+//    		s.setName("fliay-----"+i);
+//    		ctx.write(s);
+//    	}
     	ctx.flush();
     	
     }
