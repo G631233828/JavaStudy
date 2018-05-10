@@ -6,13 +6,20 @@ public class test {
 	
 	public static void main(String[] args) throws SigarException {
 	
-			property();
+			try {
+				property();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		
 	}
 
-	private static void property() throws SigarException {
+	private static void property() throws SigarException, InterruptedException {
 		Sigar s = new Sigar();
+		while(true){
 		System.out.println(s.getMem());
-		
+		Thread.sleep(1000);
+		}
 	}
 }

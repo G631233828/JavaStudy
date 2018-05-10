@@ -21,6 +21,7 @@ public class MessagePackTest {
 		MessagePack msgpack = new MessagePack();	
 		//进行编码
 		byte[] raw = msgpack.write(src);
+		System.out.println(raw.toString());
 	
 		
 		//进行解码
