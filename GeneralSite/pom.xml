@@ -115,5 +115,6 @@
 		<module>Algorithm</module>
 		<module>JavaNIO</module>
 		<module>JavaAIO</module>
+		<module>JavaBIO</module>
 	</modules>
 </project>
