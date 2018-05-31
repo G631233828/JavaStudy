@@ -1,4 +1,4 @@
-package MasterWorker模式;
+ package MasterWorker模式;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,7 +12,7 @@ public class Master {
 	// 所有的处理结果
 	private ConcurrentHashMap<String, Object> resultMap = new ConcurrentHashMap<String, Object>();
 
-	// 所有的Worker集合
+	// 使用HashMap去装所有的worker对象	
 	private HashMap<String, Thread> workerMap = new HashMap<String, Thread>();
 
 	// 构造方法，初始化Worker
@@ -41,7 +41,7 @@ public class Master {
 	// 判断所有的线程是否都完成任务
 	public boolean isComplete() {
 		for (Map.Entry<String, Thread> me : workerMap.entrySet()) {
-			if (me.getValue().getState() != Thread.State.TERMINATED) {
+			if (me.getValue().getState() != Thread.State.TERMINATED) {//判断当前线程状态终止
 				return false;
 			}
 		}

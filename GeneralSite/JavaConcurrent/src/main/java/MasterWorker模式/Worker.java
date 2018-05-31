@@ -4,8 +4,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class Worker implements Runnable {
-
+	// 任务集合
 	private ConcurrentLinkedQueue<Task> taskQueue;
+	//处理结果
 	private ConcurrentHashMap<String, Object> resultMap;
 
 	public void setTaskQueue(ConcurrentLinkedQueue<Task> taskQueue) {

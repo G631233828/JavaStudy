@@ -16,8 +16,8 @@ public class ThreadLocal共享线程变量 {
 				public void run() {
 					
 					PubParam p = new PubParam();
-					p.setId("id=" + String.valueOf( new Date().getTime())+","+String.valueOf(a));
-					p.setName("name=" + String.valueOf( new Date().getTime())+","+String.valueOf(a));
+					p.setId(String.valueOf( new Date().getTime())+","+String.valueOf(a));
+					p.setName(String.valueOf( new Date().getTime())+","+String.valueOf(a));
 					tl.set(p);
 					A.getA();
 					B.getB();
@@ -30,6 +30,22 @@ public class ThreadLocal共享线程变量 {
 				}
 
 			}).start();
+			
+			
+			
+			Thread.sleep(1000);
+			
+			
+			new Thread(new Runnable() {
+				
+				public void run() {
+					// TODO Auto-generated method stub
+					System.out.println("休息之后第二个现场获取数据");
+					A.getA();
+					B.getB();
+				}
+			}).start();
+			
 
 		}
 	

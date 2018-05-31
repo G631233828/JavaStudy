@@ -25,7 +25,7 @@ public class PriorityBlockingQueue优先级排序队列 {
 		
 		for(int i=0;i<10;i++){
 		new Thread(new Runnable() {
-			
+			  
 			public void run() {
 				while(pbq.size()>0){
 					try {
@@ -63,7 +63,7 @@ class Student implements Comparable<Student>{
 
 	public int compareTo(Student o) {
 		
-		return this.age>o.age? 1:(this.age<o.age?-1:0);
+		return this.age>o.age? 1:this.age<o.age?-1:0;
 	}
 
 
