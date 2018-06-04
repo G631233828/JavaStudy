@@ -4,6 +4,13 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * 
+ * @author fliay
+ * 当countDownLatch设置为1的时候线程执行的时候执行await操作，
+ * 需要对线程的countDownLatch值进行chutdown操作等于0的时候才会唤醒await的线程
+ *
+ */
 public class CountdownLatch计数器 {
 
 	public static void main(String[] args) {

@@ -1,7 +1,5 @@
 package 自定义线程池;
 
-import java.util.concurrent.TimeUnit;
-
 public class Mian {
 
 	
@@ -11,7 +9,7 @@ public class Mian {
 		
 		MyThreadPool my = new MyThreadPool();
 		long start = System.currentTimeMillis();
-		for(int i =1 ;i<=100000;i++){
+		for(int i =1 ;i<=70;i++){
 			Student s = new Student();
 			s.setId(i);
 			s.setName("fliay"+i);
