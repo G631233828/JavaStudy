@@ -16,7 +16,7 @@ class send {
 	public static void main(String[] args) {
 
 		try {
-			Socket socket = new Socket("192.168.1.171", 1000);
+			Socket socket = new Socket("localhost", 1000);
 
 			OutputStream out = socket.getOutputStream();
 

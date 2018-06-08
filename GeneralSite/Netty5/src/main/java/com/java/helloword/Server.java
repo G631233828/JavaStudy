@@ -10,9 +10,7 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 public class Server {
-
 	public static void main(String[] args) throws InterruptedException {
-
 		int port = 3000;
 		// 创建用于服务器端接收客户端连接的
 		EventLoopGroup sGroup = new NioEventLoopGroup();
@@ -43,11 +41,8 @@ public class Server {
 				});
 		// 进行绑定异步通道
 		ChannelFuture cf = b.bind(port).sync();
-
 		cf.channel().closeFuture().sync();
 		cGroup.shutdownGracefully();
 		sGroup.shutdownGracefully();
-
 	}
-
 }

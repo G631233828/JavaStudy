@@ -11,35 +11,24 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 
 public class Client {
-	
-	
 	public static void main(String[] args) throws InterruptedException {
-		
-		int port =7777;
+		int port =3000;
 		String host="127.0.0.1";
-		EventLoopGroup cGroup = new NioEventLoopGroup();
-		
-		Bootstrap b = new Bootstrap();
-		
+		EventLoopGroup cGroup = new NioEventLoopGroup();		
+		Bootstrap b = new Bootstrap();		
 		b.group(cGroup)
 		//.option(ChannelOption.SO_TIMEOUT, 20000)³¬Ê±
 		.channel(NioSocketChannel.class)
 		.handler(new ChannelInitializer<SocketChannel>() {
-
 			@Override
 			protected void initChannel(SocketChannel ch) throws Exception {
-				ch.pipeline().addLast(new ClientHandler());
-				
+				ch.pipeline().addLast(new ClientHandler());			
 			}
-		});
-		
+		});		
 		ChannelFuture cf = b.connect(host,port);
 			cf.channel().writeAndFlush(Unpooled.copiedBuffer("An message from client".getBytes()));
 			Thread.sleep(1000);
 		cf.channel().closeFuture().sync();
-		cGroup.shutdownGracefully();
-		
-		
+		cGroup.shutdownGracefully();		
 	}
-
 }
