@@ -1,14 +1,14 @@
-package ±àÂë½âÂëÆ÷.MessagePack;
+package ç¼–ç è§£ç å™¨.MessagePack;
 
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 import pojo.Student;
 import pojo.User;
-import ĞòÁĞ»¯.UserInfo;
+import åºåˆ—åŒ–.UserInfo;
 
 public class EchoClientHandler extends ChannelHandlerAdapter {
 
-	 // sendNumberÎªĞ´Èë·¢ËÍ»º³åÇøµÄ¶ÔÏóÊıÁ¿
+	 // sendNumberä¸ºå†™å…¥å‘é€ç¼“å†²åŒºçš„å¯¹è±¡æ•°é‡
     private int sendNumber;
 
     public EchoClientHandler(int sendNumber) {
@@ -16,7 +16,7 @@ public class EchoClientHandler extends ChannelHandlerAdapter {
     }
 
     /**
-     * ¹¹½¨³¤¶ÈÎªuserNumµÄUser¶ÔÏóÊı×é
+     * æ„å»ºé•¿åº¦ä¸ºuserNumçš„Userå¯¹è±¡æ•°ç»„
      * @param userNum
      * @return
      */

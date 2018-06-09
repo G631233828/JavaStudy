@@ -1,4 +1,4 @@
-package ±àÂë½âÂëÆ÷.Protobuf;
+package ç¼–ç è§£ç å™¨.Protobuf;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -17,7 +17,7 @@ import io.netty.handler.logging.LoggingHandler;
 public class SubReqServer {
 	
 	public void bind(int port){
-		//ÅäÖÃ·şÎñ¶ËµÄNIOÏß³Ì×é
+		//é…ç½®æœåŠ¡ç«¯çš„NIOçº¿ç¨‹ç»„
 		EventLoopGroup bossGroup = new NioEventLoopGroup();
 		EventLoopGroup workerGroup = new NioEventLoopGroup();
 		
@@ -42,9 +42,9 @@ public class SubReqServer {
 				}
 			});
 			
-			//°ó¶¨¶Ë¿Ú£¬Í¬²½µÈ´ı³É¹¦
+			//ç»‘å®šç«¯å£ï¼ŒåŒæ­¥ç­‰å¾…æˆåŠŸ
 			ChannelFuture f = b.bind(port).sync();
-			//µÈ´ı·şÎñ¶Ë¼àÌı¶Ë¿Ú¹Ø±Õ
+			//ç­‰å¾…æœåŠ¡ç«¯ç›‘å¬ç«¯å£å…³é—­
 			f.channel().closeFuture().sync();
 		}catch(Exception e){
 			e.printStackTrace();

@@ -1,4 +1,4 @@
-package ±àÂë½âÂëÆ÷.MessagePack;
+package ç¼–ç è§£ç å™¨.MessagePack;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,19 +12,19 @@ public class MessagePackTest {
 	
 	public static void main(String[] args) throws IOException {
 		
-		//´´½¨ĞèÒª±àÂëµÄ¶ÔÏó
+		//åˆ›å»ºéœ€è¦ç¼–ç çš„å¯¹è±¡
 		List<String> src = new ArrayList<String>();
 			src.add("msgpack");
 			src.add("kumofs");
 			src.add("viver");
 		
 		MessagePack msgpack = new MessagePack();	
-		//½øĞĞ±àÂë
+		//è¿›è¡Œç¼–ç 
 		byte[] raw = msgpack.write(src);
 		System.out.println(raw.toString());
 	
 		
-		//½øĞĞ½âÂë
+		//è¿›è¡Œè§£ç 
 		List<String> dst1= msgpack.read(raw,Templates.tList(Templates.TString));
 		System.out.println(dst1.get(0));
 		System.out.println(dst1.get(1));

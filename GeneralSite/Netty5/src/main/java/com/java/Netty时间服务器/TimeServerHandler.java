@@ -1,4 +1,4 @@
-package com.java.NettyÊ±¼ä·şÎñÆ÷;
+package com.java.Nettyæ—¶é—´æœåŠ¡å™¨;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -10,7 +10,7 @@ import io.netty.channel.ChannelHandlerContext;
 
 public class TimeServerHandler extends ChannelHandlerAdapter {
 
-	// TimerServer¸ÄÔì
+	// TimerServeræ”¹é€ 
 	private int counter;
 
 	@Override
@@ -39,12 +39,12 @@ public class TimeServerHandler extends ChannelHandlerAdapter {
 		buf.readBytes(req);
 
 		// String body = new String(req, "UTF-8");
-		//¸ÄÔì
+		//æ”¹é€ 
 		String body = new String(req, "UTF-8").substring(0, req.length - System.getProperty("line.separator").length());
 
-		//System.out.println("the time server receive order£º" + body);
-		//¸ÄÔì
-		System.out.println("the time server receive order£º" + body+";the couter is :"+ ++counter);
+		//System.out.println("the time server receive orderï¼š" + body);
+		//æ”¹é€ 
+		System.out.println("the time server receive orderï¼š" + body+";the couter is :"+ ++counter);
 		
 		
 		

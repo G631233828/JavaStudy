@@ -1,8 +1,8 @@
-package ¶àÏß³Ì¶ÓÁĞ;
+package å¤šçº¿ç¨‹é˜Ÿåˆ—;
 
 import java.util.concurrent.ArrayBlockingQueue;
 
-public class ArrayBlockingQueueÊı×é×èÈû¶ÓÁĞ {
+public class ArrayBlockingQueueæ•°ç»„é˜»å¡é˜Ÿåˆ— {
 
 	
 	public static void main(String[] args) {

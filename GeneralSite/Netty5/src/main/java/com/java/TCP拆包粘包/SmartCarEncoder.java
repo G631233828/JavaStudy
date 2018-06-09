@@ -1,4 +1,4 @@
-package com.java.TCP²ğ°üÕ³°ü;
+package com.java.TCPæ‹†åŒ…ç²˜åŒ…;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
@@ -7,26 +7,26 @@ import io.netty.handler.codec.MessageToByteEncoder;
 /**
  * 
  * @author fliay
- * ×Ô¼º¶¨ÒåµÄĞ­Òé  Ğ­Òé·â×°
- * Êı¾İ°ü¸ñÊ½
- * ¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª|¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª|¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª|
- * Ğ­Òé¿ªÊ¼±êÖ¾|   ³¤¶È             |      Êı¾İ    |
- * ¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª|¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª|¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª|
- * 1.Ğ­Òé¿ªÊ¼±êÖ¾head_data,ÎªintÀàĞÍµÄÊı¾İ£¬16½øÖÆ±êÖ¾Îª0x76
- * 2.´«ÊäÊı¾İµÄ³¤¶ÈcontentLength ,intÀàĞÍ
- * 3.Òª´«ÊäµÄÊı¾İ£¬³¤¶È²»Ó¦¸Ã³¬¹ı2014£¬·ÀÖ¹socketÁô¹¥»÷
+ * è‡ªå·±å®šä¹‰çš„åè®®  åè®®å°è£…
+ * æ•°æ®åŒ…æ ¼å¼
+ * â€”â€”â€”â€”â€”â€”â€”â€”|â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”|â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”|
+ * åè®®å¼€å§‹æ ‡å¿—|   é•¿åº¦             |      æ•°æ®    |
+ * â€”â€”â€”â€”â€”â€”â€”â€”|â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”|â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”|
+ * 1.åè®®å¼€å§‹æ ‡å¿—head_data,ä¸ºintç±»å‹çš„æ•°æ®ï¼Œ16è¿›åˆ¶æ ‡å¿—ä¸º0x76
+ * 2.ä¼ è¾“æ•°æ®çš„é•¿åº¦contentLength ,intç±»å‹
+ * 3.è¦ä¼ è¾“çš„æ•°æ®ï¼Œé•¿åº¦ä¸åº”è¯¥è¶…è¿‡2014ï¼Œé˜²æ­¢socketç•™æ”»å‡»
  */
 public class SmartCarEncoder extends MessageToByteEncoder<SmartCarProtocol>{
 
 	@Override
 	protected void encode(ChannelHandlerContext ctx, SmartCarProtocol msg, ByteBuf out) throws Exception {
 	
-		//Ğ´ÈëÏûÏ¢smartCarµÄ¾ßÌåÄÚÈİ
-		//1.Ğ´ÈëÏûÏ¢µÄ¿ªÍ·µÄĞÅÏ¢±êÖ¾£¨intÀàĞÍ£©
+		//å†™å…¥æ¶ˆæ¯smartCarçš„å…·ä½“å†…å®¹
+		//1.å†™å…¥æ¶ˆæ¯çš„å¼€å¤´çš„ä¿¡æ¯æ ‡å¿—ï¼ˆintç±»å‹ï¼‰
 		out.writeInt(msg.getHead_data());
-		//2.Ğ´ÈëÏûÏ¢µÄ³¤¶È£¨int ÀàĞÍ£©
+		//2.å†™å…¥æ¶ˆæ¯çš„é•¿åº¦ï¼ˆint ç±»å‹ï¼‰
 		out.writeInt(msg.getContentLength());
-		//3.Ğ´ÈëÏûÏ¢µÄÄÚÈİ£¨byte[]ÀàĞÍ£©
+		//3.å†™å…¥æ¶ˆæ¯çš„å†…å®¹ï¼ˆbyte[]ç±»å‹ï¼‰
 		out.writeBytes(msg.getContent());
 	}
 

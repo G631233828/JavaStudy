@@ -1,4 +1,4 @@
- package MasterWorkerÄ£Ê½;
+ package MasterWorkeræ¨¡å¼;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,49 +6,49 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class Master {
-	// ÈÎÎñ¼¯ºÏ
+	// ä»»åŠ¡é›†åˆ
 	private ConcurrentLinkedQueue<Task> taskQueue = new ConcurrentLinkedQueue<Task>();
 
-	// ËùÓĞµÄ´¦Àí½á¹û
+	// æ‰€æœ‰çš„å¤„ç†ç»“æœ
 	private ConcurrentHashMap<String, Object> resultMap = new ConcurrentHashMap<String, Object>();
 
-	// Ê¹ÓÃHashMapÈ¥×°ËùÓĞµÄworker¶ÔÏó	
+	// ä½¿ç”¨HashMapå»è£…æ‰€æœ‰çš„workerå¯¹è±¡	
 	private HashMap<String, Thread> workerMap = new HashMap<String, Thread>();
 
-	// ¹¹Ôì·½·¨£¬³õÊ¼»¯Worker
+	// æ„é€ æ–¹æ³•ï¼Œåˆå§‹åŒ–Worker
 	public Master(Worker worker, int workerCount) {
-		// Ã¿Ò»¸öworker¶ÔÏó¶¼ĞèÒªÓĞMasterµÄÒıÓÃ£¬taskQueueÓÃÓÚÈÎÎñµÄÌáÈ¡£¬resultMapÓÃÓÚÈÎÎñµÄÌá½»
+		// æ¯ä¸€ä¸ªworkerå¯¹è±¡éƒ½éœ€è¦æœ‰Masterçš„å¼•ç”¨ï¼ŒtaskQueueç”¨äºä»»åŠ¡çš„æå–ï¼ŒresultMapç”¨äºä»»åŠ¡çš„æäº¤
 		worker.setTaskQueue(this.taskQueue);
 		worker.setResultMap(this.resultMap);
 		for (int i = 0; i < workerCount; i++) {
-			// key±íÊ¾workerµÄÃû×Ö,value±íÊ¾Ïß³ÌÖ´ĞĞ¶ÔÏó
+			// keyè¡¨ç¤ºworkerçš„åå­—,valueè¡¨ç¤ºçº¿ç¨‹æ‰§è¡Œå¯¹è±¡
 			workerMap.put("worker" + i, new Thread(worker));
 		}
 	}
 
-	// ÓÃÓÚÌá½»ÈÎÎñ
+	// ç”¨äºæäº¤ä»»åŠ¡
 	public void submit(Task task) {
 		this.taskQueue.add(task);
 	}
 
-	// Ö´ĞĞ·½·¨£¬Æô¶¯Ó¦ÓÃ³ÌĞòÈÃËùÓĞµÄWorker¹¤×÷
+	// æ‰§è¡Œæ–¹æ³•ï¼Œå¯åŠ¨åº”ç”¨ç¨‹åºè®©æ‰€æœ‰çš„Workerå·¥ä½œ
 	public void execute() {
 		for (Map.Entry<String, Thread> me : workerMap.entrySet()) {
 			me.getValue().start();
 		}
 	}
 
-	// ÅĞ¶ÏËùÓĞµÄÏß³ÌÊÇ·ñ¶¼Íê³ÉÈÎÎñ
+	// åˆ¤æ–­æ‰€æœ‰çš„çº¿ç¨‹æ˜¯å¦éƒ½å®Œæˆä»»åŠ¡
 	public boolean isComplete() {
 		for (Map.Entry<String, Thread> me : workerMap.entrySet()) {
-			if (me.getValue().getState() != Thread.State.TERMINATED) {//ÅĞ¶Ïµ±Ç°Ïß³Ì×´Ì¬ÖÕÖ¹
+			if (me.getValue().getState() != Thread.State.TERMINATED) {//åˆ¤æ–­å½“å‰çº¿ç¨‹çŠ¶æ€ç»ˆæ­¢
 				return false;
 			}
 		}
 		return true;
 	}
 
-	// ×Ü½á¹éÄÉ
+	// æ€»ç»“å½’çº³
 	public int getResult() {
 		int ret = 0;
 		for (Map.Entry<String, Object> entry : resultMap.entrySet()) {

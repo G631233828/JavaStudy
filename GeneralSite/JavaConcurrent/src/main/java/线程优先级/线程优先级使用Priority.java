@@ -1,6 +1,6 @@
-package Ïß³ÌÓÅÏÈ¼¶;
+package çº¿ç¨‹ä¼˜å…ˆçº§;
 
-public class Ïß³ÌÓÅÏÈ¼¶Ê¹ÓÃPriority {
+public class çº¿ç¨‹ä¼˜å…ˆçº§ä½¿ç”¨Priority {
 	
 	
 	public static void main(String[] args) {

@@ -20,7 +20,7 @@ class send {
 
 			OutputStream out = socket.getOutputStream();
 
-			byte[] buf = "ÄãºÃSocket£¡ĞÂÄêºÃ£¡".getBytes();
+			byte[] buf = "ä½ å¥½Socketï¼æ–°å¹´å¥½ï¼".getBytes();
 
 			out.write(buf);
 			
@@ -68,9 +68,9 @@ class server {
 
 			System.out.println(s.getInetAddress().getHostAddress() + ":" + msg);
 			
-			//·şÎñÆ÷·´À¡
+			//æœåŠ¡å™¨åé¦ˆ
 			
-			byte[] b = "·şÎñÆ÷·´À¡£ºÄãÒ²ĞÂÄêºÃ£¡".getBytes();
+			byte[] b = "æœåŠ¡å™¨åé¦ˆï¼šä½ ä¹Ÿæ–°å¹´å¥½ï¼".getBytes();
 			
 			OutputStream out = s.getOutputStream();
 			

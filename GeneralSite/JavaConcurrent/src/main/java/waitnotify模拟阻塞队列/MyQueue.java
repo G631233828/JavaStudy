@@ -1,4 +1,4 @@
-package waitnotifyÄ£Äâ×èÈû¶ÓÁĞ;
+package waitnotifyæ¨¡æ‹Ÿé˜»å¡é˜Ÿåˆ—;
 
 import java.util.LinkedList;
 import java.util.concurrent.TimeUnit;
@@ -6,35 +6,35 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class MyQueue {
 	
-	//¶¨ÒåÒ»¸ö½áºÏÓÃÀ´´æ·Å¶ÓÁĞ
+	//å®šä¹‰ä¸€ä¸ªç»“åˆç”¨æ¥å­˜æ”¾é˜Ÿåˆ—
 	private LinkedList<Object> lqList = new LinkedList<Object>();
 	
-	//¶¨Òå×î×îµÍÖµ
+	//å®šä¹‰æœ€æœ€ä½å€¼
 	private int minSize = 0;
 	
-	//¶¨Òå×î´óÖµ
+	//å®šä¹‰æœ€å¤§å€¼
 	private int maxSize;
 	
-	//¶¨Òå¼ÆÊıÆ÷
+	//å®šä¹‰è®¡æ•°å™¨
 	private AtomicInteger count  = new AtomicInteger(0);
 	
-	//¶¨ÒåÒ»¸öÏß³ÌËø
+	//å®šä¹‰ä¸€ä¸ªçº¿ç¨‹é”
 	private Object lock = new Object();
 	
-	//¶¨Òå¹¹Ôì·½·¨
+	//å®šä¹‰æ„é€ æ–¹æ³•
 	public MyQueue(int maxSize){
 		this.maxSize = maxSize;
 	}
 	
 	
-	//¶¨ÒåÒ»¸öput·½·¨£¬ÓÃÀ´·Å¶ÓÁĞÖĞ´æ·ÅÊı¾İ
+	//å®šä¹‰ä¸€ä¸ªputæ–¹æ³•ï¼Œç”¨æ¥æ”¾é˜Ÿåˆ—ä¸­å­˜æ”¾æ•°æ®
 	
 	public void put(Object o){
-		//¶Ôput·½·¨½øĞĞ¼ÓËø
+		//å¯¹putæ–¹æ³•è¿›è¡ŒåŠ é”
 		synchronized (lock) {
-			//Èç¹û¶ÓÁĞÂúÁË£¬¾ÍĞèÒªÖ´ĞĞµÈ´ı£¬²»ÄÜÔÙÍùÀïÃæ·ÅÊı¾İÁË
+			//å¦‚æœé˜Ÿåˆ—æ»¡äº†ï¼Œå°±éœ€è¦æ‰§è¡Œç­‰å¾…ï¼Œä¸èƒ½å†å¾€é‡Œé¢æ”¾æ•°æ®äº†
 			while(count.get() == maxSize){
-				//µ±Ç°Ëø¶ÔÏóÖ´ĞĞµÈ´ı
+				//å½“å‰é”å¯¹è±¡æ‰§è¡Œç­‰å¾…
 				try {
 					lock.wait();
 				} catch (InterruptedException e) {
@@ -43,21 +43,21 @@ public class MyQueue {
 				}
 			}
 			lqList.add(o);
-			count.getAndIncrement();//¼ÆÊıÆ÷+1
-			System.out.println("ÒÑ¾­Ïò¶ÓÁĞÖĞÌí¼ÓÁËÊı¾İ"+o);
-			//Í¨Öª¿ÉÒÔÄÇÊı¾İÁË
+			count.getAndIncrement();//è®¡æ•°å™¨+1
+			System.out.println("å·²ç»å‘é˜Ÿåˆ—ä¸­æ·»åŠ äº†æ•°æ®"+o);
+			//é€šçŸ¥å¯ä»¥é‚£æ•°æ®äº†
 			lock.notify();
 			
 			
 		}
 	}
 	
-	//¶¨ÒåÒ»¸ötake·½·¨£¬ÓÃÀ´´Ó¶ÓÁĞÖĞÏû·ÑÊı¾İ
+	//å®šä¹‰ä¸€ä¸ªtakeæ–¹æ³•ï¼Œç”¨æ¥ä»é˜Ÿåˆ—ä¸­æ¶ˆè´¹æ•°æ®
 	public Object take(){
 		Object obj = null;
 		synchronized (lock) {
 			while(count.get()==minSize){
-				//ÅĞ¶ÏÈç¹ûµ±Ç°¶ÓÁĞµÄ´óĞ¡µÈÓÚ×îĞ¡Öµ£¬ÄÇÃ´ĞèÒªÖ´ĞĞµÈ´ı
+				//åˆ¤æ–­å¦‚æœå½“å‰é˜Ÿåˆ—çš„å¤§å°ç­‰äºæœ€å°å€¼ï¼Œé‚£ä¹ˆéœ€è¦æ‰§è¡Œç­‰å¾…
 				try {
 					lock.wait();
 				} catch (InterruptedException e) {
@@ -65,10 +65,10 @@ public class MyQueue {
 					e.printStackTrace();
 				}
 			}
-			//´Ó¼¯ºÏÖĞ»ñÈ¡µÚÒ»¸öÔªËØ
+			//ä»é›†åˆä¸­è·å–ç¬¬ä¸€ä¸ªå…ƒç´ 
 			obj = lqList.removeFirst();
-			count.getAndDecrement();//¼ÆÊıÆ÷-1
-			System.out.println("¶ÓÁĞÖĞÒÑ¾­ÒÆ³ıÁËÒ»ÌõÊı¾İ");
+			count.getAndDecrement();//è®¡æ•°å™¨-1
+			System.out.println("é˜Ÿåˆ—ä¸­å·²ç»ç§»é™¤äº†ä¸€æ¡æ•°æ®");
 			lock.notify();
 			
 		}
@@ -90,7 +90,7 @@ public class MyQueue {
 		mq.put("d");
 		mq.put("e");
 		
-		//´´½¨ÏÖ³¡ÍùÀïÃæ´æÊı¾İ
+		//åˆ›å»ºç°åœºå¾€é‡Œé¢å­˜æ•°æ®
 		new Thread(new Runnable() {
 			
 			public void run() {
@@ -98,14 +98,14 @@ public class MyQueue {
 				mq.put("g");
 			}
 		}).start();
-		//´´½¨ÏÖ³¡À´È¡Êı¾İ
+		//åˆ›å»ºç°åœºæ¥å–æ•°æ®
 		
 		new Thread(new Runnable() {
 			
 			public void run() {
 				
 				Object o1 = mq.take();
-				System.out.println("´Ó¶ÓÁĞÖĞÈ¡³öÊı¾İ"+o1);
+				System.out.println("ä»é˜Ÿåˆ—ä¸­å–å‡ºæ•°æ®"+o1);
 				try {
 					Thread.sleep(2000);
 				} catch (InterruptedException e) {
@@ -113,7 +113,7 @@ public class MyQueue {
 					e.printStackTrace();
 				}
 				Object o2 = mq.take();
-				System.out.println("´Ó¶ÓÁĞÖĞÈ¡³öÊı¾İ"+o2);
+				System.out.println("ä»é˜Ÿåˆ—ä¸­å–å‡ºæ•°æ®"+o2);
 				
 			}
 		}).start();

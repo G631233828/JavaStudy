@@ -1,4 +1,4 @@
-package com.java.TCP²ğ°üÕ³°ü;
+package com.java.TCPæ‹†åŒ…ç²˜åŒ…;
 
 
 import io.netty.bootstrap.Bootstrap;
@@ -14,24 +14,24 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 public class Client {
 
 	public void connect (int port,String host) throws InterruptedException{
-		//ÅäÖÃ¿Í»§¶ËµÄNIOÏß³Ì×é
+		//é…ç½®å®¢æˆ·ç«¯çš„NIOçº¿ç¨‹ç»„
 		EventLoopGroup group = new NioEventLoopGroup();
 		try{
-			//¿Í»§¶Ë¸¨ÖúÆô¶¯Àà£¬¶Ô¿Í»§¶ËÅäÖÃ
+			//å®¢æˆ·ç«¯è¾…åŠ©å¯åŠ¨ç±»ï¼Œå¯¹å®¢æˆ·ç«¯é…ç½®
 			Bootstrap b = new Bootstrap();
 			b.group(group).channel(NioSocketChannel.class).option(ChannelOption.TCP_NODELAY, true).handler(new MyChannelHandler());
-			//Òì²½Á´½Ó·şÎñÆ÷ Í¬²½µÈ´ıÁ´½Ó³É¹¦
+			//å¼‚æ­¥é“¾æ¥æœåŠ¡å™¨ åŒæ­¥ç­‰å¾…é“¾æ¥æˆåŠŸ
 			ChannelFuture f =b.connect(host,port).sync();
 			
 			
 			f.channel().writeAndFlush(Unpooled.copiedBuffer("hello netty!!".getBytes()));
 			
-			//µÈ´ıÁ´½Ó¹Ø±Õ
+			//ç­‰å¾…é“¾æ¥å…³é—­
 			f.channel().closeFuture().sync();
 			
 		}finally{
 			group.shutdownGracefully();
-			System.out.println("¿Í»§¶ËÊÍ·ÅÁËÏÖ³¡×ÊÔ´");
+			System.out.println("å®¢æˆ·ç«¯é‡Šæ”¾äº†ç°åœºèµ„æº");
 		}
 		
 		
@@ -42,10 +42,10 @@ public class Client {
 
 		@Override
 		protected void initChannel(SocketChannel ch) throws Exception {
-			//Ìí¼Ó×Ô¶¨ÒåĞ­ÒéµÄ½âÂë¹¤¾ß
+			//æ·»åŠ è‡ªå®šä¹‰åè®®çš„è§£ç å·¥å…·
 			ch.pipeline().addLast(new SmartCarEncoder());
 			ch.pipeline().addLast(new SmartCarDecoder());
-			//´¦ÀíÍøÂçIO
+			//å¤„ç†ç½‘ç»œIO
 			ch.pipeline().addLast(new ClientHandler());
 			
 			

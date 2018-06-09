@@ -1,4 +1,4 @@
-package 多线程线程通信;
+package 澶氱嚎绋嬬嚎绋嬮�氫俊;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,11 +6,11 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class Condition线程通讯 {
+public class Condition绾跨▼閫氳 {
 
 	public static void main(String[] args) {
 
-		final Condition线程通讯 t = new Condition线程通讯();
+		final Condition绾跨▼閫氳 t = new Condition绾跨▼閫氳();
 
 		new Thread(new Runnable() {
 
@@ -41,13 +41,13 @@ public class Condition线程通讯 {
 	Condition conditiondel = lock.newCondition();
 
 	public void add(int j) {
-		// 上锁
+		// 涓婇攣
 		lock.lock();
 		try {
 			for (int i = 0; i < 10; i++) {
 				Thread.sleep(200);
 				list.add(i);
-				System.out.println("正在添加元素" + i);
+				System.out.println("姝ｅ湪娣诲姞鍏冪礌" + i);
 				if (list.size() == 10) {
 					conditionadd.await();
 					break;
@@ -70,7 +70,7 @@ public class Condition线程通讯 {
 		try {
 			for (int i = 0; i <list.size(); i++) {
 				Thread.sleep(200);
-					System.out.println("正在删除元素" + list.get(0));
+					System.out.println("姝ｅ湪鍒犻櫎鍏冪礌" + list.get(0));
 				list.remove(0);
 				if (list.size() == 0) {
 					conditiondel.await();

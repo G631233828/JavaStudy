@@ -1,9 +1,9 @@
-package ¶àÏß³Ì²¢·¢°ü;
+package å¤šçº¿ç¨‹å¹¶å‘åŒ…;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Éú²úÕßÏû·ÑÕßÄ£Ê½ {
+public class ç”Ÿäº§è€…æ¶ˆè´¹è€…æ¨¡å¼ {
 
 	public static void main(String[] args) {
 		Queue<String> queue = new LinkedList<String>();
@@ -18,9 +18,9 @@ public class Éú²úÕßÏû·ÑÕßÄ£Ê½ {
 
 class Producer implements Runnable {
 
-	// Éú²úÕß¶ÓÁĞ
+	// ç”Ÿäº§è€…é˜Ÿåˆ—
 	private final Queue<String> queue;
-	// Éú²úÕß×î´óÊıÁ¿
+	// ç”Ÿäº§è€…æœ€å¤§æ•°é‡
 	private final int maxSize;
 
 	public Producer(Queue<String> queue, int maxSize) {
@@ -50,13 +50,13 @@ class Producer implements Runnable {
 			synchronized (queue) {
 
 				if (queue.size() == maxSize) {
-					System.out.println("Éú²úÕß£º²Ö¿âÒÑ¾­ÂúÁË£¬µÈ´ıÏû·Ñ");
-					// Éú²úÕß¿ªÊ¼µÈ´ı
+					System.out.println("ç”Ÿäº§è€…ï¼šä»“åº“å·²ç»æ»¡äº†ï¼Œç­‰å¾…æ¶ˆè´¹");
+					// ç”Ÿäº§è€…å¼€å§‹ç­‰å¾…
 					queue.wait();
 				}
 
-				System.out.println("Éú²úÕß£ºÉú²úÁËÉÌÆ·" + queue.add("product"));
-				// Í¨ÖªËùÓĞ
+				System.out.println("ç”Ÿäº§è€…ï¼šç”Ÿäº§äº†å•†å“" + queue.add("product"));
+				// é€šçŸ¥æ‰€æœ‰
 				queue.notifyAll();
 			}
 
@@ -99,10 +99,10 @@ class Consumer implements Runnable {
 			synchronized (queue) {
 
 				if (queue.isEmpty()) {
-					System.out.println("Ïû·ÑÕß£º²Ö¿â¿ÕÁË£¬¿ìµãÉú²ú£¡");
+					System.out.println("æ¶ˆè´¹è€…ï¼šä»“åº“ç©ºäº†ï¼Œå¿«ç‚¹ç”Ÿäº§ï¼");
 					queue.wait();
 				}
-				System.out.println("Ïû·ÑÕß£ºÏû·ÑÁËÉÌÆ·" + queue.remove());
+				System.out.println("æ¶ˆè´¹è€…ï¼šæ¶ˆè´¹äº†å•†å“" + queue.remove());
 				queue.notifyAll();
 			}
 

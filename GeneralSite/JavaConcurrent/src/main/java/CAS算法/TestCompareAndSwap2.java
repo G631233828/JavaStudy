@@ -1,4 +1,4 @@
-package CASËã·¨;
+package CASç®—æ³•;
 
 
 public class TestCompareAndSwap2{
@@ -6,7 +6,7 @@ public class TestCompareAndSwap2{
         final CompareAndSwap cas = new CompareAndSwap();
 
         for(int i=0; i<10; i++){
-            // ´´½¨10¸öÏß³Ì,Ä£Äâ¶àÏß³Ì»·¾³
+            // åˆ›å»º10ä¸ªçº¿ç¨‹,æ¨¡æ‹Ÿå¤šçº¿ç¨‹çŽ¯å¢ƒ
             new Thread(new Runnable(){
                 public void run(){
                     int expectedValue = cas.get();
@@ -21,29 +21,29 @@ public class TestCompareAndSwap2{
     
  
 
-}// Ä£ÄâCAS Ëã·¨
+}// æ¨¡æ‹ŸCAS ç®—æ³•
 class CompareAndSwap{
     private int value;
 
-    // »ñÈ¡ÄÚ´æÖµ
+    // èŽ·å–å†…å­˜å€¼
     public synchronized int get(){
         return value;
     }
 
-    // ÎÞÂÛ¸üÐÂ³É¹¦Óë·ñ,¶¼·µ»ØÐÞ¸ÄÖ®Ç°µÄÄÚ´æÖµ
+    // æ— è®ºæ›´æ–°æˆåŠŸä¸Žå¦,éƒ½è¿”å›žä¿®æ”¹ä¹‹å‰çš„å†…å­˜å€¼
     public synchronized int compareAndSwap(int expectedValue, int newValue){
-        // »ñÈ¡¾ÉÖµ
+        // èŽ·å–æ—§å€¼
         int oldValue = value;
 
         if(oldValue == expectedValue){
             this.value = newValue;
         }
 
-        // ·µ»ØÐÞ¸ÄÖ®Ç°µÄÖµ
+        // è¿”å›žä¿®æ”¹ä¹‹å‰çš„å€¼
         return oldValue;
     }
 
-    // ÅÐ¶ÏÊÇ·ñÉèÖÃ³É¹¦
+    // åˆ¤æ–­æ˜¯å¦è®¾ç½®æˆåŠŸ
     public synchronized boolean compareAndSet(int expectedValue, int newValue){
         return expectedValue == compareAndSwap(expectedValue, newValue);
     }

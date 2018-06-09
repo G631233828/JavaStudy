@@ -1,8 +1,8 @@
-package SynchronizedËø»úÖÆ;
+package Synchronizedé”æœºåˆ¶;
 
 /**
- * ÔÚÃ»ÓĞÌí¼ÓÀàËøµÄÇé¿öÏÂÊä³öÊÇ²»»á°´ÕÕË³ĞòÀ´Ö´ĞĞ£¬ÔÚÖ´ĞĞÏß³ÌaµÄ¹ı³ÌÖĞÒ²»áÖ´ĞĞÏß³Ìb
- * Ìí¼ÓÁËÀàËøÖ®ºóĞèÒªµÈÏß³ÌaÊä³öÍê³ÉÖ®ºó²Å»áÈ¥Ö´ĞĞÏß³Ìb
+ * åœ¨æ²¡æœ‰æ·»åŠ ç±»é”çš„æƒ…å†µä¸‹è¾“å‡ºæ˜¯ä¸ä¼šæŒ‰ç…§é¡ºåºæ¥æ‰§è¡Œï¼Œåœ¨æ‰§è¡Œçº¿ç¨‹açš„è¿‡ç¨‹ä¸­ä¹Ÿä¼šæ‰§è¡Œçº¿ç¨‹b
+ * æ·»åŠ äº†ç±»é”ä¹‹åéœ€è¦ç­‰çº¿ç¨‹aè¾“å‡ºå®Œæˆä¹‹åæ‰ä¼šå»æ‰§è¡Œçº¿ç¨‹b
  * @author fliay
  *
  */
@@ -22,7 +22,7 @@ public class InLockTest extends Thread{
 	}
 	
 	/**
-	 * Í¨¹ıÊ¹ÓÃ static+synchronizedÀà´´½¨Ò»¸öÄÚËø£¬ÀàËøÊÇ°´ÕÕË³ĞòÖ´ĞĞ£¬ÊÇÒ»¸ö×èÈûµÄ
+	 * é€šè¿‡ä½¿ç”¨ static+synchronizedç±»åˆ›å»ºä¸€ä¸ªå†…é”ï¼Œç±»é”æ˜¯æŒ‰ç…§é¡ºåºæ‰§è¡Œï¼Œæ˜¯ä¸€ä¸ªé˜»å¡çš„
 	 * @param type
 	 */
 	public static synchronized void print(String type){
@@ -45,7 +45,7 @@ public class InLockTest extends Thread{
 	
 	public static void main(String[] args) {
 		
-		//´´½¨Á½¸öÏß³ÌÖ´ĞĞ
+		//åˆ›å»ºä¸¤ä¸ªçº¿ç¨‹æ‰§è¡Œ
 		InLockTest a = new InLockTest("a");
 		InLockTest b = new InLockTest("b");
 		a.start();

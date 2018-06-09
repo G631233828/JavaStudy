@@ -1,4 +1,4 @@
-package ±àÂë½âÂëÆ÷.MessagePack;
+package ç¼–ç è§£ç å™¨.MessagePack;
 
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
@@ -19,7 +19,7 @@ public class EchoServerHandler extends ChannelHandlerAdapter {
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
-        // ·¢ÉúÒì³££¬¹Ø±ÕÁ´Â·
+        // å‘ç”Ÿå¼‚å¸¸ï¼Œå…³é—­é“¾è·¯
         ctx.close();
     }
 

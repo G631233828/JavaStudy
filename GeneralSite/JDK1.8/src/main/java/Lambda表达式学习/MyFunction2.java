@@ -1,4 +1,4 @@
-package Lambda����ʽѧϰ;
+package Lambda表达式学习;
 
 public interface MyFunction2<T, R> {
 

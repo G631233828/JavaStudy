@@ -1,4 +1,4 @@
-package FutureÄ£Ê½;
+package Futureæ¨¡å¼;
 
 public class Main {
 	
@@ -7,11 +7,11 @@ public class Main {
 		FutureClient fc = new FutureClient();
 		
 		
-		Data data = fc.request("ÇëÇó²ÎÊı");
+		Data data = fc.request("è¯·æ±‚å‚æ•°");
 		
 		
-		System.out.println("ÇëÇó·¢ËÍ³É¹¦£¡");
-		System.out.println("¿ÉÒÔ×öÆäËûÊÂÇé¡£");
+		System.out.println("è¯·æ±‚å‘é€æˆåŠŸï¼");
+		System.out.println("å¯ä»¥åšå…¶ä»–äº‹æƒ…ã€‚");
 		
 		System.out.println(data.getRequest());		
 	}

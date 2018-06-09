@@ -18,35 +18,35 @@ public class UseChannel {
 	public static void main(String[] args) {
 		
 		try {
-			//1.´ò¿ªServerSocketChannel ÓÃ»§¼àÌı¿Í»§¶ËµÄÁ¬½Ó
+			//1.æ‰“å¼€ServerSocketChannel ç”¨æˆ·ç›‘å¬å®¢æˆ·ç«¯çš„è¿æ¥
 			ServerSocketChannel sc =  ServerSocketChannel.open();
-			//2.°ó¶¨¼àÌı¶Ë¿Ú£¬ÉèÖÃÁ¬½ÓÎ»·Ç×èÈûÄ£Ê½
+			//2.ç»‘å®šç›‘å¬ç«¯å£ï¼Œè®¾ç½®è¿æ¥ä½éé˜»å¡æ¨¡å¼
 			sc.socket().bind(new InetSocketAddress(InetAddress.getByName("IP"), 8181));
-			sc.configureBlocking(false);//ÉèÖÃ×èÈûÄ£Ê½Îªfalse
-			//3.´´½¨ReactorÏß³Ì£¬´´½¨¶àÂ·¸´ÓÃÆ÷²¢Æô¶¯Ïß³Ì
+			sc.configureBlocking(false);//è®¾ç½®é˜»å¡æ¨¡å¼ä¸ºfalse
+			//3.åˆ›å»ºReactorçº¿ç¨‹ï¼Œåˆ›å»ºå¤šè·¯å¤ç”¨å™¨å¹¶å¯åŠ¨çº¿ç¨‹
 			Selector selector = Selector.open();
 			new Thread(new ReactorTack()).start();
-			//4.½«ServerSocketChannel ×¢²áµ½ReactorÏß³ÌµÄ¶àÂ·¸´ÓÃÆ÷SelectorÉÏ£¬¼àÌıACCEPTÊÂ¼ş
+			//4.å°†ServerSocketChannel æ³¨å†Œåˆ°Reactorçº¿ç¨‹çš„å¤šè·¯å¤ç”¨å™¨Selectorä¸Šï¼Œç›‘å¬ACCEPTäº‹ä»¶
 			SelectionKey key = sc.register(selector, SelectionKey.OP_ACCEPT);
-			//5.à½àà¸´ÓÃÆ÷ÔÚÏß³Ìrun·½·¨µÄÎŞÏŞÑ­»·ÌåÄÚÂÖÑ¯×¼±¸¾ÍĞ÷µÄkey
+			//5.å˜Ÿå™œå¤ç”¨å™¨åœ¨çº¿ç¨‹runæ–¹æ³•çš„æ— é™å¾ªç¯ä½“å†…è½®è¯¢å‡†å¤‡å°±ç»ªçš„key
 			int num =selector.select();
 			Set selectedKeys = selector.selectedKeys();
 			Iterator it = selectedKeys.iterator();
 			while(it.hasNext()){
 				SelectionKey key1 = (SelectionKey) it.next();
 			}
-			//6.¶àÂ·¸´ÓÃÆ÷¼àÌıµ½ÓĞĞÂµÄ¿Í»§¶Ë½ÓÈë£¬´¦ÀíĞÂµÄ½ÓÈëÇëÇó£¬Íê³ÉTCPÈı´ÎÎÕÊÖ£¬½¨Á¢ÎïÀíÁ´Â·
+			//6.å¤šè·¯å¤ç”¨å™¨ç›‘å¬åˆ°æœ‰æ–°çš„å®¢æˆ·ç«¯æ¥å…¥ï¼Œå¤„ç†æ–°çš„æ¥å…¥è¯·æ±‚ï¼Œå®ŒæˆTCPä¸‰æ¬¡æ¡æ‰‹ï¼Œå»ºç«‹ç‰©ç†é“¾è·¯
 			SocketChannel channel = sc.accept();
-			//7.ÉèÖÃ¿Í»§¶ËÁ´Â·Îª·Ç×èÈûÄ£Ê½
+			//7.è®¾ç½®å®¢æˆ·ç«¯é“¾è·¯ä¸ºéé˜»å¡æ¨¡å¼
 			channel.configureBlocking(false);
 			channel.socket().setReuseAddress(true);
-			//8.½«ĞÂ½ÓÈëµÄ¿Í»§¶ËÁ¬½Ó×¢²áµ½ReactorÏß³ÌµÄ¶àÂ·¸´ÓÃÆ÷ÉÏ£¬¼àÌı¶Á²Ù×÷£¬¶ÁÈ¡¿Í»§¶Ë·¢ËÍµÄÍøÂçÏûÏ¢
+			//8.å°†æ–°æ¥å…¥çš„å®¢æˆ·ç«¯è¿æ¥æ³¨å†Œåˆ°Reactorçº¿ç¨‹çš„å¤šè·¯å¤ç”¨å™¨ä¸Šï¼Œç›‘å¬è¯»æ“ä½œï¼Œè¯»å–å®¢æˆ·ç«¯å‘é€çš„ç½‘ç»œæ¶ˆæ¯
 			SelectionKey ck = channel.register(selector, SelectionKey.OP_READ);
-			//9.Òì²½¶ÁÈ¡¿Í»§¶ËÇëÇóÏûÏ¢µ½»º³åÇø
+			//9.å¼‚æ­¥è¯»å–å®¢æˆ·ç«¯è¯·æ±‚æ¶ˆæ¯åˆ°ç¼“å†²åŒº
 			ByteBuffer b = null;
 			int readNumber = channel.read(b);
-			//10.¶ÔByteBuffer½øĞĞ±àÂë½âÂë£¬Èç¹ûÓĞ°ë°üÏûÏ¢Ö¸Õëreset£¬¼ÌĞø¶ÁÈ¡ºóĞøµÄ±¨ÎÄ£¬½«½âÂë³É¹¦µÄÏûÏ¢·â×°³ÉTask£¬Í¶µİµ½ÒµÎñÏß³Ì³ØÖĞ£¬½øĞĞÒµÎñÂß¼­±àÅÅ
-			//11.½«pojo¶ÔÏóencode³ÉByteBuffer£¬µ÷ÓÃSocketChannelµÄÒì²½write½Ó¿Ú½«ÏûÏ¢Òì²½·¢ËÍ¸ø¿Í»§¶Ë
+			//10.å¯¹ByteBufferè¿›è¡Œç¼–ç è§£ç ï¼Œå¦‚æœæœ‰åŠåŒ…æ¶ˆæ¯æŒ‡é’ˆresetï¼Œç»§ç»­è¯»å–åç»­çš„æŠ¥æ–‡ï¼Œå°†è§£ç æˆåŠŸçš„æ¶ˆæ¯å°è£…æˆTaskï¼ŒæŠ•é€’åˆ°ä¸šåŠ¡çº¿ç¨‹æ± ä¸­ï¼Œè¿›è¡Œä¸šåŠ¡é€»è¾‘ç¼–æ’
+			//11.å°†pojoå¯¹è±¡encodeæˆByteBufferï¼Œè°ƒç”¨SocketChannelçš„å¼‚æ­¥writeæ¥å£å°†æ¶ˆæ¯å¼‚æ­¥å‘é€ç»™å®¢æˆ·ç«¯
 			channel.write(b);
 			
 			

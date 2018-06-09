@@ -1,4 +1,4 @@
-package com.java.丢弃服务;
+package com.java.涓㈠純鏈嶅姟;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerAdapter;
@@ -6,7 +6,7 @@ import io.netty.channel.ChannelHandlerContext;
 
 
 /**
- * Netty 丢弃服务
+ * Netty 涓㈠純鏈嶅姟
  * @author fliay
  *
  */
@@ -28,7 +28,7 @@ public class DiscardServerHandler extends ChannelHandlerAdapter {
 			
 			
 		}finally{
-			// 直接丢弃
+			// 鐩存帴涓㈠純
 			((ByteBuf) msg).release();
 		}
 		

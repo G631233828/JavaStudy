@@ -1,4 +1,4 @@
-package ¶àÏß³Ì¶ÓÁĞ;
+package å¤šçº¿ç¨‹é˜Ÿåˆ—;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -10,10 +10,10 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class LinkedBlockingQueueÁ´±í½á¹¹¶ÓÁĞ {
+public class LinkedBlockingQueueé“¾è¡¨ç»“æ„é˜Ÿåˆ— {
 
 	/**
-	 * Á´±íÓĞĞòÊä³ö
+	 * é“¾è¡¨æœ‰åºè¾“å‡º
 	 * 
 	 * @param args
 	 * @throws InterruptedException
@@ -39,9 +39,9 @@ public class LinkedBlockingQueueÁ´±í½á¹¹¶ÓÁĞ {
 			lbq.put(s);
 		}
 
-		// ´´½¨Ïß³Ì³ØÓÃÀ´»ñÈ¡Êı¾İ
+		// åˆ›å»ºçº¿ç¨‹æ± ç”¨æ¥è·å–æ•°æ®
 
-		ExecutorService es = Executors.newFixedThreadPool(5);//ÏûºÄÊ±¼ä£º
+		ExecutorService es = Executors.newFixedThreadPool(5);//æ¶ˆè€—æ—¶é—´ï¼š
 
 		final File f = new File("D:/test.txt");
 		if (f.exists()) {
@@ -52,7 +52,7 @@ public class LinkedBlockingQueueÁ´±í½á¹¹¶ÓÁĞ {
 			f.createNewFile();
 		}
 
-		for (int i = 0; i <5; i++) { //1¸öÏß³Ì 22494ºÁÃë  10¸öÏß³Ì 7779ºÁÃë  5¸öÏß³Ì 7989ºÁÃë     3¸öÏß³Ì  8829
+		for (int i = 0; i <5; i++) { //1ä¸ªçº¿ç¨‹ 22494æ¯«ç§’  10ä¸ªçº¿ç¨‹ 7779æ¯«ç§’  5ä¸ªçº¿ç¨‹ 7989æ¯«ç§’     3ä¸ªçº¿ç¨‹  8829
 
 			Runnable ru = new Thread(new Runnable() {
 
@@ -71,7 +71,7 @@ public class LinkedBlockingQueueÁ´±í½á¹¹¶ÓÁĞ {
 							
 							if(lbq.size()<=1){
 								System.out.println("[Thread:" + Thread.currentThread().getName() + "],name:" + student.getName()
-								+ "heart:" + student.getHeart() + "age:" + student.getAge() + "\n\t"+"ÏûºÄÊ±¼ä£º" + (end - start));
+								+ "heart:" + student.getHeart() + "age:" + student.getAge() + "\n\t"+"æ¶ˆè€—æ—¶é—´ï¼š" + (end - start));
 							}
 							bw.flush();
 							bw.close();
@@ -103,8 +103,8 @@ public class LinkedBlockingQueueÁ´±í½á¹¹¶ÓÁĞ {
 		Random random = new Random();
 
 		highCode = (176 + Math.abs(random.nextInt(39))); // B0 + 0~39(16~55)
-															// Ò»¼¶ºº×ÖËùÕ¼Çø
-		lowCode = (161 + Math.abs(random.nextInt(93))); // A1 + 0~93 Ã¿ÇøÓĞ94¸öºº×Ö
+															// ä¸€çº§æ±‰å­—æ‰€å åŒº
+		lowCode = (161 + Math.abs(random.nextInt(93))); // A1 + 0~93 æ¯åŒºæœ‰94ä¸ªæ±‰å­—
 
 		byte[] b = new byte[2];
 		b[0] = (Integer.valueOf(highCode)).byteValue();

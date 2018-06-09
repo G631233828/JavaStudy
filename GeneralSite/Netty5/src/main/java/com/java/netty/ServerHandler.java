@@ -11,13 +11,13 @@ import io.netty.util.ReferenceCountUtil;
 
 public class ServerHandler extends ChannelHandlerAdapter  {
 	/*
-	 * ÕâÀïÎÒÃÇ¸²¸ÇÁËchanelRead()ÊÂ¼ş´¦Àí·½·¨¡£ Ã¿µ±´Ó¿Í»§¶ËÊÕµ½ĞÂµÄÊı¾İÊ±£¬ Õâ¸ö·½·¨»áÔÚÊÕµ½ÏûÏ¢Ê±±»µ÷ÓÃ£¬
-     * Õâ¸öÀı×ÓÖĞ£¬ÊÕµ½µÄÏûÏ¢µÄÀàĞÍÊÇByteBuf
+	 * è¿™é‡Œæˆ‘ä»¬è¦†ç›–äº†chanelRead()äº‹ä»¶å¤„ç†æ–¹æ³•ã€‚ æ¯å½“ä»å®¢æˆ·ç«¯æ”¶åˆ°æ–°çš„æ•°æ®æ—¶ï¼Œ è¿™ä¸ªæ–¹æ³•ä¼šåœ¨æ”¶åˆ°æ¶ˆæ¯æ—¶è¢«è°ƒç”¨ï¼Œ
+     * è¿™ä¸ªä¾‹å­ä¸­ï¼Œæ”¶åˆ°çš„æ¶ˆæ¯çš„ç±»å‹æ˜¯ByteBuf
      * 
      * @param ctx
-     *            Í¨µÀ´¦ÀíµÄÉÏÏÂÎÄĞÅÏ¢
+     *            é€šé“å¤„ç†çš„ä¸Šä¸‹æ–‡ä¿¡æ¯
      * @param msg
-     *            ½ÓÊÕµÄÏûÏ¢
+     *            æ¥æ”¶çš„æ¶ˆæ¯
      */
 	@Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws UnsupportedEncodingException {
@@ -27,14 +27,14 @@ public class ServerHandler extends ChannelHandlerAdapter  {
     	buf.readBytes(req);
     	String body = new String (req,"utf-8");
     	System.out.println("server:"+body);
-    	//·şÎñÆ÷¶Ë¸ø¿Í»§¶ËµÄÏìÓ¦
+    	//æœåŠ¡å™¨ç«¯ç»™å®¢æˆ·ç«¯çš„å“åº”
     	String response ="Hi Client";
     	ctx.writeAndFlush(Unpooled.copiedBuffer(response.getBytes()));
     }
 
 	@Override
 	public void handlerAdded(ChannelHandlerContext ctx) throws Exception {
-		//·şÎñÆ÷¶Ë¸ø¿Í»§¶ËµÄÏìÓ¦
+		//æœåŠ¡å™¨ç«¯ç»™å®¢æˆ·ç«¯çš„å“åº”
     	String response ="Hi Client";
     	ctx.writeAndFlush(Unpooled.copiedBuffer(response.getBytes()));
 	}

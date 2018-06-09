@@ -1,6 +1,6 @@
-package Ïß³Ì¹²Ïí±äÁ¿;
+package çº¿ç¨‹å…±äº«å˜é‡;
 
-public class ÊµÏÖ¹²Ïí¶ÔÏóÊı¾İÖµ¼Ó¼Ó¼õ¼õ {
+public class å®ç°å…±äº«å¯¹è±¡æ•°æ®å€¼åŠ åŠ å‡å‡ {
 	
 	public static void main(String[] args) throws InterruptedException {
 		final OB o = new OB();

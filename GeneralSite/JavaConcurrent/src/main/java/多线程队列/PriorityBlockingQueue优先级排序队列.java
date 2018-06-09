@@ -1,12 +1,12 @@
-package ¶àÏß³Ì¶ÓÁĞ;
+package å¤šçº¿ç¨‹é˜Ÿåˆ—;
 
 import java.util.concurrent.PriorityBlockingQueue;
 
-public class PriorityBlockingQueueÓÅÏÈ¼¶ÅÅĞò¶ÓÁĞ {
+public class PriorityBlockingQueueä¼˜å…ˆçº§æ’åºé˜Ÿåˆ— {
 	
 	
 	/**
-	 * Ö§³ÖÓÅÏÈ¼¶ÅÅĞòµÄ¶ÓÁĞ£¬ĞèÒª¶ÔÏóÊµÏÖComparable½Ó¿Ú
+	 * æ”¯æŒä¼˜å…ˆçº§æ’åºçš„é˜Ÿåˆ—ï¼Œéœ€è¦å¯¹è±¡å®ç°Comparableæ¥å£
 	 * @param args
 	 * @throws InterruptedException
 	 */
@@ -21,7 +21,7 @@ public class PriorityBlockingQueueÓÅÏÈ¼¶ÅÅĞò¶ÓÁĞ {
 		pbq.put(s2);
 		pbq.put(s3);
 		
-		System.out.println("Êä³öËùÓĞ£º"+pbq);
+		System.out.println("è¾“å‡ºæ‰€æœ‰ï¼š"+pbq);
 		
 		for(int i=0;i<10;i++){
 		new Thread(new Runnable() {
@@ -29,7 +29,7 @@ public class PriorityBlockingQueueÓÅÏÈ¼¶ÅÅĞò¶ÓÁĞ {
 			public void run() {
 				while(pbq.size()>0){
 					try {
-						System.out.println("ÓĞĞò´òÓ¡£º"+pbq.take());
+						System.out.println("æœ‰åºæ‰“å°ï¼š"+pbq.take());
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();

@@ -1,4 +1,4 @@
-package com.java.NettyÊ±¼ä·şÎñÆ÷TCPÕ³°ü;
+package com.java.Nettyæ—¶é—´æœåŠ¡å™¨TCPç²˜åŒ…;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -17,7 +17,7 @@ public class TimeServer {
 
 	public void bind(int port) {
 
-		// ÅäÖÃ·şÎñÆ÷µÄNIOÏß³Ì×é
+		// é…ç½®æœåŠ¡å™¨çš„NIOçº¿ç¨‹ç»„
 		EventLoopGroup sGroup = new NioEventLoopGroup();
 		EventLoopGroup cGroup = new NioEventLoopGroup();
 
@@ -38,17 +38,17 @@ public class TimeServer {
 						}
 					});
 
-			// °ó¶¨¶Ë¿Ú£¬Í¬²½µÈ´ı³É¹¦
+			// ç»‘å®šç«¯å£ï¼ŒåŒæ­¥ç­‰å¾…æˆåŠŸ
 			ChannelFuture f = s.bind(port).sync();
 
-			// µÈ´ı·şÎñ¶Ë¼àÌı¶Ë¿Ú¹Ø±Õ
+			// ç­‰å¾…æœåŠ¡ç«¯ç›‘å¬ç«¯å£å…³é—­
 			f.channel().closeFuture().sync();
 
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			// ÓÅÑÅµÄÍË³ö£¬ÊÍ·ÅËùÓĞÏß³Ì×ÊÔ´
+			// ä¼˜é›…çš„é€€å‡ºï¼Œé‡Šæ”¾æ‰€æœ‰çº¿ç¨‹èµ„æº
 			sGroup.shutdownGracefully();
 			cGroup.shutdownGracefully();
 		}

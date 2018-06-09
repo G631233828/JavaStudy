@@ -8,13 +8,13 @@ import java.net.SocketException;
 import java.util.Random;
 import java.util.Scanner;
 
-public class ÃæÏòÎŞÁ¬½ÓUDP {
+public class é¢å‘æ— è¿æ¥UDP {
 
 }
 
 /**
  * 
- * @author fliay ´´½¨udp·¢ËÍ
+ * @author fliay åˆ›å»ºudpå‘é€
  */
 class UDPSend {
 
@@ -28,12 +28,12 @@ class UDPSend {
 				
 				int num = (int) (Math.random()*200);
 				
-				 byte[] bt = ("ÄãºÃ"+num).getBytes();
+				 byte[] bt = ("ä½ å¥½"+num).getBytes();
 				 
-				 //255ÊÇ¹ã²¥µÄËùÓĞµÄÉè±¸¶¼»áÊÕµ½
+				 //255æ˜¯å¹¿æ’­çš„æ‰€æœ‰çš„è®¾å¤‡éƒ½ä¼šæ”¶åˆ°
 					DatagramPacket dp = new DatagramPacket(bt, 0, bt.length,
 							InetAddress.getByName("192.168.1.255"), 7878);
-					// ·¢ËÍ
+					// å‘é€
 					ds.send(dp);
 					Thread.sleep(2000);
 			}
@@ -74,9 +74,9 @@ class UDPReceive {
 				int port = dp.getPort();
 				String data = new String(dp.getData());
 
-				System.out.println("·¢ËÍÕßIp:" + ip);
-				System.out.println("·¢ËÍÕß¶Ë¿ÚºÅ:" + port);
-				System.out.println("½ÓÊÕÄÚÈİ:" + data);
+				System.out.println("å‘é€è€…Ip:" + ip);
+				System.out.println("å‘é€è€…ç«¯å£å·:" + port);
+				System.out.println("æ¥æ”¶å†…å®¹:" + data);
 			}
 			
 

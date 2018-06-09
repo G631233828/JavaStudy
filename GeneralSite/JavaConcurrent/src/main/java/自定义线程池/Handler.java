@@ -1,4 +1,4 @@
-package ×Ô¶¨ÒåÏß³Ì³Ø;
+package è‡ªå®šä¹‰çº¿ç¨‹æ± ;
 
 import java.util.concurrent.BlockingQueue;
 
@@ -14,8 +14,8 @@ public class Handler implements Runnable {
 
 	public void run() {
 		Student s = (Student) task;
-		System.out.println(Thread.currentThread().getName() + "£º" + s.getId() + "," + s.getAge() + "," + s.getName());
-		System.out.println("¶ÓÁÐÖÐ»¹Ê£ÏÂ£º" + queue.size() + "¸öÔªËØ");
+		System.out.println(Thread.currentThread().getName() + "ï¼š" + s.getId() + "," + s.getAge() + "," + s.getName());
+		System.out.println("é˜Ÿåˆ—ä¸­è¿˜å‰©ä¸‹ï¼š" + queue.size() + "ä¸ªå…ƒç´ ");
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {

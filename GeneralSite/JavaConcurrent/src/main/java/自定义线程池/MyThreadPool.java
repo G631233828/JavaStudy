@@ -1,4 +1,4 @@
-package ×Ô¶¨ÒåÏß³Ì³Ø;
+package è‡ªå®šä¹‰çº¿ç¨‹æ± ;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
@@ -23,16 +23,16 @@ public class MyThreadPool {
 		this.time = time;
 	}
 */
-	// ´´½¨×èÈû¶ÓÁĞ
+	// åˆ›å»ºé˜»å¡é˜Ÿåˆ—
 	BlockingQueue<Runnable> queue = new ArrayBlockingQueue<Runnable>(5);
-	//Ê¹ÓÃÎŞ½ç¶ÓÁĞ
+	//ä½¿ç”¨æ— ç•Œé˜Ÿåˆ—
 	//BlockingQueue<Runnable> queue = new LinkedBlockingQueue<Runnable>();
 
-	// ´´½¨Ïß³Ì³Ø Ìí¼ÓÁËMyRewjectedµÄ¾Ü¾ø²ßÂÔ
+	// åˆ›å»ºçº¿ç¨‹æ±  æ·»åŠ äº†MyRewjectedçš„æ‹’ç»ç­–ç•¥
 	ExecutorService executor = new ThreadPoolExecutor(1, 2, 60L, TimeUnit.SECONDS, queue,new MyRejected());
 
 	public void execute(Object task) {
-		System.out.println("µ±Ç°¶ÓÁĞ´óĞ¡"+queue.size());
+		System.out.println("å½“å‰é˜Ÿåˆ—å¤§å°"+queue.size());
 		executor.execute(new Handler(task,queue));
 	}
 

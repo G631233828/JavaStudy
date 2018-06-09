@@ -1,4 +1,4 @@
-package com.java.TCP²ğ°üÕ³°ü;
+package com.java.TCPæ‹†åŒ…ç²˜åŒ…;
 
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
@@ -9,23 +9,23 @@ public class ServerHandler extends ChannelHandlerAdapter {
 		ctx.close();
 	}
 
-	//ÓÃÓÚ»ñÈ¡¿Í»§¶Ë·¢ËÍµÄĞÅÏ¢
+	//ç”¨äºè·å–å®¢æˆ·ç«¯å‘é€çš„ä¿¡æ¯
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-		//ÓÃ»§»ñÈ¡¿Í»§¶Ë·¢À´µÄÊı¾İĞÅÏ¢
+		//ç”¨æˆ·è·å–å®¢æˆ·ç«¯å‘æ¥çš„æ•°æ®ä¿¡æ¯
 		SmartCarProtocol body =(SmartCarProtocol) msg;
-		System.out.println("server½ÓÊÕ¿Í»§¶ËµÄĞÅÏ¢£º"+body.toString());
+		System.out.println("serveræ¥æ”¶å®¢æˆ·ç«¯çš„ä¿¡æ¯ï¼š"+body.toString());
 		
-		//»áĞ´Êı¾İ¸ø¿Í»§¶Ë
+		//ä¼šå†™æ•°æ®ç»™å®¢æˆ·ç«¯
 		String str="Hi I am Server";
 		
 		SmartCarProtocol response = new SmartCarProtocol(str.getBytes().length, str.getBytes());
 		
-		//µ±·şÎñ¶ËÍê³É²Ù×÷ºÍ£¬¹Ø±ÕÓë¿Í»§¶ËµÄÁ¬½Ó
+		//å½“æœåŠ¡ç«¯å®Œæˆæ“ä½œå’Œï¼Œå…³é—­ä¸å®¢æˆ·ç«¯çš„è¿æ¥
 		ctx.writeAndFlush(response);//.addListener(ChannelFutureListener.CLOSE);
 		
-		//µ±ÓĞĞ´²Ù×÷Ê±£¬²»ĞèÒªÊÖ¶¯ÊÍ·ÅmsgµÄ×÷ÓÃ
-		//µ±Ö»ÓĞ¶Á²Ù×÷Ê±£¬²ÅĞèÒªÊÖ¶¯ÊÍ·ÅmsgµÄÒıÓÃ
+		//å½“æœ‰å†™æ“ä½œæ—¶ï¼Œä¸éœ€è¦æ‰‹åŠ¨é‡Šæ”¾msgçš„ä½œç”¨
+		//å½“åªæœ‰è¯»æ“ä½œæ—¶ï¼Œæ‰éœ€è¦æ‰‹åŠ¨é‡Šæ”¾msgçš„å¼•ç”¨
 		
 		
 	}

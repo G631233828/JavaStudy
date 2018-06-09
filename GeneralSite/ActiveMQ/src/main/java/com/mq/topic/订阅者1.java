@@ -13,7 +13,7 @@ import javax.jms.TextMessage;
 
 import org.apache.activemq.ActiveMQXAConnectionFactory;
 
-public class ¶©ÔÄÕß1 {
+public class è®¢é˜…è€…1 {
 
 	private ConnectionFactory connectionFactory;
 
@@ -25,7 +25,7 @@ public class ¶©ÔÄÕß1 {
 
 	private MessageConsumer messageConsumer;
 
-	public ¶©ÔÄÕß1() {
+	public è®¢é˜…è€…1() {
 		try {
 			this.connectionFactory = new ActiveMQXAConnectionFactory("admin", "admin", "tcp://localhost:61616");
 			this.connection = this.connectionFactory.createConnection();
@@ -46,7 +46,7 @@ public class ¶©ÔÄÕß1 {
 			public void onMessage(Message message) {
 				try {
 					if (message instanceof TextMessage) {
-						System.out.println("¶©ÔÄÕß1ÊÕµ½ÏûÏ¢");
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½Õµï¿½ï¿½ï¿½Ï¢");
 						TextMessage m = (TextMessage) message;
 
 						System.out.println(m.getText());

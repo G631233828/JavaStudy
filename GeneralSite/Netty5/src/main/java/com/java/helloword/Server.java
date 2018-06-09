@@ -12,34 +12,34 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 public class Server {
 	public static void main(String[] args) throws InterruptedException {
 		int port = 3000;
-		// ´´½¨ÓÃÓÚ·şÎñÆ÷¶Ë½ÓÊÕ¿Í»§¶ËÁ¬½ÓµÄ
+		// åˆ›å»ºç”¨äºæœåŠ¡å™¨ç«¯æ¥æ”¶å®¢æˆ·ç«¯è¿æ¥çš„
 		EventLoopGroup sGroup = new NioEventLoopGroup();
-		// ´´½¨ÓÃÓÚ½øĞĞÍøÂçÍ¨ĞÅµÄÍ¨µÀ
+		// åˆ›å»ºç”¨äºè¿›è¡Œç½‘ç»œé€šä¿¡çš„é€šé“
 		EventLoopGroup cGroup = new NioEventLoopGroup();
-		// ´´½¨¸¨Öú¹¤¾ßÀà£¬ÓÃÓÚ·şÎñÆ÷Í¨µÀµÄÒ»ÏµÁĞÅäÖÃ
+		// åˆ›å»ºè¾…åŠ©å·¥å…·ç±»ï¼Œç”¨äºæœåŠ¡å™¨é€šé“çš„ä¸€ç³»åˆ—é…ç½®
 		ServerBootstrap b = new ServerBootstrap();
-		// Ê×ÏÈ´´½¨ÒªÓëÏß³Ì×é½øĞĞ°ó¶¨
+		// é¦–å…ˆåˆ›å»ºè¦ä¸çº¿ç¨‹ç»„è¿›è¡Œç»‘å®š
 		b.group(sGroup, cGroup)
-				// °ó¶¨³É¹¦Ö®ºóĞèÒªÖ¸¶¨NIOµÄÄ£Ê½
+				// ç»‘å®šæˆåŠŸä¹‹åéœ€è¦æŒ‡å®šNIOçš„æ¨¡å¼
 				.channel(NioServerSocketChannel.class)
-				// ÉèÖÃtcp»º³åÇø´óĞ¡
+				// è®¾ç½®tcpç¼“å†²åŒºå¤§å°
 				.option(ChannelOption.SO_BACKLOG, 1024)
-				// ÉèÖÃ·¢ËÍ»º³åÇø´óĞ¡£¨buffer»º³åÇø´óĞ¡£©
+				// è®¾ç½®å‘é€ç¼“å†²åŒºå¤§å°ï¼ˆbufferç¼“å†²åŒºå¤§å°ï¼‰
 				.option(ChannelOption.SO_SNDBUF, 32 * 1024)
-				// ÉèÖÃ½ÓÊÕ»º³åÇø´óĞ¡
+				// è®¾ç½®æ¥æ”¶ç¼“å†²åŒºå¤§å°
 				.option(ChannelOption.SO_RCVBUF, 32 * 1024)
-				//±£³ÖÁ¬½Ó
+				//ä¿æŒè¿æ¥
 				.option(ChannelOption.SO_KEEPALIVE,true)
-				// »ñÈ¡¿Í»§¶ËÁ¬½ÓÍ¨µÀ
+				// è·å–å®¢æˆ·ç«¯è¿æ¥é€šé“
 				.childHandler(new ChannelInitializer<SocketChannel>() {
 					
 					@Override
 					protected void initChannel(SocketChannel ch) throws Exception {
-						// ÓÃÓÚ¹ıÂËÊı¾İ£¬±àÂë£¬½âÂë£¬ÔÚÕâÀïÅäÖÃ¾ßÌåµÄÊı¾İ½ÓÊÕ·½·¨ºÍ´¦Àí·½·¨
+						// ç”¨äºè¿‡æ»¤æ•°æ®ï¼Œç¼–ç ï¼Œè§£ç ï¼Œåœ¨è¿™é‡Œé…ç½®å…·ä½“çš„æ•°æ®æ¥æ”¶æ–¹æ³•å’Œå¤„ç†æ–¹æ³•
 						ch.pipeline().addLast(new ServerHandler());
 					}
 				});
-		// ½øĞĞ°ó¶¨Òì²½Í¨µÀ
+		// è¿›è¡Œç»‘å®šå¼‚æ­¥é€šé“
 		ChannelFuture cf = b.bind(port).sync();
 		cf.channel().closeFuture().sync();
 		cGroup.shutdownGracefully();

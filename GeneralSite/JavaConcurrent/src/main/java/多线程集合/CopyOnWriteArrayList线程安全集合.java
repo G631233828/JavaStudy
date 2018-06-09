@@ -1,24 +1,24 @@
-package ¶àÏß³Ì¼¯ºÏ;
+package å¤šçº¿ç¨‹é›†åˆ;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class CopyOnWriteArrayListÏß³Ì°²È«¼¯ºÏ {
+public class CopyOnWriteArrayListçº¿ç¨‹å®‰å…¨é›†åˆ {
 
-	// listÊÇÏß³Ì²»°²È«µÄ
+	// listæ˜¯çº¿ç¨‹ä¸å®‰å…¨çš„
 	// static List<String> list = new ArrayList<String>(10);
 	static CopyOnWriteArrayList<String> list = new CopyOnWriteArrayList<String>();
 
-	// Ïë¼¯ºÏÖĞÌí¼ÓÊı¾İ
+	// æƒ³é›†åˆä¸­æ·»åŠ æ•°æ®
 	public void toAdd(List<String> list) {
 
 		try {
 			Thread.sleep(100);
 			list.add("aaa");
-			System.out.println("³É¹¦Ìí¼ÓÊı¾İ");
+			System.out.println("æˆåŠŸæ·»åŠ æ•°æ®");
 		} catch (Exception e) {
-			System.out.println("³É¹¦Êı¾İÊ§°Ü");
+			System.out.println("æˆåŠŸæ•°æ®å¤±è´¥");
 			e.printStackTrace();
 			return;
 		}
@@ -28,10 +28,10 @@ public class CopyOnWriteArrayListÏß³Ì°²È«¼¯ºÏ {
 		try {
 			if (list.size() > 0) {
 				list.remove(0);
-				System.out.println("É¾³ıÊı¾İ³É¹¦");
+				System.out.println("åˆ é™¤æ•°æ®æˆåŠŸ");
 			}
 		} catch (Exception e) {
-			System.out.println("É¾³ıÊı¾İÊ§°Ü");
+			System.out.println("åˆ é™¤æ•°æ®å¤±è´¥");
 			e.printStackTrace();
 			return;
 		}
@@ -39,7 +39,7 @@ public class CopyOnWriteArrayListÏß³Ì°²È«¼¯ºÏ {
 
 	public static void main(String[] args) {
 
-		final CopyOnWriteArrayListÏß³Ì°²È«¼¯ºÏ c = new CopyOnWriteArrayListÏß³Ì°²È«¼¯ºÏ();
+		final CopyOnWriteArrayListçº¿ç¨‹å®‰å…¨é›†åˆ c = new CopyOnWriteArrayListçº¿ç¨‹å®‰å…¨é›†åˆ();
 
 		Thread t1 = new Thread(new Runnable() {
 

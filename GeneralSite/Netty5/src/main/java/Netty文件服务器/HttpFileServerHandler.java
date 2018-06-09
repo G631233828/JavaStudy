@@ -1,4 +1,4 @@
-package NettyÎÄ¼ş·şÎñÆ÷;
+package Nettyæ–‡ä»¶æœåŠ¡å™¨;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -176,14 +176,14 @@ public class HttpFileServerHandler extends SimpleChannelInboundHandler<FullHttpR
         buf.append("<!DOCTYPE html>\r\n");
         buf.append("<html><head><title>");
         buf.append(dirPath);
-        buf.append("Ä¿Â¼:");
+        buf.append("ç›®å½•:");
         buf.append("</title></head><body>\r\n");
         
         buf.append("<h3>");
-        buf.append(dirPath).append(" Ä¿Â¼£º");
+        buf.append(dirPath).append(" ç›®å½•ï¼š");
         buf.append("</h3>\r\n");
         buf.append("<ul>");
-        buf.append("<li>Á´½Ó£º<a href=\" ../\")..</a></li>\r\n");
+        buf.append("<li>é“¾æ¥ï¼š<a href=\" ../\")..</a></li>\r\n");
         for (File f : dir.listFiles()) {
             if(f.isHidden() || !f.canRead()) {
                 continue;
@@ -193,7 +193,7 @@ public class HttpFileServerHandler extends SimpleChannelInboundHandler<FullHttpR
                 continue;
             }
             
-            buf.append("<li>Á´½Ó£º<a href=\"");
+            buf.append("<li>é“¾æ¥ï¼š<a href=\"");
             buf.append(name);
             buf.append("\">");
             buf.append(name);

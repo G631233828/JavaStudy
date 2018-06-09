@@ -1,13 +1,13 @@
-package SynchronizedËø»úÖÆ;
+package Synchronizedé”æœºåˆ¶;
 
-public class Ò»¸öÏß³Ì°²È«Ò»¸ö·ÇÏß³Ì°²È«Ëø {
+public class ä¸€ä¸ªçº¿ç¨‹å®‰å…¨ä¸€ä¸ªéçº¿ç¨‹å®‰å…¨é” {
 	
 	
 	
 	
 	
 	/**
-	 * method1Ê¹ÓÃÏß³Ì°²È«
+	 * method1ä½¿ç”¨çº¿ç¨‹å®‰å…¨
 	 */
 	public synchronized void method1(){
 		System.out.println("method1");
@@ -21,7 +21,7 @@ public class Ò»¸öÏß³Ì°²È«Ò»¸ö·ÇÏß³Ì°²È«Ëø {
 	}
 	
 	/**
-	 * method2Ê¹ÓÃ·ÇÏß³Ì°²È«
+	 * method2ä½¿ç”¨éçº¿ç¨‹å®‰å…¨
 	 */
 	public /*synchronized*/ void method2(){
 		System.out.println("method2");
@@ -31,12 +31,12 @@ public class Ò»¸öÏß³Ì°²È«Ò»¸ö·ÇÏß³Ì°²È«Ëø {
 	
 	
 	/**
-	 * Èç¹ûmethod2Ã»ÓĞÊ¹ÓÃsynchronizedÄÇÃ´Á½¸öÏß³Ì»áÍ¬Ê±Ö´ĞĞ
-	 * Èç¹ûmethod2Ìí¼ÓÁËsynchronizedÄÇÃ´»áµÈ´ımethod1Ö´ĞĞÍê³ÉÖ®ºóÔÙÖ´ĞĞmethod2
+	 * å¦‚æœmethod2æ²¡æœ‰ä½¿ç”¨synchronizedé‚£ä¹ˆä¸¤ä¸ªçº¿ç¨‹ä¼šåŒæ—¶æ‰§è¡Œ
+	 * å¦‚æœmethod2æ·»åŠ äº†synchronizedé‚£ä¹ˆä¼šç­‰å¾…method1æ‰§è¡Œå®Œæˆä¹‹åå†æ‰§è¡Œmethod2
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		final Ò»¸öÏß³Ì°²È«Ò»¸ö·ÇÏß³Ì°²È«Ëø o = new Ò»¸öÏß³Ì°²È«Ò»¸ö·ÇÏß³Ì°²È«Ëø();
+		final ä¸€ä¸ªçº¿ç¨‹å®‰å…¨ä¸€ä¸ªéçº¿ç¨‹å®‰å…¨é” o = new ä¸€ä¸ªçº¿ç¨‹å®‰å…¨ä¸€ä¸ªéçº¿ç¨‹å®‰å…¨é”();
 
 		Thread t1 = new Thread(new Runnable() {
 			

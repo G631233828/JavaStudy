@@ -1,14 +1,14 @@
-package ¶àÏß³Ì¶ÓÁĞ;
+package å¤šçº¿ç¨‹é˜Ÿåˆ—;
 
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.SynchronousQueue;
 
-public class Í¬²½¶ÓÁĞSynchronousQueue {
+public class åŒæ­¥é˜Ÿåˆ—SynchronousQueue {
 
 	
 	public static void main(String[] args) throws InterruptedException {
 		
-		final Semaphore semaphore = new Semaphore(1);//Ê¹ÓÃÒ»¸öĞÅºÅÁ¿À´¿ØÖÆ·ÃÎÊ
+		final Semaphore semaphore = new Semaphore(1);//ä½¿ç”¨ä¸€ä¸ªä¿¡å·é‡æ¥æ§åˆ¶è®¿é—®
 		
 		final SynchronousQueue<String> queue = new SynchronousQueue<String>();
 		

@@ -1,10 +1,10 @@
-package 多线程线程通信;
+package 澶氱嚎绋嬬嚎绋嬮�氫俊;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class Condition轮流依次输出ABC {
+public class Condition杞祦渚濇杈撳嚭ABC {
 	
 	Lock lock= new ReentrantLock();
 	
@@ -14,7 +14,7 @@ public class Condition轮流依次输出ABC {
 	static int count=1;
 	
 	public static void main(String[] args) {
-		final Condition轮流依次输出ABC abc = new Condition轮流依次输出ABC();
+		final Condition杞祦渚濇杈撳嚭ABC abc = new Condition杞祦渚濇杈撳嚭ABC();
 		for(int i=0;i<100;i++){
 		new Thread(new Runnable() {
 			
@@ -33,7 +33,7 @@ public class Condition轮流依次输出ABC {
 		}
 		
 	}
-	public  void OutA(Condition轮流依次输出ABC v) throws InterruptedException{
+	public  void OutA(Condition杞祦渚濇杈撳嚭ABC v) throws InterruptedException{
 		lock.lock();
 			if(v.count == 1){
 				System.out.println("A:"+v.count);
@@ -43,7 +43,7 @@ public class Condition轮流依次输出ABC {
 			cb.signal();
 		lock.unlock();
 	} 
-	public  void OutB(Condition轮流依次输出ABC v) throws InterruptedException{
+	public  void OutB(Condition杞祦渚濇杈撳嚭ABC v) throws InterruptedException{
 		lock.lock();
 		if(v.count == 2){
 			System.out.println("B:"+v.count);
@@ -54,7 +54,7 @@ public class Condition轮流依次输出ABC {
 	lock.unlock();
 	} 
 	
-	public  void OutC(Condition轮流依次输出ABC v) throws InterruptedException{
+	public  void OutC(Condition杞祦渚濇杈撳嚭ABC v) throws InterruptedException{
 		lock.lock();
 		if(v.count == 3){
 			System.out.println("C:"+v.count);

@@ -1,10 +1,10 @@
-package ¶àÏß³ÌÆäËûÍ¬²½°ü;
+package å¤šçº¿ç¨‹å…¶ä»–åŒæ­¥åŒ…;
 
 import java.util.concurrent.Exchanger;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class ExchangeÏß³ÌÊı¾İ½»»» {
+public class Exchangeçº¿ç¨‹æ•°æ®äº¤æ¢ {
 
 	public static void main(String[] args) {
 
@@ -16,11 +16,11 @@ public class ExchangeÏß³ÌÊı¾İ½»»» {
 
 			public void run() {
 				try {
-					String data1 = "Ïß³Ì1Êı¾İ";
+					String data1 = "çº¿ç¨‹1æ•°æ®";
 					Thread.sleep((long) Math.random() * 1000);
-					System.out.println("1ÕıÔÚ×¼±¸ÓÃÊı¾İ" + data1 + "½øĞĞ½»»»Êı¾İ");
+					System.out.println("1æ­£åœ¨å‡†å¤‡ç”¨æ•°æ®" + data1 + "è¿›è¡Œäº¤æ¢æ•°æ®");
 					data1 = exchange.exchange(data1);
-					System.out.println("1½»»»ºóµÄÊı¾İ£º" + data1);
+					System.out.println("1äº¤æ¢åçš„æ•°æ®ï¼š" + data1);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -31,11 +31,11 @@ public class ExchangeÏß³ÌÊı¾İ½»»» {
 		e.execute(new Runnable() {
 			public void run() {
 				try {
-					String data1 = "Ïß³Ì2Êı¾İ";
+					String data1 = "çº¿ç¨‹2æ•°æ®";
 					Thread.sleep((long) Math.random() * 1000);
-					System.out.println("2ÕıÔÚ×¼±¸ÓÃÊı¾İ" + data1 + "½øĞĞ½»»»Êı¾İ");
+					System.out.println("2æ­£åœ¨å‡†å¤‡ç”¨æ•°æ®" + data1 + "è¿›è¡Œäº¤æ¢æ•°æ®");
 					data1 = exchange.exchange(data1);
-					System.out.println("2½»»»ºóµÄÊı¾İ£º" + data1);
+					System.out.println("2äº¤æ¢åçš„æ•°æ®ï¼š" + data1);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

@@ -1,4 +1,4 @@
-package ·½·¨ÒıÓÃ;
+package æ–¹æ³•å¼•ç”¨;
 
 import java.io.PrintStream;
 import java.util.Comparator;
@@ -9,38 +9,38 @@ import java.util.function.Supplier;
 
 
 
-import Lambda±í´ïÊ½Ñ§Ï°.Employee;
+import Lambdaè¡¨è¾¾å¼å­¦ä¹ .Employee;
 import org.junit.Test;
 
 /**
  * 
  * @author fliay
  *
- *	1.·½·¨ÒıÓÃ£ºÈô LambdaÌåÖĞµÄÄÚÈİÓĞ·½·¨ÒÔ¼°ÊµÏÖÁË£¬ÎÒÃÇ¿ÉÒÔÊ¹ÓÃ¡°·½·¨ÒıÓÃ¡±
- *  ¿ÉÒÔÀí½âÎª·½·¨ÒıÓÃÊÇLambda±í´ïÊ½µÄÁíÍâÒ»ÖÖ±íÏÖĞÎÊ½
- *	Ö÷ÒªÓĞÈıÖÖÓï·¨¸ñÊ½£º
+ *	1.æ–¹æ³•å¼•ç”¨ï¼šè‹¥ Lambdaä½“ä¸­çš„å†…å®¹æœ‰æ–¹æ³•ä»¥åŠå®ç°äº†ï¼Œæˆ‘ä»¬å¯ä»¥ä½¿ç”¨â€œæ–¹æ³•å¼•ç”¨â€
+ *  å¯ä»¥ç†è§£ä¸ºæ–¹æ³•å¼•ç”¨æ˜¯Lambdaè¡¨è¾¾å¼çš„å¦å¤–ä¸€ç§è¡¨ç°å½¢å¼
+ *	ä¸»è¦æœ‰ä¸‰ç§è¯­æ³•æ ¼å¼ï¼š
  *	
- *	¶ÔÏó::ÊµÀı·½·¨Ãû
+ *	å¯¹è±¡::å®ä¾‹æ–¹æ³•å
  *
- *	Àà   ::¾²Ì¬·½·¨Ãû
+ *	ç±»   ::é™æ€æ–¹æ³•å
  *
- *  Àà   ::ÊµÀı·½·¨Ãû
+ *  ç±»   ::å®ä¾‹æ–¹æ³•å
  *  
- *  ×¢Òâ£º
- *  Lambda ÌåÖĞµ÷ÓÃ·½·¨µÄ²ÎÊıÁĞ±íÓë·µ»ØÖµÀàĞÍ£¬ÒªÓëº¯ÊıÊ½½Ó¿ÚÖĞ³éÏó·½·¨µÄº¯ÊıÁĞ±í·µ»ØÖµÀàĞÍ±£³ÖÒ»ÖÂ¡£
- *  2.¹¹ÔìÆ÷ÒıÓÃ
- *  ¸ñÊ½£º
+ *  æ³¨æ„ï¼š
+ *  Lambda ä½“ä¸­è°ƒç”¨æ–¹æ³•çš„å‚æ•°åˆ—è¡¨ä¸è¿”å›å€¼ç±»å‹ï¼Œè¦ä¸å‡½æ•°å¼æ¥å£ä¸­æŠ½è±¡æ–¹æ³•çš„å‡½æ•°åˆ—è¡¨è¿”å›å€¼ç±»å‹ä¿æŒä¸€è‡´ã€‚
+ *  2.æ„é€ å™¨å¼•ç”¨
+ *  æ ¼å¼ï¼š
  *  ClassName:new
  *  
  */
 public class TestMethodRef {
 
-	//¶ÔÏó£º£ºÊµÀı·½·¨Ãû
+	//å¯¹è±¡ï¼šï¼šå®ä¾‹æ–¹æ³•å
 	@Test
 	public void test1(){
 		PrintStream ps1 = System.out;
 		Consumer<String> con1 = (x)-> ps1.println(x); 
-		//ÁíÒ»ÖÖ·½Ê½
+		//å¦ä¸€ç§æ–¹å¼
 		PrintStream ps = System.out;
 		Consumer<String> con = ps::println;
 		con1.accept("acsdfsdf");
@@ -54,13 +54,13 @@ public class TestMethodRef {
 		Supplier<String> sup=()->emp.getName();
 		String str = sup.get();
 		System.out.println(str);
-		//ÁíÒ»ÖÖ·½Ê½
+		//å¦ä¸€ç§æ–¹å¼
 		Supplier<String> sup2 = emp::getName;
 		System.out.println(sup.get());
 	}
 
 	/**
-	 * Àà£º£º¾²Ì¬·½·¨Ãû
+	 * ç±»ï¼šï¼šé™æ€æ–¹æ³•å
 	 */
 	@Test
 	 public void test3(){
@@ -81,7 +81,7 @@ public class TestMethodRef {
 	}
 	
 	
-	//¹¹ÔìÆ÷ÒıÓÃ
+	//æ„é€ å™¨å¼•ç”¨
 	@Test
 	public void test5(){
 		Supplier<Employee> emp = Employee::new;
@@ -89,7 +89,7 @@ public class TestMethodRef {
 		System.out.println(e);
 	}
 	
-	//´ø²ÎÊı¹¹ÔìÆ÷ÒıÓÃ
+	//å¸¦å‚æ•°æ„é€ å™¨å¼•ç”¨
 	@Test
 	public void test6(){
 		Function<Integer, Employee> fun = (x)->new Employee(x,"aaa",111.1);
@@ -100,7 +100,7 @@ public class TestMethodRef {
 		System.out.println(emp);
 	}
 	
-	//Êı×éÒıÓÃ
+	//æ•°ç»„å¼•ç”¨
 	@Test
 	public void test7(){
 		Function<Integer,String[]> fun =(x)->new String[x];

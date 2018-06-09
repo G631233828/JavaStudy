@@ -1,4 +1,4 @@
-package com.java.NettyÊ±¼ä·şÎñÆ÷TCPÕ³°ü;
+package com.java.Nettyæ—¶é—´æœåŠ¡å™¨TCPç²˜åŒ…;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -7,7 +7,7 @@ import io.netty.channel.ChannelHandlerContext;
 
 public class TimeClientHandler extends ChannelHandlerAdapter {
 
-	// ¸ÄÔì
+	// æ”¹é€ 
 	   private int counter;
 
 	    private byte[] req;
@@ -29,7 +29,7 @@ public class TimeClientHandler extends ChannelHandlerAdapter {
 	    @Override
 	    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
 	        String body = (String) msg;
-	        // counterµÄ×÷ÓÃÊÇ±ê¼ÇÕâÊÇµÚ¼¸´ÎÊÕµ½¿Í»§¶ËµÄÇëÇó
+	        // counterçš„ä½œç”¨æ˜¯æ ‡è®°è¿™æ˜¯ç¬¬å‡ æ¬¡æ”¶åˆ°å®¢æˆ·ç«¯çš„è¯·æ±‚
 	        System.out.println("Now is : " + body + " ; the counter is : " + ++counter);
 	    }
 

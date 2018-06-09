@@ -1,4 +1,4 @@
-package Lambda±í´ïÊ½Ñ§Ï°;
+package Lambdaè¡¨è¾¾å¼å­¦ä¹ ;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -34,7 +34,7 @@ public class TestLambda2 {
 	
 	
 	/**
-	 * String×Ö·û´®×ª»»Àà
+	 * Stringå­—ç¬¦ä¸²è½¬æ¢ç±»
 	 */
 	@Test
 	public void  test2(){
@@ -43,7 +43,7 @@ public class TestLambda2 {
 	}
 	
 	
-	//ÓÃÓÚ´¦Àí×Ö·û´®
+	//ç”¨äºå¤„ç†å­—ç¬¦ä¸²
 	public String strHandler(String str,MyFunction mf){
 		return mf.getValue(str);
 	}
@@ -57,7 +57,7 @@ public class TestLambda2 {
 		
 	}
 	
-	//¶ÔÓÚÁ½¸öLongĞÍÊı¾İ½øĞĞ´¦Àí
+	//å¯¹äºä¸¤ä¸ªLongå‹æ•°æ®è¿›è¡Œå¤„ç†
 	public void op(Long l1,Long l2,MyFunction2<Long,Long> mf){
 		System.out.println(mf.getValue(l1, l2));
 	}

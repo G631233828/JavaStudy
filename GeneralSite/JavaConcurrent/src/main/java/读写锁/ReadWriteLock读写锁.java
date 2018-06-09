@@ -1,8 +1,8 @@
-package ¶ÁĞ´Ëø;
+package è¯»å†™é”;
 
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-public class ReadWriteLock¶ÁĞ´Ëø {
+public class ReadWriteLockè¯»å†™é” {
 
 	public static void main(String[] args) {
 		final ReadWriteLockDemo r = new ReadWriteLockDemo();
@@ -40,25 +40,25 @@ public class ReadWriteLock¶ÁĞ´Ëø {
 }
 
 class ReadWriteLockDemo {
-	 private Object data = null;//¹²ÏíÊı¾İ£¬Ö»ÄÜÓĞÒ»¸öÏß³ÌÄÜĞ´¸ÃÊı¾İ£¬µ«¿ÉÒÔÓĞ¶à¸öÏß³ÌÍ¬Ê±¶Á¸ÃÊı¾İ¡£
+	 private Object data = null;//å…±äº«æ•°æ®ï¼Œåªèƒ½æœ‰ä¸€ä¸ªçº¿ç¨‹èƒ½å†™è¯¥æ•°æ®ï¼Œä½†å¯ä»¥æœ‰å¤šä¸ªçº¿ç¨‹åŒæ—¶è¯»è¯¥æ•°æ®ã€‚
 	    private ReentrantReadWriteLock rwl = new ReentrantReadWriteLock();
 	    public void get(){
-	        rwl.readLock().lock();//ÉÏ¶ÁËø£¬ÆäËûÏß³ÌÖ»ÄÜ¶Á²»ÄÜĞ´
+	        rwl.readLock().lock();//ä¸Šè¯»é”ï¼Œå…¶ä»–çº¿ç¨‹åªèƒ½è¯»ä¸èƒ½å†™
 	        System.out.println(Thread.currentThread().getName() + " be ready to read data!");
 	        
 	        System.out.println(Thread.currentThread().getName() + "have read data :" + data);       
-	        rwl.readLock().unlock(); //ÊÍ·Å¶ÁËø£¬×îºÃ·ÅÔÚfinnalyÀïÃæ
+	        rwl.readLock().unlock(); //é‡Šæ”¾è¯»é”ï¼Œæœ€å¥½æ”¾åœ¨finnalyé‡Œé¢
 	    }
 	     
 	    public void put(Object data){
 	 
-	        rwl.writeLock().lock();//ÉÏĞ´Ëø£¬²»ÔÊĞíÆäËûÏß³Ì¶ÁÒ²²»ÔÊĞíĞ´
+	        rwl.writeLock().lock();//ä¸Šå†™é”ï¼Œä¸å…è®¸å…¶ä»–çº¿ç¨‹è¯»ä¹Ÿä¸å…è®¸å†™
 	        System.out.println(Thread.currentThread().getName() + " be ready to write data!");                   
 	    
 	        this.data = data;       
 	        System.out.println(Thread.currentThread().getName() + " have write data: " + data);                   
 	         
-	        rwl.writeLock().unlock();//ÊÍ·ÅĞ´Ëø   
+	        rwl.writeLock().unlock();//é‡Šæ”¾å†™é”   
 	    }
 	
 	

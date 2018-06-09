@@ -1,32 +1,32 @@
-package Ô­×ÓĞÔ;
+package åŸå­æ€§;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Ô­×ÓĞÔÊı¾İÀàĞÍAtomtic {
-	// Ô­×ÓĞÔ
+public class åŸå­æ€§æ•°æ®ç±»å‹Atomtic {
+	// åŸå­æ€§
 	//static AtomicInteger age = new AtomicInteger(0);
 
 	public static void main(String[] args) throws InterruptedException {
 
 		/*
-		 * Ñ­»·10000¸öÏß³ÌÊµÏÖ++ for(int i =0;i<10000;i++){
+		 * å¾ªç¯10000ä¸ªçº¿ç¨‹å®ç°++ for(int i =0;i<10000;i++){
 		 * 
 		 * new Thread(new Runnable() {
 		 * 
 		 * public void run() { age.incrementAndGet();//age++
 		 * System.out.println(age.get()); } }).start(); }
 		 */
-		// ´´½¨5¸öÏß³Ì³Ø
+		// åˆ›å»º5ä¸ªçº¿ç¨‹æ± 
 		ExecutorService e = Executors.newFixedThreadPool(3);
 
 		AtomicInteger p = new AtomicInteger(200);
 		//sale s = new sale(p);
 		for (int i = 0; i < 1000; i++) {
-			Thread t1 = new Thread(new sale(p,"¹ñÌ¨1") );
-			Thread t2 = new Thread(new sale(p, "¹ñÌ¨2"));
-			Thread t3 = new Thread(new sale(p, "¹ñÌ¨3"));
-			Thread t4 = new Thread(new sale(p, "¹ñÌ¨4"));
+			Thread t1 = new Thread(new sale(p,"æŸœå°1") );
+			Thread t2 = new Thread(new sale(p, "æŸœå°2"));
+			Thread t3 = new Thread(new sale(p, "æŸœå°3"));
+			Thread t4 = new Thread(new sale(p, "æŸœå°4"));
 			e.execute(t1);
 			e.execute(t2);
 			e.execute(t3);
@@ -50,7 +50,7 @@ class sale implements Runnable {
 			return;
 		} else {
 			p.decrementAndGet();
-			System.out.println(this.name + "¡·³É¹¦³öÊÛÒ»ÕÅÆ±£¬»¹Ê£Óà£º" + p.get() + " ÕÅÆ±");
+			System.out.println(this.name + "ã€‹æˆåŠŸå‡ºå”®ä¸€å¼ ç¥¨ï¼Œè¿˜å‰©ä½™ï¼š" + p.get() + " å¼ ç¥¨");
 			try {
 				Thread.sleep((long) (Math.random()*1000));
 			} catch (InterruptedException e) {

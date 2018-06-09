@@ -1,7 +1,7 @@
-package Lambda±í´ïÊ½Ñ§Ï°;
+package Lambdaè¡¨è¾¾å¼å­¦ä¹ ;
 
 /**
- * º¯ÊıÊ½½Ó¿ÚĞèÒªÊÊÓ¦@FunctionalInterface
+ * å‡½æ•°å¼æ¥å£éœ€è¦é€‚åº”@FunctionalInterface
  * @author fliay
  *
  * @param <T>

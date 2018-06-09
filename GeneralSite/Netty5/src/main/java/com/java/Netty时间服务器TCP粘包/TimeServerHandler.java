@@ -1,4 +1,4 @@
-package com.java.NettyÊ±¼ä·şÎñÆ÷TCPÕ³°ü;
+package com.java.Nettyæ—¶é—´æœåŠ¡å™¨TCPç²˜åŒ…;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -14,7 +14,7 @@ public class TimeServerHandler extends ChannelHandlerAdapter {
 	    @Override
 	    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
 	        String body = (String) msg;
-	        // counterµÄ×÷ÓÃÊÇ±ê¼ÇÕâÊÇµÚ¼¸´ÎÊÕµ½¿Í»§¶ËµÄÇëÇó
+	        // counterçš„ä½œç”¨æ˜¯æ ‡è®°è¿™æ˜¯ç¬¬å‡ æ¬¡æ”¶åˆ°å®¢æˆ·ç«¯çš„è¯·æ±‚
 	        System.out.println("The time server receive order : " + body + " ; the counter is : " + ++counter);
 	        String currentTime = "QUERY TIME ORDER".equalsIgnoreCase(body) ? 
 	                new Date(System.currentTimeMillis()).toString() : "BAD ORDER";

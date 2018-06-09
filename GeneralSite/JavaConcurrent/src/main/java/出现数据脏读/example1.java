@@ -1,4 +1,4 @@
-package ³öÏÖÊı¾İÔà¶Á;
+package å‡ºç°æ•°æ®è„è¯»;
 
 public class example1 {
 	
@@ -14,11 +14,11 @@ public class example1 {
 			e.printStackTrace();
 		}
 		this.passWord= passWord;
-		System.out.println("ÄúµÄÕÊºÅ£º"+accountName+"ÄúµÄÃÜÂë£º"+passWord);
+		System.out.println("æ‚¨çš„å¸å·ï¼š"+accountName+"æ‚¨çš„å¯†ç ï¼š"+passWord);
 	}
 	
 	public /*synchronized*/ void getValue(){
-		System.out.println("ÄúµÄÕÊºÅ£º"+accountName+"ÄúµÄÃÜÂë£º"+passWord);
+		System.out.println("æ‚¨çš„å¸å·ï¼š"+accountName+"æ‚¨çš„å¯†ç ï¼š"+passWord);
 	}
 	
 	public static void main(String[] args) {

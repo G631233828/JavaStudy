@@ -1,4 +1,4 @@
-package com.java.NettyÊ±¼ä·şÎñÆ÷;
+package com.java.Nettyæ—¶é—´æœåŠ¡å™¨;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -7,7 +7,7 @@ import io.netty.channel.ChannelHandlerContext;
 
 public class TimeClientHandler extends ChannelHandlerAdapter {
 
-	// ¸ÄÔì
+	// æ”¹é€ 
 	private int counter;
 	private byte[] req;
 

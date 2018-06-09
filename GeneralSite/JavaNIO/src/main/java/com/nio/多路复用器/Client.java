@@ -1,4 +1,4 @@
-package com.nio.¶àÂ·¸´ÓÃÆ÷;
+package com.nio.å¤šè·¯å¤ç”¨å™¨;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -7,36 +7,36 @@ import java.nio.channels.SocketChannel;
 
 public class Client {
 
-	//ĞèÒªÒ»¸öSelector 
+	//éœ€è¦ä¸€ä¸ªSelector 
 	public static void main(String[] args) {
 		
-		//´´½¨Á¬½ÓµÄµØÖ·
+		//åˆ›å»ºè¿æ¥çš„åœ°å€
 		InetSocketAddress address = new InetSocketAddress("127.0.0.1", 8765);
 		
-		//ÉùÃ÷Á¬½ÓÍ¨µÀ
+		//å£°æ˜è¿æ¥é€šé“
 		SocketChannel sc = null;
 		
-		//½¨Á¢»º³åÇø
+		//å»ºç«‹ç¼“å†²åŒº
 		ByteBuffer buf = ByteBuffer.allocate(1024);
 		
 		try {
-			//´ò¿ªÍ¨µÀ
+			//æ‰“å¼€é€šé“
 			sc = SocketChannel.open();
-			//½øĞĞÁ¬½Ó
+			//è¿›è¡Œè¿æ¥
 			sc.connect(address);
 			
 			while(true){
-				//¶¨ÒåÒ»¸ö×Ö½ÚÊı×é£¬È»ºóÊ¹ÓÃÏµÍ³Â¼Èë¹¦ÄÜ£º
+				//å®šä¹‰ä¸€ä¸ªå­—èŠ‚æ•°ç»„ï¼Œç„¶åä½¿ç”¨ç³»ç»Ÿå½•å…¥åŠŸèƒ½ï¼š
 				byte[] bytes = new byte[1024];
 				System.in.read(bytes);
 				
-				//°ÑÊı¾İ·Åµ½»º³åÇøÖĞ
+				//æŠŠæ•°æ®æ”¾åˆ°ç¼“å†²åŒºä¸­
 				buf.put(bytes);
-				//¶Ô»º³åÇø½øĞĞ¸´Î»
+				//å¯¹ç¼“å†²åŒºè¿›è¡Œå¤ä½
 				buf.flip();
-				//Ğ´³öÊı¾İ
+				//å†™å‡ºæ•°æ®
 				sc.write(buf);
-				//Çå¿Õ»º³åÇøÊı¾İ
+				//æ¸…ç©ºç¼“å†²åŒºæ•°æ®
 				buf.clear();
 			}
 		} catch (IOException e) {

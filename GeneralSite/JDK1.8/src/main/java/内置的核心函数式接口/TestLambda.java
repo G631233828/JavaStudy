@@ -1,4 +1,4 @@
-package ÄÚÖÃµÄºËĞÄº¯ÊıÊ½½Ó¿Ú;
+package å†…ç½®çš„æ ¸å¿ƒå‡½æ•°å¼æ¥å£;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,21 +13,21 @@ import org.junit.Test;
 /**
  *
  * @author fliay
- * Java 8ÄÚÖÃµÄËÄ´óºËĞÄº¯ÊıÊ½½Ó¿Ú
- * Consumer<T> :Ïû·ÑĞÍ½Ó¿Ú
+ * Java 8å†…ç½®çš„å››å¤§æ ¸å¿ƒå‡½æ•°å¼æ¥å£
+ * Consumer<T> :æ¶ˆè´¹å‹æ¥å£
  *         void accept(T t);
- * Supplier<T> :¹©¸øĞÍ½Ó¿Ú
+ * Supplier<T> :ä¾›ç»™å‹æ¥å£
  *          T  get();
- * Function<T,R>:º¯ÊıĞÍ½Ó¿Ú
+ * Function<T,R>:å‡½æ•°å‹æ¥å£
  *         R apply(T t);
- * Predicate<T>:¶ÏÑÔĞÍ½Ó¿Ú
+ * Predicate<T>:æ–­è¨€å‹æ¥å£
  *         boolean test(T t)        
  */
 public class TestLambda {
 
 	@Test
 	public void test1(){
-		useComsumer("¹ù½¨²¨",(a)->System.out.println("ÄãºÃ£¬"+a+"!"));
+		useComsumer("éƒ­å»ºæ³¢",(a)->System.out.println("ä½ å¥½ï¼Œ"+a+"!"));
 	}
 	
 	//Consumer
@@ -41,7 +41,7 @@ public class TestLambda {
 		System.out.println(list);
 	}
 	
-	//¹©¸øĞÍ½Ó¿Ú
+	//ä¾›ç»™å‹æ¥å£
 	public List<Integer> getNumList(int num,Supplier<Integer> sup){
 		List<Integer> list = new ArrayList<>();
 		for(int i=0;i<num;i++){
@@ -53,7 +53,7 @@ public class TestLambda {
 	
 	
 	/**
-	 * Ê¹ÓÃFunction½øĞĞ×Ö·û´®Ìæ»»
+	 * ä½¿ç”¨Functionè¿›è¡Œå­—ç¬¦ä¸²æ›¿æ¢
 	 */
 	@Test
 	public void test3(){
@@ -62,14 +62,14 @@ public class TestLambda {
 		
 	}
 	
-	//ÓÃÓÚ´¦Àí×Ö·û´®
+	//ç”¨äºå¤„ç†å­—ç¬¦ä¸²
 	public String strHandler(String str,Function<String,String> fun){
 		return fun.apply(str);
 	}
 	
 	
 	/**
-	 * Ê¹ÓÃ¶ÏÑÔµÄ·½Ê½ÅĞ¶Ï·ûºÏµÄ×Ö·û´®
+	 * ä½¿ç”¨æ–­è¨€çš„æ–¹å¼åˆ¤æ–­ç¬¦åˆçš„å­—ç¬¦ä¸²
 	 */
 	@Test
 	public void test4(){
@@ -80,7 +80,7 @@ public class TestLambda {
 		
 	}
 	
-	//½«Âú×ãÌõ¼şµÄ×Ö·û´®·ÅÈë¼¯ºÏ
+	//å°†æ»¡è¶³æ¡ä»¶çš„å­—ç¬¦ä¸²æ”¾å…¥é›†åˆ
 	public List<String> filterStr(List<String> list,Predicate<String> pre){
 		List<String> strList = new ArrayList<>();
 		for(String str:list){

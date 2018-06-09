@@ -1,18 +1,18 @@
-package ¶àÏß³Ì¶ÓÁĞ;
+package å¤šçº¿ç¨‹é˜Ÿåˆ—;
 
 import java.util.concurrent.SynchronousQueue;
 
-public class SynchronousQueue²»´æÔªËØ¶ÓÁĞ {
+public class SynchronousQueueä¸å­˜å…ƒç´ é˜Ÿåˆ— {
 
 	public static void main(String[] args) {
 
 		final SynchronousQueue sq = new SynchronousQueue();
 
-		// sq.add("1"); Èç¹ûÖ±½Ó¸ø¶ÓÁĞ¸´ÖÆÊä³öµÄ»°»á±¨´íÈçÏÂĞÅÏ¢
+		// sq.add("1"); å¦‚æœç›´æ¥ç»™é˜Ÿåˆ—å¤åˆ¶è¾“å‡ºçš„è¯ä¼šæŠ¥é”™å¦‚ä¸‹ä¿¡æ¯
 		/*
 		 * Exception in thread "main" java.lang.IllegalStateException: Queue
 		 * full at java.util.AbstractQueue.add(Unknown Source) at
-		 * ¶àÏß³Ì¶ÓÁĞ.SynchronousQueue²»´æÔªËØ¶ÓÁĞ.main(SynchronousQueue²»´æÔªËØ¶ÓÁĞ.java:14)
+		 * å¤šçº¿ç¨‹é˜Ÿåˆ—.SynchronousQueueä¸å­˜å…ƒç´ é˜Ÿåˆ—.main(SynchronousQueueä¸å­˜å…ƒç´ é˜Ÿåˆ—.java:14)
 		 */
 		for(int i=0;i<10;i++){
 		new Thread(new Runnable() {
@@ -33,7 +33,7 @@ public class SynchronousQueue²»´æÔªËØ¶ÓÁĞ {
 		new Thread(new Runnable() {
 			public void run() {
 				while (true) {
-					synchronized (SynchronousQueue²»´æÔªËØ¶ÓÁĞ.class) {
+					synchronized (SynchronousQueueä¸å­˜å…ƒç´ é˜Ÿåˆ—.class) {
 						
 						if(sq.isEmpty()){
 							try {

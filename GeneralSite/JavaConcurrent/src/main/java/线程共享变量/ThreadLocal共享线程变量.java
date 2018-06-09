@@ -1,9 +1,9 @@
-package Ïß³Ì¹²Ïí±äÁ¿;
+package çº¿ç¨‹å…±äº«å˜é‡;
 
 import java.util.Date;
 
-public class ThreadLocal¹²ÏíÏß³Ì±äÁ¿ {
-//Ïß³ÌÄÚ¹²Ïí±äÁ¿
+public class ThreadLocalå…±äº«çº¿ç¨‹å˜é‡ {
+//çº¿ç¨‹å†…å…±äº«å˜é‡
 	public static ThreadLocal<PubParam> tl = new ThreadLocal<PubParam>();
 
 	public static void main(String[] args) throws InterruptedException {
@@ -40,7 +40,7 @@ public class ThreadLocal¹²ÏíÏß³Ì±äÁ¿ {
 				
 				public void run() {
 					// TODO Auto-generated method stub
-					System.out.println("ĞİÏ¢Ö®ºóµÚ¶ş¸öÏÖ³¡»ñÈ¡Êı¾İ");
+					System.out.println("ä¼‘æ¯ä¹‹åç¬¬äºŒä¸ªç°åœºè·å–æ•°æ®");
 					A.getA();
 					B.getB();
 				}
@@ -57,7 +57,7 @@ class A{
 	
 	
 	public static void getA(){
-		PubParam  p =ThreadLocal¹²ÏíÏß³Ì±äÁ¿.tl.get();
+		PubParam  p =ThreadLocalå…±äº«çº¿ç¨‹å˜é‡.tl.get();
 System.out.println("A:"+p);		
 		
 	}
@@ -70,7 +70,7 @@ class B{
 	
 	
 	public static void getB(){
-		PubParam  p =ThreadLocal¹²ÏíÏß³Ì±äÁ¿.tl.get();
+		PubParam  p =ThreadLocalå…±äº«çº¿ç¨‹å˜é‡.tl.get();
 		System.out.println("B:"+p);		
 		
 	}

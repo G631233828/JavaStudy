@@ -1,10 +1,10 @@
-package ¶àÏß³ÌÊµÏÖĞÅºÅµÆÊµÏÖ²¢·¢;
+package å¤šçº¿ç¨‹å®ç°ä¿¡å·ç¯å®ç°å¹¶å‘;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
 
-public class SemahoreĞÅºÅµÆ {
+public class Semahoreä¿¡å·ç¯ {
 
 	public static void main(String[] args) {
 		final int bingfa=3;
@@ -22,7 +22,7 @@ public class SemahoreĞÅºÅµÆ {
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
-					System.out.println("Ïß³Ì"+Thread.currentThread().getName()+"½øÈë£¬µ±Ç°ÒÑ¾­ÓĞ"+(bingfa-sp.availablePermits())+"¸ö²¢·¢");
+					System.out.println("çº¿ç¨‹"+Thread.currentThread().getName()+"è¿›å…¥ï¼Œå½“å‰å·²ç»æœ‰"+(bingfa-sp.availablePermits())+"ä¸ªå¹¶å‘");
 				
 					try {
 						Thread.sleep((long)(Math.random()*10000));
@@ -33,7 +33,7 @@ public class SemahoreĞÅºÅµÆ {
 					
 					
 					sp.release();
-					System.out.println("Ïß³Ì"+Thread.currentThread().getName()+"ÒÑ¾­Àë¿ª£¬µ±Ç°ÒÑ¾­ÓĞ"+(bingfa-sp.availablePermits())+"¸ö²¢·¢");
+					System.out.println("çº¿ç¨‹"+Thread.currentThread().getName()+"å·²ç»ç¦»å¼€ï¼Œå½“å‰å·²ç»æœ‰"+(bingfa-sp.availablePermits())+"ä¸ªå¹¶å‘");
 					
 				}
 				

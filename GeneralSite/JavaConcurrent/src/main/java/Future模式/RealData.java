@@ -1,4 +1,4 @@
-package FutureÄ£Ê½;
+package Futureæ¨¡å¼;
 
 public class RealData implements Data{
 	
@@ -6,14 +6,14 @@ public class RealData implements Data{
 	private String result;
 
 	public RealData(String queryStr) {
-		System.out.println("¸ù¾İ"+queryStr+"½øĞĞ²éÑ¯£¬ÕâÊÇÒ»¸öºÜºÄÊ±µÄ²Ù×÷¡£¡£¡£");
+		System.out.println("æ ¹æ®"+queryStr+"è¿›è¡ŒæŸ¥è¯¢ï¼Œè¿™æ˜¯ä¸€ä¸ªå¾ˆè€—æ—¶çš„æ“ä½œã€‚ã€‚ã€‚");
 		try{
 			Thread.sleep(5000);
 		}catch(InterruptedException e){
 			e.printStackTrace();
 		}
-		System.out.println("²Ù×÷Íê±Ï£¬»ñÈ¡½á¹û");
-		result = "²éÑ¯½á¹û";
+		System.out.println("æ“ä½œå®Œæ¯•ï¼Œè·å–ç»“æœ");
+		result = "æŸ¥è¯¢ç»“æœ";
 		
 	}
 

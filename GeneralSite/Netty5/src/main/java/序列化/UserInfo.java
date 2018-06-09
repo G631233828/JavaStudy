@@ -1,11 +1,11 @@
-package ĞòÁĞ»¯;
+package åºåˆ—åŒ–;
 
 import java.io.Serializable;
 import java.nio.ByteBuffer;
 
 
 /**
- * UserInfoÊÇÒ»¸öÆÕÍ¨µÄPOJO¶ÔÏó£¬ËüÊµÏÖÁËSerializable½Ó¿Ú£¬±ö¸øÇ®Éú³ÉÁËÒ»¸öÄ¬ÈÏµÄĞòÁĞºÅ
+ * UserInfoæ˜¯ä¸€ä¸ªæ™®é€šçš„POJOå¯¹è±¡ï¼Œå®ƒå®ç°äº†Serializableæ¥å£ï¼Œå®¾ç»™é’±ç”Ÿæˆäº†ä¸€ä¸ªé»˜è®¤çš„åºåˆ—å·
  * @author fliay
  *
  */
@@ -46,8 +46,8 @@ public class UserInfo implements Serializable {
 	
 	
 	/**
-	 * ÊÔÓÃ»ùÓÚByteBufferµÄÍ¨ÓÃ¶ş½øÖÆ½âÂë¼¼Êõ¶ÔUserInfo¶ÔÏó½øĞĞ±àÂë
-	 * ±àÂëµÄ½á¹ûÈÔÈ»ÊÇbyteÊı×é£¬¿ÉÒÔÓë´«Í³µÄJDKĞòÁĞºÅºóµÄÂëÁ÷´óĞ¡½øĞĞ¶Ô±È
+	 * è¯•ç”¨åŸºäºByteBufferçš„é€šç”¨äºŒè¿›åˆ¶è§£ç æŠ€æœ¯å¯¹UserInfoå¯¹è±¡è¿›è¡Œç¼–ç 
+	 * ç¼–ç çš„ç»“æœä»ç„¶æ˜¯byteæ•°ç»„ï¼Œå¯ä»¥ä¸ä¼ ç»Ÿçš„JDKåºåˆ—å·åçš„ç æµå¤§å°è¿›è¡Œå¯¹æ¯”
 	 * @return
 	 */
 	public byte[] codeC(){
