@@ -2,7 +2,7 @@ package com.java.disruptor.test;
 
 import com.lmax.disruptor.EventFactory;
 /**
- * ÓÉÓÚĞèÒªÈÃDisruptorÎªÎÒÃÇ´´½¨ÊÂ¼ş£¬ÎÒÃÇÍ¬Ê±»¹ÉùÃ÷ÁËÒ»¸öEventFactoryÀ´ÊµÀı»¯Event¶ÔÏó¡£
+ * ç”±äºéœ€è¦è®©Disruptorä¸ºæˆ‘ä»¬åˆ›å»ºäº‹ä»¶ï¼Œæˆ‘ä»¬åŒæ—¶è¿˜å£°æ˜äº†ä¸€ä¸ªEventFactoryæ¥å®ä¾‹åŒ–Eventå¯¹è±¡ã€‚
  * @author fliay
  *
  */

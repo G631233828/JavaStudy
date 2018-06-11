@@ -4,7 +4,7 @@ import com.lmax.disruptor.EventHandler;
 
 
 /**
- * 事件消费者，也就是一个事件处理器，这个事件处理器简单地把事件中存储的数据打印到终端
+ * 浜嬩欢娑堣垂鑰咃紝涔熷氨鏄竴涓簨浠跺鐞嗗櫒锛岃繖涓簨浠跺鐞嗗櫒绠�鍗曞湴鎶婁簨浠朵腑瀛樺偍鐨勬暟鎹墦鍗板埌缁堢
  * @author fliay
  *
  */

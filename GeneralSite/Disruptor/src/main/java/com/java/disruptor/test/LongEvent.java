@@ -2,7 +2,7 @@ package com.java.disruptor.test;
 
 
 /**
- * ´´½¨Êı¾İ¶ÔÏóÊÇ
+ * åˆ›å»ºæ•°æ®å¯¹è±¡æ˜¯
  * @author fliay
  *
  */

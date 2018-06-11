@@ -1,8 +1,4 @@
-<<<<<<< HEAD:GeneralSite/JDK1.8/src/main/java/functionInterface/TestLambda.java
 package functionInterface;
-=======
-package 内置的核心函数式接口;
->>>>>>> eed80db9da73e11b2cfb1ae50aa707d4755a1f73:GeneralSite/JDK1.8/src/main/java/内置的核心函数式接口/TestLambda.java
 
 import java.util.ArrayList;
 import java.util.Arrays;
