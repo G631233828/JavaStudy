@@ -1,4 +1,4 @@
-package com.java.TCP拆包粘包;
+package com.java.TCP鎷嗗寘绮樺寘;
 
 import java.net.SocketAddress;
 
@@ -7,7 +7,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelPromise;
 import io.netty.util.ReferenceCountUtil;
 
-//用于读取客户端发来的信息
+//鐢ㄤ簬璇诲彇瀹㈡埛绔彂鏉ョ殑淇℃伅
 public class ClientHandler implements ChannelHandler {
 
 	public void handlerAdded(ChannelHandlerContext ctx) throws Exception {

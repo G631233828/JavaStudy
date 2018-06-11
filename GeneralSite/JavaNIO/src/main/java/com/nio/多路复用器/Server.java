@@ -1,4 +1,4 @@
-package com.nio.¶àÂ·¸´ÓÃÆ÷;
+package com.nio.å¤šè·¯å¤ç”¨å™¨;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -11,9 +11,9 @@ import java.util.Iterator;
 
 public class Server implements Runnable {
 
-	// 1.¶àÂ·¸´ÓÃÆ÷£¨¹ÜÀíËùÓĞµÄÍ¨µÀ£©
+	// 1.å¤šè·¯å¤ç”¨å™¨ï¼ˆç®¡ç†æ‰€æœ‰çš„é€šé“ï¼‰
 	private Selector selector;
-	// 2 ½¨Á¢»º³åÇø
+	// 2 å»ºç«‹ç¼“å†²åŒº
 	private ByteBuffer readBuf = ByteBuffer.allocate(1024);
 	// 3
 	private ByteBuffer writeBuf = ByteBuffer.allocate(1024);
@@ -21,15 +21,15 @@ public class Server implements Runnable {
 
 	public Server(int port) {
 		try {
-			// 1.´ò¿ª¸´ÓÃÆ÷
+			// 1.æ‰“å¼€å¤ç”¨å™¨
 			this.selector = selector;
-			// 2.´ò¿ª·şÎñÆ÷Í¨µÀ
+			// 2.æ‰“å¼€æœåŠ¡å™¨é€šé“
 			ServerSocketChannel ssc = ServerSocketChannel.open();
-			// 3.ÉèÖÃ·şÎñÆ÷Í¨µÀÎª·Ç×èÈûÄ£Ê½
+			// 3.è®¾ç½®æœåŠ¡å™¨é€šé“ä¸ºéé˜»å¡æ¨¡å¼
 			ssc.configureBlocking(false);
-			// 4.°ó¶¨µØÖ·
+			// 4.ç»‘å®šåœ°å€
 			ssc.bind(new InetSocketAddress(port));
-			// 5.°Ñ·şÎñÆ÷Í¨µÀ×¢²áµ½¶àÂ·¸´ÓÃÆ÷ÉÏ£¬²¢ÇÒ¼àÌı×èÈûÊÂ¼ş
+			// 5.æŠŠæœåŠ¡å™¨é€šé“æ³¨å†Œåˆ°å¤šè·¯å¤ç”¨å™¨ä¸Šï¼Œå¹¶ä¸”ç›‘å¬é˜»å¡äº‹ä»¶
 			ssc.register(this.selector, SelectionKey.OP_ACCEPT);
 
 			System.out.println("Server start , port:" + port);
@@ -41,19 +41,19 @@ public class Server implements Runnable {
 	public void run() {
 		while (true) {
 			try {
-				// 1.±ØĞëÒªÈÃ¶àÂ·¸´ÓÃÆ÷¿ªÊ¼¼àÌı
+				// 1.å¿…é¡»è¦è®©å¤šè·¯å¤ç”¨å™¨å¼€å§‹ç›‘å¬
 				this.selector.select();
-				// 2.·µ»Ø¶àÂ·¸´ÓÃÆ÷ÒÑ¾­Ñ¡ÔñµÄ½á¹û¼¯
+				// 2.è¿”å›å¤šè·¯å¤ç”¨å™¨å·²ç»é€‰æ‹©çš„ç»“æœé›†
 				Iterator<SelectionKey> keys = this.selector.selectedKeys().iterator();
-				// 3.½øĞĞ±éÀú
+				// 3.è¿›è¡Œéå†
 				while (keys.hasNext()) {
-					// 4.»ñÈ¡Ò»¸öÑ¡ÔñµÄÔªËØ
+					// 4.è·å–ä¸€ä¸ªé€‰æ‹©çš„å…ƒç´ 
 					SelectionKey key = keys.next();
-					// 5.Ö±½Ó´ÓÈİÆ÷ÖĞÒÆ³ı¾Í¿ÉÒÔ
+					// 5.ç›´æ¥ä»å®¹å™¨ä¸­ç§»é™¤å°±å¯ä»¥
 					keys.remove();
-					// 6.Èç¹ûÊÇÓĞĞ§µÄ
+					// 6.å¦‚æœæ˜¯æœ‰æ•ˆçš„
 					if (key.isValid()) {
-						// 7Èç¹ûÎª×èÈû×´Ì¬
+						// 7å¦‚æœä¸ºé˜»å¡çŠ¶æ€
 						if (key.isAcceptable()) {
 							this.accept(key);
 						}
@@ -74,29 +74,29 @@ public class Server implements Runnable {
 
 	private void read(SelectionKey key) {
 		try {
-			// 1 Çå¿Õ»º³åÇø¾ÉµÄÊı¾İ
+			// 1 æ¸…ç©ºç¼“å†²åŒºæ—§çš„æ•°æ®
 			this.readBuf.clear();
-			// 2 »ñÈ¡Ö®Ç°×¢²áµÄsocketÍ¨µÀ¶ÔÏó
+			// 2 è·å–ä¹‹å‰æ³¨å†Œçš„socketé€šé“å¯¹è±¡
 			SocketChannel sc = (SocketChannel) key.channel();
-			// 3 ¶ÁÈ¡Êı¾İ
+			// 3 è¯»å–æ•°æ®
 			int count = sc.read(this.readBuf);
-			// 4 Èç¹ûÃ»ÓĞÊı¾İ
+			// 4 å¦‚æœæ²¡æœ‰æ•°æ®
 			if (count == -1) {
 				key.channel().close();
 				key.cancel();
 				return;
 			}
-			// 5 ÓĞÊı¾İÔò½øĞĞ¶ÁÈ¡ ¶ÁÈ¡Ö®Ç°ĞèÒª½øĞĞ¸´Î»·½·¨(°Ñposition ºÍlimit½øĞĞ¸´Î»)
+			// 5 æœ‰æ•°æ®åˆ™è¿›è¡Œè¯»å– è¯»å–ä¹‹å‰éœ€è¦è¿›è¡Œå¤ä½æ–¹æ³•(æŠŠposition å’Œlimitè¿›è¡Œå¤ä½)
 			this.readBuf.flip();
-			// 6 ¸ù¾İ»º³åÇøµÄÊı¾İ³¤¶È´´½¨ÏàÓ¦´óĞ¡µÄbyteÊı×é£¬½ÓÊÕ»º³åÇøµÄÊı¾İ
+			// 6 æ ¹æ®ç¼“å†²åŒºçš„æ•°æ®é•¿åº¦åˆ›å»ºç›¸åº”å¤§å°çš„byteæ•°ç»„ï¼Œæ¥æ”¶ç¼“å†²åŒºçš„æ•°æ®
 			byte[] bytes = new byte[this.readBuf.remaining()];
-			// 7 ½ÓÊÕ»º³åÇøÊı¾İ
+			// 7 æ¥æ”¶ç¼“å†²åŒºæ•°æ®
 			this.readBuf.get(bytes);
-			// 8 ´òÓ¡½á¹û
+			// 8 æ‰“å°ç»“æœ
 			String body = new String(bytes).trim();
 			System.out.println("Server : " + body);
 
-			// 9..¿ÉÒÔĞ´»Ø¸ø¿Í»§¶ËÊı¾İ
+			// 9..å¯ä»¥å†™å›ç»™å®¢æˆ·ç«¯æ•°æ®
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -106,13 +106,13 @@ public class Server implements Runnable {
 
 	private void accept(SelectionKey key) {
 		try {
-			// 1 »ñÈ¡·şÎñÍ¨µÀ
+			// 1 è·å–æœåŠ¡é€šé“
 			ServerSocketChannel ssc = (ServerSocketChannel) key.channel();
-			// 2 Ö´ĞĞ×èÈû·½·¨
+			// 2 æ‰§è¡Œé˜»å¡æ–¹æ³•
 			SocketChannel sc = ssc.accept();
-			// 3 ÉèÖÃ×èÈûÄ£Ê½
+			// 3 è®¾ç½®é˜»å¡æ¨¡å¼
 			sc.configureBlocking(false);
-			// 4 ×¢²áµ½¶àÂ·¸´ÓÃÆ÷ÉÏ£¬²¢ÉèÖÃ¶ÁÈ¡±êÊ¶
+			// 4 æ³¨å†Œåˆ°å¤šè·¯å¤ç”¨å™¨ä¸Šï¼Œå¹¶è®¾ç½®è¯»å–æ ‡è¯†
 			sc.register(this.seletor, SelectionKey.OP_READ);
 		} catch (IOException e) {
 			e.printStackTrace();

@@ -1,4 +1,4 @@
-package com.java.¶ªÆú·şÎñ;
+package com.java.ä¸¢å¼ƒæœåŠ¡;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -23,7 +23,7 @@ public class Server {
 		
 		sb.group(sGroup, cGroup)
 		.channel(NioServerSocketChannel.class)
-		.option(ChannelOption.SO_BACKLOG,1024)//tcp»º³åÇø´óĞ¡
+		.option(ChannelOption.SO_BACKLOG,1024)//tcpç¼“å†²åŒºå¤§å°
 		.option(ChannelOption.SO_SNDBUF,32*1024)
 		.option(ChannelOption.SO_RCVBUF, 32*1024)
 		.option(ChannelOption.SO_KEEPALIVE, true)

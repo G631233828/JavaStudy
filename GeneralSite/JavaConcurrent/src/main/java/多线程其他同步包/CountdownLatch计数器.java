@@ -1,4 +1,4 @@
-package ¶àÏß³ÌÆäËûÍ¬²½°ü;
+package å¤šçº¿ç¨‹å…¶ä»–åŒæ­¥åŒ…;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -7,15 +7,15 @@ import java.util.concurrent.Executors;
 /**
  * 
  * @author fliay
- * µ±countDownLatchÉèÖÃÎª1µÄÊ±ºòÏß³ÌÖ´ĞĞµÄÊ±ºòÖ´ĞĞawait²Ù×÷£¬
- * ĞèÒª¶ÔÏß³ÌµÄcountDownLatchÖµ½øĞĞchutdown²Ù×÷µÈÓÚ0µÄÊ±ºò²Å»á»½ĞÑawaitµÄÏß³Ì
+ * å½“countDownLatchè®¾ç½®ä¸º1çš„æ—¶å€™çº¿ç¨‹æ‰§è¡Œçš„æ—¶å€™æ‰§è¡Œawaitæ“ä½œï¼Œ
+ * éœ€è¦å¯¹çº¿ç¨‹çš„countDownLatchå€¼è¿›è¡Œchutdownæ“ä½œç­‰äº0çš„æ—¶å€™æ‰ä¼šå”¤é†’awaitçš„çº¿ç¨‹
  *
  */
-public class CountdownLatch¼ÆÊıÆ÷ {
+public class CountdownLatchè®¡æ•°å™¨ {
 
 	public static void main(String[] args) {
 
-		ExecutorService e = Executors.newCachedThreadPool();// ´´½¨Ïß³Ì³Ø
+		ExecutorService e = Executors.newCachedThreadPool();// åˆ›å»ºçº¿ç¨‹æ± 
 
 		final CountDownLatch cOrder = new CountDownLatch(1);
 		CountDownLatch cAnswer = new CountDownLatch(3);
@@ -25,13 +25,13 @@ public class CountdownLatch¼ÆÊıÆ÷ {
 
 				public void run() {
 					try {
-						System.out.println("Ïß³Ì" + Thread.currentThread().getName() + "Õı×¼±¸½ÓÊÜÃüÁî");
+						System.out.println("çº¿ç¨‹" + Thread.currentThread().getName() + "æ­£å‡†å¤‡æ¥å—å‘½ä»¤");
 						cOrder.await();
-						// Õ½Ê¿ÃÇ¶¼´¦ÓÚµÈ´ıÃüÁî×´Ì¬
-						System.out.println("Ïß³Ì" + Thread.currentThread().getName() + "ÒÑ½ÓÊÜÃüÁî");
+						// æˆ˜å£«ä»¬éƒ½å¤„äºç­‰å¾…å‘½ä»¤çŠ¶æ€
+						System.out.println("çº¿ç¨‹" + Thread.currentThread().getName() + "å·²æ¥å—å‘½ä»¤");
 						Thread.sleep((long) (Math.random() * 10000));
-						System.out.println("Ïß³Ì" + Thread.currentThread().getName() + "»ØÓ¦ÃüÁî´¦Àí½á¹û");
-						cOrder.countDown(); // ÈÎÎñÖ´ĞĞÍê±Ï£¬·µ»Ø¸øÖ¸»Ó¹Ù£¬cdAnswer¼õ1¡£
+						System.out.println("çº¿ç¨‹" + Thread.currentThread().getName() + "å›åº”å‘½ä»¤å¤„ç†ç»“æœ");
+						cOrder.countDown(); // ä»»åŠ¡æ‰§è¡Œå®Œæ¯•ï¼Œè¿”å›ç»™æŒ‡æŒ¥å®˜ï¼ŒcdAnswerå‡1ã€‚
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -46,15 +46,15 @@ public class CountdownLatch¼ÆÊıÆ÷ {
 		try {
 			Thread.sleep((long) (Math.random() * 10000));
 
-			System.out.println("Ïß³Ì" + Thread.currentThread().getName() + "¼´½«·¢²¼ÃüÁî");
-			cOrder.countDown(); // ·¢ËÍÃüÁî£¬cdOrder¼õ1£¬´¦ÓÚµÈ´ıµÄÕ½Ê¿ÃÇÍ£Ö¹µÈ´ı×ªÈ¥Ö´ĞĞÈÎÎñ¡£
-			System.out.println("Ïß³Ì" + Thread.currentThread().getName() + "ÒÑ·¢ËÍÃüÁî£¬ÕıÔÚµÈ´ı½á¹û");
-			cOrder.await(); // ÃüÁî·¢ËÍºóÖ¸»Ó¹Ù´¦ÓÚµÈ´ı×´Ì¬£¬Ò»µ©cdAnswerÎª0Ê±Í£Ö¹µÈ´ı¼ÌĞøÍùÏÂÖ´ĞĞ
-			System.out.println("Ïß³Ì" + Thread.currentThread().getName() + "ÒÑÊÕµ½ËùÓĞÏìÓ¦½á¹û");
+			System.out.println("çº¿ç¨‹" + Thread.currentThread().getName() + "å³å°†å‘å¸ƒå‘½ä»¤");
+			cOrder.countDown(); // å‘é€å‘½ä»¤ï¼ŒcdOrderå‡1ï¼Œå¤„äºç­‰å¾…çš„æˆ˜å£«ä»¬åœæ­¢ç­‰å¾…è½¬å»æ‰§è¡Œä»»åŠ¡ã€‚
+			System.out.println("çº¿ç¨‹" + Thread.currentThread().getName() + "å·²å‘é€å‘½ä»¤ï¼Œæ­£åœ¨ç­‰å¾…ç»“æœ");
+			cOrder.await(); // å‘½ä»¤å‘é€åæŒ‡æŒ¥å®˜å¤„äºç­‰å¾…çŠ¶æ€ï¼Œä¸€æ—¦cdAnswerä¸º0æ—¶åœæ­¢ç­‰å¾…ç»§ç»­å¾€ä¸‹æ‰§è¡Œ
+			System.out.println("çº¿ç¨‹" + Thread.currentThread().getName() + "å·²æ”¶åˆ°æ‰€æœ‰å“åº”ç»“æœ");
 		} catch (Exception s) {
 			s.printStackTrace();
 		}
-		e.shutdown(); // ÈÎÎñ½áÊø£¬Í£Ö¹Ïß³Ì³ØµÄËùÓĞÏß³Ì
+		e.shutdown(); // ä»»åŠ¡ç»“æŸï¼Œåœæ­¢çº¿ç¨‹æ± çš„æ‰€æœ‰çº¿ç¨‹
 
 	}
 

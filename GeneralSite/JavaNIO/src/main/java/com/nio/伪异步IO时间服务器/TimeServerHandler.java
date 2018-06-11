@@ -1,4 +1,4 @@
-package com.nio.Î±Òì²½IOÊ±¼ä·şÎñÆ÷;
+package com.nio.ä¼ªå¼‚æ­¥IOæ—¶é—´æœåŠ¡å™¨;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,7 +1,7 @@
-package Ïß³Ì»¥³âËø;
+package çº¿ç¨‹äº’æ–¥é”;
 
-//Ö÷Ïß³ÌÃ¿Ö´ĞĞ10´Î£¬×ÓÏß³ÌÖ´ĞĞ100´Î£¬Ö÷Ïß³ÌÖ´ĞĞ50´Î
-public class ÃæÊÔÌâÄ¿ÂÖÁ÷Êä³ö {
+//ä¸»çº¿ç¨‹æ¯æ‰§è¡Œ10æ¬¡ï¼Œå­çº¿ç¨‹æ‰§è¡Œ100æ¬¡ï¼Œä¸»çº¿ç¨‹æ‰§è¡Œ50æ¬¡
+public class é¢è¯•é¢˜ç›®è½®æµè¾“å‡º {
 
 	public static void main(String[] args) {
 
@@ -47,7 +47,7 @@ class Test {
 
 		for (int j = 1; j <= 10; j++) {
 
-			System.out.println("Ö÷Ïß³Ì" + i + "Ö´ĞĞ" + j);
+			System.out.println("ä¸»çº¿ç¨‹" + i + "æ‰§è¡Œ" + j);
 		}
 		flag = false;
 		this.notify();
@@ -62,7 +62,7 @@ class Test {
 
 		for (int j = 1; j <= 10; j++) {
 
-			System.out.println("×ÓÏß³Ì" + i + "Ö´ĞĞ" + j);
+			System.out.println("å­çº¿ç¨‹" + i + "æ‰§è¡Œ" + j);
 		}
 		flag = true;
 		this.notify();

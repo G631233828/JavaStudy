@@ -1,4 +1,4 @@
-package com.nio.Î±Òì²½IOÊ±¼ä·şÎñÆ÷;
+package com.nio.ä¼ªå¼‚æ­¥IOæ—¶é—´æœåŠ¡å™¨;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -14,14 +14,14 @@ public class TimeServer {
 		try {
 			server = new ServerSocket(port);
 
-			System.out.println("The time server is start in port£º" + port);
+			System.out.println("The time server is start in portï¼š" + port);
 
 			Socket socket = null;
 
-			TimeServerHandlerExecutePool singleExecutor = new TimeServerHandlerExecutePool(50, 10000);// ´´½¨I/OÈÎÎñÏß³Ì³Ø   £¨Ïß³ÌÊı£¬¶ÓÁĞ´óĞ¡£©
+			TimeServerHandlerExecutePool singleExecutor = new TimeServerHandlerExecutePool(50, 10000);// åˆ›å»ºI/Oä»»åŠ¡çº¿ç¨‹æ±    ï¼ˆçº¿ç¨‹æ•°ï¼Œé˜Ÿåˆ—å¤§å°ï¼‰
 
 			while (true) {
-				//¼àÌı¿Í»§¶Ësocket
+				//ç›‘å¬å®¢æˆ·ç«¯socket
 				socket = server.accept();
 				singleExecutor.execute(new TimeServerHandler(socket));
 

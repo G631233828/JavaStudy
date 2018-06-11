@@ -1,9 +1,9 @@
-package ¶àÏß³Ì¼Óµ¥ÀıÄ£Ê½;
+package å¤šçº¿ç¨‹åŠ å•ä¾‹æ¨¡å¼;
 
 
 
 /**
- * ¶àÏß³ÌnewÊµÀı»ñÈ¡hashÖµÊÇ·ñ»á³öÏÖ¶à¸öµÄÇé¿ö
+ * å¤šçº¿ç¨‹newå®ä¾‹è·å–hashå€¼æ˜¯å¦ä¼šå‡ºç°å¤šä¸ªçš„æƒ…å†µ
  * @author fliay
  *
  */
@@ -13,7 +13,7 @@ public class SingletonThread {
 	private  static SingletonThread st = null;
 	
 	/**
-	 * Ê¹ÓÃÁËË«ÖØÀ´ÅĞ¶Ï
+	 * ä½¿ç”¨äº†åŒé‡æ¥åˆ¤æ–­
 	 * @return
 	 */
 	public static SingletonThread getSingletonThread(){
@@ -37,7 +37,7 @@ public class SingletonThread {
 	
 	public static void main(String[] args) {
 		
-		//´´½¨¶àÏß³ÌÅĞ¶ÏÊµÀı¶ÔÏó
+		//åˆ›å»ºå¤šçº¿ç¨‹åˆ¤æ–­å®ä¾‹å¯¹è±¡
 		new Thread(new Runnable() {
 			
 			public void run() {

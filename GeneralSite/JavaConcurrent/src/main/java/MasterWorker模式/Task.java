@@ -1,4 +1,4 @@
-package MasterWorkerģʽ;
+package MasterWorker模式;
 
 public class Task {
 	

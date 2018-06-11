@@ -1,6 +1,6 @@
-package ¶àÏß³Ì²¢·¢°ü;
+package å¤šçº¿ç¨‹å¹¶å‘åŒ…;
 
-public class ¶àÏß³ÌjoinµÄÊ¹ÓÃ {
+public class å¤šçº¿ç¨‹joinçš„ä½¿ç”¨ {
 	
 	
 	
@@ -9,9 +9,9 @@ public static void main(String[] args) throws InterruptedException {
 	Thread t02 =new Thread(new thread02());
 	t01.start();
 	t02.start();
-	t01.join(); //Ê¹ÓÃÁËjoinÖ®ºóÖ»ÓĞÔÚÏß³Ì½áÊøÖ®ºó²Å»áÖ´ĞĞÏÂÃæµÄsystem.out.printLn()
+	t01.join(); //ä½¿ç”¨äº†joinä¹‹ååªæœ‰åœ¨çº¿ç¨‹ç»“æŸä¹‹åæ‰ä¼šæ‰§è¡Œä¸‹é¢çš„system.out.printLn()
 	t02.join();
-	System.out.println("Ïß³Ì½áÊø");
+	System.out.println("çº¿ç¨‹ç»“æŸ");
 }
 	
 }
@@ -21,7 +21,7 @@ class thread01 implements Runnable{
 
 	public void run() {
 		for(int i=0;i<100;i++){
-			System.out.println("Ïß³Ì1"+new Thread().getName()+":"+i);
+			System.out.println("çº¿ç¨‹1"+new Thread().getName()+":"+i);
 		}
 	}
 	
@@ -32,7 +32,7 @@ class thread02 implements Runnable{
 
 	public void run() {
 		for(int i=0;i<100;i++){
-			System.out.println("Ïß³Ì2"+new Thread().getName()+":"+i);
+			System.out.println("çº¿ç¨‹2"+new Thread().getName()+":"+i);
 		}
 	}
 	

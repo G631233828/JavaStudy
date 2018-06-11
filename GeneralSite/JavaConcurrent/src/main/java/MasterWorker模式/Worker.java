@@ -1,12 +1,12 @@
-package MasterWorkerÄ£Ê½;
+package MasterWorkeræ¨¡å¼;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class Worker implements Runnable {
-	// ÈÎÎñ¼¯ºÏ
+	// ä»»åŠ¡é›†åˆ
 	private ConcurrentLinkedQueue<Task> taskQueue;
-	//´¦Àí½á¹û
+	//å¤„ç†ç»“æœ
 	private ConcurrentHashMap<String, Object> resultMap;
 
 	public void setTaskQueue(ConcurrentLinkedQueue<Task> taskQueue) {
@@ -22,17 +22,17 @@ public class Worker implements Runnable {
 			Task executeTask = this.taskQueue.poll();
 			if (executeTask == null)
 				break;
-			// ÕæÕıµÄÈÎÎñ´¦Àí
+			// çœŸæ­£çš„ä»»åŠ¡å¤„ç†
 			Object result = handle(executeTask);
 			this.resultMap.put(executeTask.getName(), result);
 		}
 	}
 
-	// ºËĞÄ´¦ÀíÂß¼­£¬¿ÉÒÔ³éÀë³öÀ´ÓÉ¾ßÌå×ÓÀàÊµÏÖ
+	// æ ¸å¿ƒå¤„ç†é€»è¾‘ï¼Œå¯ä»¥æŠ½ç¦»å‡ºæ¥ç”±å…·ä½“å­ç±»å®ç°
 	private Object handle(Task executeTask) {
 		Object result = null;
 		try {
-			// ±íÊ¾´¦ÀíÈÎÎñµÄºÄÊ±....
+			// è¡¨ç¤ºå¤„ç†ä»»åŠ¡çš„è€—æ—¶....
 			Thread.sleep(0);
 			result = executeTask.getPrice();
 		} catch (InterruptedException e) {

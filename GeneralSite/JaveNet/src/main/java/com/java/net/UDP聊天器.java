@@ -8,7 +8,7 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
 
-public class UDPÁÄÌìÆ÷ {
+public class UDPèŠå¤©å™¨ {
 
 	public static void main(String[] args) {
 		try {

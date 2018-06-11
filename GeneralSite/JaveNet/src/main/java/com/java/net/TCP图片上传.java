@@ -10,7 +10,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-public class TCPÍ¼Æ¬ÉÏ´« {
+public class TCPå›¾ç‰‡ä¸Šä¼  {
 	
 
 }
@@ -27,7 +27,7 @@ public class TCPÍ¼Æ¬ÉÏ´« {
 		File f = new File("d://aa.jpg");
 		
 		FileInputStream fis = new FileInputStream(f);
-		//ÉÏ´«Êı¾İ
+		//ä¸Šä¼ æ•°æ®
 		OutputStream out = socket.getOutputStream();
 		
 		int len =0;
@@ -40,10 +40,10 @@ public class TCPÍ¼Æ¬ÉÏ´« {
 			
 		}
 		
-		//¸æËß·şÎñÆ÷ÒÑ¾­Íê³ÉÁËÉÏ´«
+		//å‘Šè¯‰æœåŠ¡å™¨å·²ç»å®Œæˆäº†ä¸Šä¼ 
 		 socket.shutdownOutput();
-		//Íê³ÉÉÏ´«
-		//»ñÈ¡·şÎñÆ÷·´À¡
+		//å®Œæˆä¸Šä¼ 
+		//è·å–æœåŠ¡å™¨åé¦ˆ
 		InputStream in = socket.getInputStream();
 		
 		byte[] inb = new byte[1024];
@@ -84,7 +84,7 @@ public class TCPÍ¼Æ¬ÉÏ´« {
 		 
 		 OutputStream out = s.getOutputStream();
 		 
-		out.write("ÉÏ´«³É¹¦".getBytes());
+		out.write("ä¸Šä¼ æˆåŠŸ".getBytes());
 		 
 		 out.close();
 		 in.close();

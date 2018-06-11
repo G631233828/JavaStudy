@@ -1,4 +1,8 @@
+<<<<<<< HEAD:GeneralSite/JDK1.8/src/main/java/LambdaStudy/TestLambda2.java
 package LambdaStudy;
+=======
+package Lambdaè¡¨è¾¾å¼å­¦ä¹ ;
+>>>>>>> eed80db9da73e11b2cfb1ae50aa707d4755a1f73:GeneralSite/JDK1.8/src/main/java/Lambdaè¡¨è¾¾å¼å­¦ä¹ /TestLambda2.java
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -34,7 +38,7 @@ public class TestLambda2 {
 	
 	
 	/**
-	 * String×Ö·û´®×ª»»Àà
+	 * Stringå­—ç¬¦ä¸²è½¬æ¢ç±»
 	 */
 	@Test
 	public void  test2(){
@@ -43,7 +47,7 @@ public class TestLambda2 {
 	}
 	
 	
-	//ÓÃÓÚ´¦Àí×Ö·û´®
+	//ç”¨äºå¤„ç†å­—ç¬¦ä¸²
 	public String strHandler(String str,MyFunction mf){
 		return mf.getValue(str);
 	}
@@ -57,7 +61,7 @@ public class TestLambda2 {
 		
 	}
 	
-	//¶ÔÓÚÁ½¸öLongĞÍÊı¾İ½øĞĞ´¦Àí
+	//å¯¹äºä¸¤ä¸ªLongå‹æ•°æ®è¿›è¡Œå¤„ç†
 	public void op(Long l1,Long l2,MyFunction2<Long,Long> mf){
 		System.out.println(mf.getValue(l1, l2));
 	}

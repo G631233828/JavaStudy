@@ -3,12 +3,12 @@ package com.java.net;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-public class 获取网站的所有IP {
+public class 鑾峰彇缃戠珯鐨勬墍鏈塈P {
 	
 	
 	public static void main(String[] args) {
 		try {
-			//获取百度的所有ip
+			//鑾峰彇鐧惧害鐨勬墍鏈塱p
 			InetAddress[] in =getIps("www.baidu.com");
 			
 			for(int i =0;i<in.length;i++){
@@ -30,7 +30,7 @@ public class 获取网站的所有IP {
 	 * @param url
 	 * @return
 	 * @throws UnknownHostException
-	 * 返回url
+	 * 杩斿洖url
 	 */
 	public static InetAddress[] getIps(String url) throws UnknownHostException{
 		

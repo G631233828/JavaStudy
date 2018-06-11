@@ -1,4 +1,4 @@
-package com.java.NettyEcho·şÎñÆ÷;
+package com.java.NettyEchoæœåŠ¡å™¨;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.ByteBuf;
@@ -38,7 +38,7 @@ public class EchoServer {
 			protected void initChannel(SocketChannel ch) throws Exception {
 		/*		ByteBuf delimiter = Unpooled.copiedBuffer("$_".getBytes());
 				ch.pipeline().addLast(new DelimiterBasedFrameDecoder(1024, delimiter));*/
-				//FixedLengthFrameDecoder¹Ì¶¨³¤¶È½âÂëÆ÷£¬ÄÜ¹»°´ÕÕÖ¸¶¨µÄ³¤¶È¶ÔÏûÏ¢½øĞĞ×Ô¶¯½âÂë
+				//FixedLengthFrameDecoderå›ºå®šé•¿åº¦è§£ç å™¨ï¼Œèƒ½å¤ŸæŒ‰ç…§æŒ‡å®šçš„é•¿åº¦å¯¹æ¶ˆæ¯è¿›è¡Œè‡ªåŠ¨è§£ç 
 				ch.pipeline().addLast(new FixedLengthFrameDecoder(20));
 				
 				ch.pipeline().addLast(new StringDecoder());
@@ -47,9 +47,9 @@ public class EchoServer {
 			}
 		}) ;
 		
-		//°ó¶¨¶Ë¿Ú£¬Í¬²½µÈ´ı³É¹¦
+		//ç»‘å®šç«¯å£ï¼ŒåŒæ­¥ç­‰å¾…æˆåŠŸ
 		ChannelFuture f = s.bind(port).sync();
-		//µÈ´ı·şÎñÆ÷¼àÌı¶Ë¿Ú¹Ø±Õ
+		//ç­‰å¾…æœåŠ¡å™¨ç›‘å¬ç«¯å£å…³é—­
 		f.channel().closeFuture().sync();
 		}catch(Exception e){
 			e.printStackTrace();

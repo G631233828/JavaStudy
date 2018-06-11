@@ -1,8 +1,8 @@
-package Ïß³Ì¹²Ïí±äÁ¿;
+package çº¿ç¨‹å…±äº«å˜é‡;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class ¶àÏß³Ì±äÁ¿¿É¼ûĞÔVolatite extends Thread {
+public class å¤šçº¿ç¨‹å˜é‡å¯è§æ€§Volatite extends Thread {
 	
 	
 	private volatile boolean flag = true;
@@ -23,7 +23,7 @@ public class ¶àÏß³Ì±äÁ¿¿É¼ûĞÔVolatite extends Thread {
 
 	public void run() {
 		while(this.isFlag()){
-			System.out.println("Ïß³ÌÔËĞĞÖĞ¡£¡£¡£"+this.isFlag());
+			System.out.println("çº¿ç¨‹è¿è¡Œä¸­ã€‚ã€‚ã€‚"+this.isFlag());
 			try {
 				Thread.sleep(100);
 			} catch (InterruptedException e) {
@@ -31,7 +31,7 @@ public class ¶àÏß³Ì±äÁ¿¿É¼ûĞÔVolatite extends Thread {
 				e.printStackTrace();
 			}
 		}
-		System.out.println("Ïß³ÌÒÑ¾­Í£Ö¹£¡");
+		System.out.println("çº¿ç¨‹å·²ç»åœæ­¢ï¼");
 		
 	}
 	
@@ -40,7 +40,7 @@ public class ¶àÏß³Ì±äÁ¿¿É¼ûĞÔVolatite extends Thread {
 	public static void main(String[] args) throws InterruptedException {
 		
 		
-		¶àÏß³Ì±äÁ¿¿É¼ûĞÔVolatite v = new ¶àÏß³Ì±äÁ¿¿É¼ûĞÔVolatite();
+		å¤šçº¿ç¨‹å˜é‡å¯è§æ€§Volatite v = new å¤šçº¿ç¨‹å˜é‡å¯è§æ€§Volatite();
 
 		v.start();
 		
@@ -49,7 +49,7 @@ public class ¶àÏß³Ì±äÁ¿¿É¼ûĞÔVolatite extends Thread {
 		
 		v.setFlag(false);
 		
-		System.out.println("flagÉèÖÃÎªfalse");
+		System.out.println("flagè®¾ç½®ä¸ºfalse");
 		
 		
 	}

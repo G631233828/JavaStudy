@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class ä¯ÀÀÆ÷×÷Îª¿Í»§¶Ë·ÃÎÊSocket·şÎñÆ÷ {
+public class æµè§ˆå™¨ä½œä¸ºå®¢æˆ·ç«¯è®¿é—®SocketæœåŠ¡å™¨ {
 
 	public static void main(String[] args) throws IOException {
 

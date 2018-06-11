@@ -1,4 +1,4 @@
-package ×Ô¶¨ÒåÏß³Ì³Ø;
+package è‡ªå®šä¹‰çº¿ç¨‹æ± ;
 
 import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -9,8 +9,8 @@ public class MyRejected implements RejectedExecutionHandler {
 	public MyRejected(){}
 
 	public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
-	System.out.println("×Ô¶¨Òå´¦Àí¡·¡£");
-	System.out.println("µ±Ç°±»¾Ü¾øµÄµÄÈÎÎñÎª£º"+r.toString());
+	System.out.println("è‡ªå®šä¹‰å¤„ç†ã€‹ã€‚");
+	System.out.println("å½“å‰è¢«æ‹’ç»çš„çš„ä»»åŠ¡ä¸ºï¼š"+r.toString());
 	}
 
 }

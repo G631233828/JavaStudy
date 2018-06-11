@@ -1,4 +1,4 @@
-package com.java.NettyEcho·şÎñÆ÷;
+package com.java.NettyEchoæœåŠ¡å™¨;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;

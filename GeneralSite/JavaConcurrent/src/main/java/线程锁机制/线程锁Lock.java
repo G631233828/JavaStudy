@@ -1,11 +1,11 @@
-package Ïß³ÌËø»úÖÆ;
+package çº¿ç¨‹é”æœºåˆ¶;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class Ïß³ÌËøLock {
+public class çº¿ç¨‹é”Lock {
 
 	public static void main(String[] args) {
 		MyCount count = new MyCount("6222121001041899235", 20000);
@@ -47,24 +47,24 @@ class User implements Runnable {
 	public void run() {
 		String string;
 		if (iocash > 0) {
-			string = "´æ¿î";
+			string = "å­˜æ¬¾";
 		} else {
-			string = "È¡¿î";
+			string = "å–æ¬¾";
 		}
 		myLock.lock();
-		// Ö´ĞĞÏÖ½ğÈÎÎñ
-		System.out.println(name + "ÕıÔÚ²Ù×÷" + myCount + "ÕË»§£¬" + string + "½ğ¶îÎª" + iocash + ",µ±Ç°ÕË»§Óà¶îÎª£º" + myCount.getCash());
+		// æ‰§è¡Œç°é‡‘ä»»åŠ¡
+		System.out.println(name + "æ­£åœ¨æ“ä½œ" + myCount + "è´¦æˆ·ï¼Œ" + string + "é‡‘é¢ä¸º" + iocash + ",å½“å‰è´¦æˆ·ä½™é¢ä¸ºï¼š" + myCount.getCash());
 		myCount.setCash(myCount.getCash() + iocash);
-		System.out.println(name + "ÕıÔÚ²Ù×÷" + myCount + "ÕË»§£¬" + string + "½ğ¶îÎª" + iocash + ",µ±Ç°ÕË»§Óà¶îÎª£º" + myCount.getCash());
-		System.out.println("²Ù×÷½áÊø");
+		System.out.println(name + "æ­£åœ¨æ“ä½œ" + myCount + "è´¦æˆ·ï¼Œ" + string + "é‡‘é¢ä¸º" + iocash + ",å½“å‰è´¦æˆ·ä½™é¢ä¸ºï¼š" + myCount.getCash());
+		System.out.println("æ“ä½œç»“æŸ");
 		myLock.unlock();
 	}
 
 }
 
 class MyCount {
-	private String oid;// ÕÊºÅ
-	private int cash;// Óà¶î
+	private String oid;// å¸å·
+	private int cash;// ä½™é¢
 
 	MyCount(String oid, int cash) {
 		this.oid = oid;

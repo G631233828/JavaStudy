@@ -18,7 +18,7 @@ public class Client {
 	
 	
 	public static void main(String[] args) throws InterruptedException {
-		EventLoopGroup group = new NioEventLoopGroup();//定义一个客户端的接收通道
+		EventLoopGroup group = new NioEventLoopGroup();//瀹氫箟涓�涓鎴风鐨勬帴鏀堕�氶亾
 		Bootstrap b = new Bootstrap();
 		
 		b.group(group).channel(NioSocketChannel.class)

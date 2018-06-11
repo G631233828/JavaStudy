@@ -11,7 +11,7 @@ import javax.jms.TextMessage;
 
 import org.apache.activemq.ActiveMQXAConnectionFactory;
 
-public class ÐÂÎÅ {
+public class æ–°é—» {
 	
 	
 	private ConnectionFactory connectionFactory;
@@ -26,7 +26,7 @@ public class ÐÂÎÅ {
 	
 	private MessageProducer messageProducer;
 
-	public ÐÂÎÅ(){
+	public æ–°é—»(){
 		try {
 			this.connectionFactory = new ActiveMQXAConnectionFactory("admin", "admin", "tcp://localhost:61616");
 			this.connection = this.connectionFactory.createConnection();
@@ -44,7 +44,7 @@ public void sendMessage(){
 
 	try {
 		destination = session.createTopic("topic1");
-		textMessage = session.createTextMessage("ÄÚÈÝ¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£");
+		textMessage = session.createTextMessage("å†…å®¹ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚");
 		this.messageProducer.send(destination, textMessage);
 		
 	} catch (JMSException e) {
@@ -55,7 +55,7 @@ public void sendMessage(){
 }
 	
 public static void main(String[] args) {
-	ÐÂÎÅ x= new ÐÂÎÅ();
+	æ–°é—» x= new æ–°é—»();
 	x.sendMessage();
 }
 	

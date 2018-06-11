@@ -7,7 +7,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-public class Socket¿Í»§¶ËÓë·şÎñ¶Ë {
+public class Socketå®¢æˆ·ç«¯ä¸æœåŠ¡ç«¯ {
 
 	public static void main(String[] args) {
 
@@ -22,12 +22,12 @@ class SocketClient {
 	
 	public static void startClient() throws UnknownHostException, IOException{
 		
-		//´´½¨socket
+		//åˆ›å»ºsocket
 		Socket socket = new Socket("192.168.1.171", 8888);
-		//·¢ËÍÊı¾İ
+		//å‘é€æ•°æ®
 		OutputStream out = socket.getOutputStream();
 		
-		byte[] msg = "ÄãºÃSocket".getBytes();
+		byte[] msg = "ä½ å¥½Socket".getBytes();
 		
 		out.write(msg);
 		

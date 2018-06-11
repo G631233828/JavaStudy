@@ -1,4 +1,4 @@
-package com.java.TCP²ğ°üÕ³°ü;
+package com.java.TCPæ‹†åŒ…ç²˜åŒ…;
 
 
 import io.netty.bootstrap.ServerBootstrap;
@@ -20,19 +20,19 @@ public class Server {
 	}
 
 	public void bind(int port) throws InterruptedException {
-		// ÅäÖÃNIOÏß³Ì×é
+		// é…ç½®NIOçº¿ç¨‹ç»„
 		EventLoopGroup bossGroup = new NioEventLoopGroup();
 		EventLoopGroup workerGroup = new NioEventLoopGroup();
 		try {
-			// Æô¶¯·şÎñÆ÷¸¨ÖúÆô¶¯ÀàÅäÖÃ
+			// å¯åŠ¨æœåŠ¡å™¨è¾…åŠ©å¯åŠ¨ç±»é…ç½®
 			ServerBootstrap b = new ServerBootstrap();
 			b.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class)
 					.handler(new LoggingHandler(LogLevel.INFO)).childHandler(new ChildChannelHandler())
-					.option(ChannelOption.SO_BACKLOG, 1024)// ÉèÖÃTCP»º³åÇø
+					.option(ChannelOption.SO_BACKLOG, 1024)// è®¾ç½®TCPç¼“å†²åŒº
 					.childOption(ChannelOption.SO_KEEPALIVE, true);
-			// °ó¶¨¶Ë¿Ú£¬Í¬²½µÈ´ı°ó¶¨³É¹¦
+			// ç»‘å®šç«¯å£ï¼ŒåŒæ­¥ç­‰å¾…ç»‘å®šæˆåŠŸ
 			ChannelFuture f = b.bind(port).sync();
-			// µÈµ½·şÎñÆ÷¶Ë¼àÌı¶Ë¿Ú¹Ø±Õ
+			// ç­‰åˆ°æœåŠ¡å™¨ç«¯ç›‘å¬ç«¯å£å…³é—­
 			f.channel().closeFuture().sync();
 		} finally {
 			workerGroup.shutdownGracefully();
@@ -41,16 +41,16 @@ public class Server {
 	}
 
 	/**
-	 * ÍøÂçÊÂ¼ş´¦ÀíÆ÷
+	 * ç½‘ç»œäº‹ä»¶å¤„ç†å™¨
 	 */
 	private class ChildChannelHandler extends ChannelInitializer<SocketChannel> {
 
 		@Override
 		protected void initChannel(SocketChannel ch) throws Exception {
-			// Ìí¼Ó×Ô¶¨ÒåµÄĞ­ÒéµÄ±àÂë¹¤¾ß
+			// æ·»åŠ è‡ªå®šä¹‰çš„åè®®çš„ç¼–ç å·¥å…·
 			ch.pipeline().addLast(new SmartCarEncoder());
 			ch.pipeline().addLast(new SmartCarDecoder());
-			// ´¦ÀíÍøÂçIO
+			// å¤„ç†ç½‘ç»œIO
 			ch.pipeline().addLast(new ServerHandler());
 			
 			

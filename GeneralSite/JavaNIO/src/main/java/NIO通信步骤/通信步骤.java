@@ -1,20 +1,20 @@
- package NIOÍ¨ÐÅ²½Öè;
+ package NIOé€šä¿¡æ­¥éª¤;
 
-public class Í¨ÐÅ²½Öè {
+public class é€šä¿¡æ­¥éª¤ {
 
 	
 	/**
-	 * ¹ØÓÚNIOµÄÍ¨ÐÅ²½Öè
+	 * å…³äºŽNIOçš„é€šä¿¡æ­¥éª¤
 	 * @param args
-	 * 1.´´½¨ServerSocketChannel£¬ÎªËüÅäÖÃ·Ç×èÈûÄ£Ê½
-	 * 2.°ó¶¨¼àÌý£¬ÅäÖÃTCP²ÎÊý£¬Â¼Èëbacklog´óÐ¡µÈ
-	 * 3.´´½¨Ò»¸ö¶ÀÁ¢µÄIOÏß³Ì£¬ÓÃÓÚÂÖÑ¯¶àÂ·¸´ÓÃÆ÷Selector
-	 * 4.´´½¨Selector£¬½«Ö®Ç°´´½¨µÄServerSocketChannel×¢²áµ½SelectorÉÏ£¬²¢ÇÒÉèÖÃ¼àÌý±êÊ¶Î»SelectionKey.ACCEPT
-	 * 5.Æô¶¯IOÏß³Ì£¬ÔÚÑ­»·ÌåÖÐÖ´ÐÐSelector.select()·½·¨£¬ÂÖÑ¯¾ÍÐ÷µÄÍ¨µÀ
-	 * 6.µ±ÂÖÑ¯µ½´¦ÓÚ¾ÍÐ÷µÄÍ¨µÀÊ±£¬ÐèÒª½øÐÐÅÐ¶Ï²Ù×÷Î»£¬Èç¹ûÊÇACCEPT×´Ì¬£¬ËµÃ÷ÊÇÐÂµÄ¿Í»§¶Ë½ÓÈë£¬Ôòµ÷ÓÃaccept·½·¨½ÓÊÜÐÂµÄ¿Í»§¶Ë
-	 * 7.ÉèÖÃÐÂ½ÓÈë¿Í»§¶ËµÄÒ»Ð©²ÎÊý£¬Èç·Ç×èÈû£¬²¢½«ÆäÍ¨µÀ¼ÌÐø×¢²áµ½SelectorÖ®ÖÐ£¬ÉèÖÃ¼àÌý±êÊ¶Î»µÈ
-	 * 8.Èç¹ûÂÖÑ¯µÄÍ¨µÀ²Ù×÷Î»ÊÇREAD£¬Ôò½øÐÐ¶ÁÈ¡£¬¹¹ÔìBuffer¶ÔÏóµÈ
-	 * 9.¸üÏ¸½ÚµÄ»¹ÓÐÊý¾ÝÃ»·¨ËÍÍê³É¼ÌÐø·¢ËÍµÄÎÊÌâ¡£¡£
+	 * 1.åˆ›å»ºServerSocketChannelï¼Œä¸ºå®ƒé…ç½®éžé˜»å¡žæ¨¡å¼
+	 * 2.ç»‘å®šç›‘å¬ï¼Œé…ç½®TCPå‚æ•°ï¼Œå½•å…¥backlogå¤§å°ç­‰
+	 * 3.åˆ›å»ºä¸€ä¸ªç‹¬ç«‹çš„IOçº¿ç¨‹ï¼Œç”¨äºŽè½®è¯¢å¤šè·¯å¤ç”¨å™¨Selector
+	 * 4.åˆ›å»ºSelectorï¼Œå°†ä¹‹å‰åˆ›å»ºçš„ServerSocketChannelæ³¨å†Œåˆ°Selectorä¸Šï¼Œå¹¶ä¸”è®¾ç½®ç›‘å¬æ ‡è¯†ä½SelectionKey.ACCEPT
+	 * 5.å¯åŠ¨IOçº¿ç¨‹ï¼Œåœ¨å¾ªçŽ¯ä½“ä¸­æ‰§è¡ŒSelector.select()æ–¹æ³•ï¼Œè½®è¯¢å°±ç»ªçš„é€šé“
+	 * 6.å½“è½®è¯¢åˆ°å¤„äºŽå°±ç»ªçš„é€šé“æ—¶ï¼Œéœ€è¦è¿›è¡Œåˆ¤æ–­æ“ä½œä½ï¼Œå¦‚æžœæ˜¯ACCEPTçŠ¶æ€ï¼Œè¯´æ˜Žæ˜¯æ–°çš„å®¢æˆ·ç«¯æŽ¥å…¥ï¼Œåˆ™è°ƒç”¨acceptæ–¹æ³•æŽ¥å—æ–°çš„å®¢æˆ·ç«¯
+	 * 7.è®¾ç½®æ–°æŽ¥å…¥å®¢æˆ·ç«¯çš„ä¸€äº›å‚æ•°ï¼Œå¦‚éžé˜»å¡žï¼Œå¹¶å°†å…¶é€šé“ç»§ç»­æ³¨å†Œåˆ°Selectorä¹‹ä¸­ï¼Œè®¾ç½®ç›‘å¬æ ‡è¯†ä½ç­‰
+	 * 8.å¦‚æžœè½®è¯¢çš„é€šé“æ“ä½œä½æ˜¯READï¼Œåˆ™è¿›è¡Œè¯»å–ï¼Œæž„é€ Bufferå¯¹è±¡ç­‰
+	 * 9.æ›´ç»†èŠ‚çš„è¿˜æœ‰æ•°æ®æ²¡æ³•é€å®Œæˆç»§ç»­å‘é€çš„é—®é¢˜ã€‚ã€‚
 	 * 
 	 * 
 	 */

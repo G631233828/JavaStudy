@@ -1,4 +1,4 @@
-package NettyÎÄ¼ş·şÎñÆ÷;
+package Nettyæ–‡ä»¶æœåŠ¡å™¨;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -35,7 +35,7 @@ public class HttpFileServer {
 					});
 
 			ChannelFuture f = b.bind("localhost", port).sync();
-			System.out.println("HTTP ÎÄ¼ş·şÎñÆ÷Æô¶¯, µØÖ·ÊÇ£º " + "http://localhost:" + port + url);
+			System.out.println("HTTP æ–‡ä»¶æœåŠ¡å™¨å¯åŠ¨, åœ°å€æ˜¯ï¼š " + "http://localhost:" + port + url);
 			f.channel().closeFuture().sync();
 
 		} finally {

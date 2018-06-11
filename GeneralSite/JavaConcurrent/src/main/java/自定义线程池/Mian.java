@@ -1,4 +1,4 @@
-package ×Ô¶¨ÒåÏß³Ì³Ø;
+package è‡ªå®šä¹‰çº¿ç¨‹æ± ;
 
 public class Mian {
 
@@ -22,7 +22,7 @@ public class Mian {
 		
 		long end = System.currentTimeMillis();
 		
-		System.out.println("ºÄÊ±£º"+(end-start));
+		System.out.println("è€—æ—¶ï¼š"+(end-start));
 		
 
 	}

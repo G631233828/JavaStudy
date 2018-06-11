@@ -1,4 +1,4 @@
-package FutureÄ£Ê½;
+package Futureæ¨¡å¼;
 
 public class FutureData  implements Data{
 	
@@ -8,19 +8,19 @@ public class FutureData  implements Data{
 	private boolean isReady = false;
 
 	public synchronized void setRealData(RealData realData) {
-		//Èç¹ûÒÑ¾­×°ÔØ·´±È£¬Ö±½Ó·µ»Ø
+		//å¦‚æœå·²ç»è£…è½½åæ¯”ï¼Œç›´æ¥è¿”å›
 		if(isReady){
 			return;
 		}
-		//Èç¹ûÃÀ×±×Ó°¡£¬ ½øĞĞ×°ÔØÕæÊµ¶ÔÏó
+		//å¦‚æœç¾å¦†å­å•Šï¼Œ è¿›è¡Œè£…è½½çœŸå®å¯¹è±¡
 		this.realData = realData;
 		isReady = true;
-		//½øĞĞÍ¨Öª
+		//è¿›è¡Œé€šçŸ¥
 		notify();
 	}
 
 	public synchronized String getRequest() {
-		//Èç¹ûÃ»×°ÔØºÃ£¬³ÌĞò¾ÍÒ»Ö±´¦ÓÚ×èÈû×´Ì¬
+		//å¦‚æœæ²¡è£…è½½å¥½ï¼Œç¨‹åºå°±ä¸€ç›´å¤„äºé˜»å¡çŠ¶æ€
 		while(!isReady){
 			try{
 				wait();
@@ -28,7 +28,7 @@ public class FutureData  implements Data{
 				e.printStackTrace();
 			}
 		}
-		//×°ÔØºÃÖ±½Ó»ñÈ¡Êı¾İ¼´¿É
+		//è£…è½½å¥½ç›´æ¥è·å–æ•°æ®å³å¯
 		return this.realData.getRequest();
 		
 		

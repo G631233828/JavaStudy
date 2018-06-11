@@ -1,4 +1,4 @@
-package com.java.NettyEcho·şÎñÆ÷;
+package com.java.NettyEchoæœåŠ¡å™¨;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBuf;
@@ -35,7 +35,7 @@ public class EchoClient {
 				/*			ByteBuf delimiter = Unpooled.copiedBuffer("$_".getBytes());
 							ch.pipeline().addLast(new DelimiterBasedFrameDecoder(1024, delimiter));*/
 							
-							//FixedLengthFrameDecoder¹Ì¶¨³¤¶È½âÂëÆ÷£¬ÄÜ¹»°´ÕÕÖ¸¶¨µÄ³¤¶È¶ÔÏûÏ¢½øĞĞ×Ô¶¯½âÂë
+							//FixedLengthFrameDecoderå›ºå®šé•¿åº¦è§£ç å™¨ï¼Œèƒ½å¤ŸæŒ‰ç…§æŒ‡å®šçš„é•¿åº¦å¯¹æ¶ˆæ¯è¿›è¡Œè‡ªåŠ¨è§£ç 
 							ch.pipeline().addLast(new FixedLengthFrameDecoder(20));
 							ch.pipeline().addLast(new StringDecoder());
 							ch.pipeline().addLast(new EchoClientHandler());

@@ -38,11 +38,11 @@ public class WebsoketServerHandler extends SimpleChannelInboundHandler<Object> {
 	@Override
 	protected void messageReceived(ChannelHandlerContext ctx, Object msg) throws Exception {
 		
-		//´«Í³µÄhttp½ÓÈë
+		//ä¼ ç»Ÿçš„httpæ¥å…¥
 		if(msg instanceof FullHttpRequest){
 			handleHttpRequest(ctx, (FullHttpRequest)msg);;
 		}
-		//webSocket½ÓÈë
+		//webSocketæ¥å…¥
 		else if(msg instanceof WebSocketFrame){
 			handleWebSocketFram(ctx,(WebSocketFrame)msg);
 		}
@@ -62,7 +62,7 @@ public class WebsoketServerHandler extends SimpleChannelInboundHandler<Object> {
 	
 	
 	private void handleWebSocketFram(ChannelHandlerContext ctx, WebSocketFrame msg) {
-		//ÅĞ¶ÏÊÇ·ñ¹Ø±ÕÁ´Â·µÄÖ¸Áî
+		//åˆ¤æ–­æ˜¯å¦å…³é—­é“¾è·¯çš„æŒ‡ä»¤
 		if(msg instanceof CloseWebSocketFrame){
 			handshaker.close(ctx.channel(), (CloseWebSocketFrame)msg.retain());
 			return;
@@ -71,7 +71,7 @@ public class WebsoketServerHandler extends SimpleChannelInboundHandler<Object> {
 			ctx.channel().write(new PongWebSocketFrame(msg.content().retain()));
 			return;
 		}
-		//±¾Àı³ÌÖ»Ö§³ÖÎÄ±¾ÏûÏ¢£¬²»Ö§³Ö¶ş½øÖÆÏûÏ¢
+		//æœ¬ä¾‹ç¨‹åªæ”¯æŒæ–‡æœ¬æ¶ˆæ¯ï¼Œä¸æ”¯æŒäºŒè¿›åˆ¶æ¶ˆæ¯
 		if(!(msg instanceof TextWebSocketFrame)){
 			throw new UnsupportedOperationException(String.format("%s frame types not supported", msg.getClass().getName()));
 		}
@@ -79,7 +79,7 @@ public class WebsoketServerHandler extends SimpleChannelInboundHandler<Object> {
 		if(logger.isLoggable(Level.FINE)){
 			logger.fine(String.format("%s received %s",ctx.channel(),request));
 		}
-		ctx.channel().write(new TextWebSocketFrame(request+",»¶Ó­Ê¹ÓÃ Netty WebSocket·şÎñ,ÏÖÔÚÊ±¿Ì£º"+new java.util.Date().toString()));
+		ctx.channel().write(new TextWebSocketFrame(request+",æ¬¢è¿ä½¿ç”¨ Netty WebSocketæœåŠ¡,ç°åœ¨æ—¶åˆ»ï¼š"+new java.util.Date().toString()));
 		
 	}
 
@@ -89,7 +89,7 @@ public class WebsoketServerHandler extends SimpleChannelInboundHandler<Object> {
 
 	private void handleHttpRequest(ChannelHandlerContext ctx,FullHttpRequest req){
 		
-		//Èç¹ûHTTP½âÂëÊ§°Ü·µ»ØHTTPÒì³£
+		//å¦‚æœHTTPè§£ç å¤±è´¥è¿”å›HTTPå¼‚å¸¸
 		if(!req.decoderResult().isSuccess()||(!"websocket".equals(req.headers().get("Upgrade")))){
 			sendHttpResponse(ctx,req,new DefaultFullHttpResponse(HTTP_1_1,BAD_REQUEST));
 			return;
@@ -113,7 +113,7 @@ public class WebsoketServerHandler extends SimpleChannelInboundHandler<Object> {
 
 	private void sendHttpResponse(ChannelHandlerContext ctx, FullHttpRequest req,
 			DefaultFullHttpResponse res) {
-		//·µ»ØÓ¦´ğ¸ø¿Í»§¶Ë
+		//è¿”å›åº”ç­”ç»™å®¢æˆ·ç«¯
 		if(res.status().code()!=200){
 			ByteBuf buf = Unpooled.copiedBuffer(res.status().toString(),CharsetUtil.UTF_8);
 			res.content().writeBytes(buf);
@@ -121,7 +121,7 @@ public class WebsoketServerHandler extends SimpleChannelInboundHandler<Object> {
 			setContentLength(res,res.content().readableBytes());
 		}
 		
-		//Èç¹ûÊÇ·ÇKeep-Alive¹Ø±ÕÁ¬½Ó
+		//å¦‚æœæ˜¯éKeep-Aliveå…³é—­è¿æ¥
 		ChannelFuture  f = ctx.channel().writeAndFlush(res);
 		if(!isKeepAlive(req)||res.status().code()!=200){
 			f.addListener(ChannelFutureListener.CLOSE);

@@ -1,4 +1,5 @@
-package com.nio.Î±Òì²½IOÊ±¼ä·şÎñÆ÷;
+package com.nio.ä¼ªå¼‚æ­¥IOæ—¶é—´æœåŠ¡å™¨;
+
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ExecutorService;
@@ -7,13 +8,13 @@ import java.util.concurrent.TimeUnit;
 
 public class TimeServerHandlerExecutePool {
 
-	// ¶¨ÒåÏß³Ì³Ø
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ß³Ì³ï¿½
 	private ExecutorService executor;
 	
 	/**
 	 * 
-	 * @param maxPoolSize  ×î´óÏß³ÌÊı
-	 * @param queueSize    ¶ÓÁĞ´óĞ¡
+	 * @param maxPoolSize  ï¿½ï¿½ï¿½ï¿½ß³ï¿½ï¿½ï¿½
+	 * @param queueSize    ï¿½ï¿½ï¿½Ğ´ï¿½Ğ¡
 	 */
 	public TimeServerHandlerExecutePool(int maxPoolSize, int queueSize) {
 		executor = new ThreadPoolExecutor(Runtime.getRuntime().availableProcessors(), maxPoolSize, 120L,

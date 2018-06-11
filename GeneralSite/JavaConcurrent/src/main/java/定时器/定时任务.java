@@ -1,4 +1,4 @@
-package ¶¨Ê±Æ÷;
+package å®šæ—¶å™¨;
 
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class ¶¨Ê±ÈÎÎñ {
+public class å®šæ—¶ä»»åŠ¡ {
 
 	public static void main(String[] args) {
 
@@ -39,7 +39,7 @@ class timerTask extends TimerTask {
 	@Override
 	public void run() {
 		timeMinus.flag = false;
-		System.out.println("¶¨Ê±Æ÷Ö´ĞĞÁË£¡");
+		System.out.println("å®šæ—¶å™¨æ‰§è¡Œäº†ï¼");
 		return; 
 	}
 
@@ -56,7 +56,7 @@ class timeMinus implements Runnable {
 
 			String d = s.format(new Date());
 
-			System.out.println("µ±Ç°Ê±¼ä" + d);
+			System.out.println("å½“å‰æ—¶é—´" + d);
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {

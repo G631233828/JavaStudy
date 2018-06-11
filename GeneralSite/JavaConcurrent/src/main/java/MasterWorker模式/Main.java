@@ -1,25 +1,25 @@
-package MasterWorkerÄ£Ê½;
+package MasterWorkeræ¨¡å¼;
 
 import java.util.Random;
 
 public class Main {
 	public static void main(String[] args) {
-		// Êµ¼Ê¿ª·¢ÖĞ¶àÉÙ¸öÏß³Ì×îºÃĞ´³ÉRuntime.getRuntime().availableProcessors()
+		// å®é™…å¼€å‘ä¸­å¤šå°‘ä¸ªçº¿ç¨‹æœ€å¥½å†™æˆRuntime.getRuntime().availableProcessors()
 		
 		Master master = new Master(new Worker(), 10);
 		
 		Random random = new Random();
 		
-		//Ö´ĞĞ100¸öÑ­»·´´½¨taskÈÎÎñ·Åµ½masterµÄtaskQueueÈÎÎñ¼¯ºÏÖĞ
+		//æ‰§è¡Œ100ä¸ªå¾ªç¯åˆ›å»ºtaskä»»åŠ¡æ”¾åˆ°masterçš„taskQueueä»»åŠ¡é›†åˆä¸­
 		for (int i = 0; i <= 1; i++) {
 			Task task = new Task();
 			task.setId(i);
-			task.setName("ÈÎÎñ" + i);
+			task.setName("ä»»åŠ¡" + i);
 			task.setPrice(random.nextInt(1000));
 			master.submit(task);
 		}
 		
-		//Ö´ĞĞÈÎÎñ
+		//æ‰§è¡Œä»»åŠ¡
 		master.execute();
 		
 		
@@ -28,7 +28,7 @@ public class Main {
 			if (master.isComplete()) {
 				long end = System.currentTimeMillis() - start;
 				int ret = master.getResult();
-				System.out.println("¼ÆËã½á¹û:" + ret + ",Ö´ĞĞºÄÊ±:" + end);
+				System.out.println("è®¡ç®—ç»“æœ:" + ret + ",æ‰§è¡Œè€—æ—¶:" + end);
 				break;
 			}
 		}

@@ -17,7 +17,7 @@ public class Client {
 		EventLoopGroup cGroup = new NioEventLoopGroup();		
 		Bootstrap b = new Bootstrap();		
 		b.group(cGroup)
-		//.option(ChannelOption.SO_TIMEOUT, 20000)³¬Ê±
+		//.option(ChannelOption.SO_TIMEOUT, 20000)è¶…æ—¶
 		.channel(NioSocketChannel.class)
 		.handler(new ChannelInitializer<SocketChannel>() {
 			@Override

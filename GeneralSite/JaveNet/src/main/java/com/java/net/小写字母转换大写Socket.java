@@ -8,7 +8,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.Scanner;
 
-public class Ğ¡Ğ´×ÖÄ¸×ª»»´óĞ´Socket {
+public class å°å†™å­—æ¯è½¬æ¢å¤§å†™Socket {
 
 }
 
@@ -16,7 +16,7 @@ class InputSocket {
 
 	public static void main(String[] args) throws UnknownHostException, IOException {
 
-		// ´´½¨socketÁ¬½Ó
+		// åˆ›å»ºsocketè¿æ¥
 		Socket s = new Socket("192.168.1.171", 1000);
 
 		OutputStream out = s.getOutputStream();
@@ -35,7 +35,7 @@ class InputSocket {
 			out.write(input.nextLine().getBytes());
 			
 			
-			InputStream in = s.getInputStream();// »ñÈ¡ÊäÈëÁ÷
+			InputStream in = s.getInputStream();// è·å–è¾“å…¥æµ
 
 			byte[] b = new byte[1024];
 

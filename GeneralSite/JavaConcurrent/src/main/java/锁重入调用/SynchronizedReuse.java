@@ -1,4 +1,4 @@
-package ËøÖØÈëµ÷ÓÃ;
+package é”é‡å…¥è°ƒç”¨;
 
 public class SynchronizedReuse {
 	

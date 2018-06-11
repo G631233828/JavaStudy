@@ -1,9 +1,9 @@
-package ¶¨Ê±Æ÷;
+package å®šæ—¶å™¨;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class ¶¨Ê±Õ¨µ¯ {
+public class å®šæ—¶ç‚¸å¼¹ {
 	
 	public static void main(String[] args) throws InterruptedException {
 		
@@ -11,7 +11,7 @@ public class ¶¨Ê±Õ¨µ¯ {
 		
 		for(int i=0;i<time;time--){
 			
-			System.out.println("µ¹Êý¼ÆÊ±£º"+time+"Ãë");
+			System.out.println("å€’æ•°è®¡æ—¶ï¼š"+time+"ç§’");
 			Thread.sleep(1000);
 			
 		}
@@ -25,9 +25,9 @@ class Boom extends TimerTask{
 
 	public void run() {
 		
-		System.out.println("BoomÕ¨ÁË£¡");
+		System.out.println("Boomç‚¸äº†ï¼");
 		
-		//Õ¨ÁËÓÖÕ¨
+		//ç‚¸äº†åˆç‚¸
 		new Timer().schedule(new Boom(), 5000, 1000);
 		
 	}

@@ -1,4 +1,4 @@
-package com.java.NettyÊ±¼ä·şÎñÆ÷TCPÕ³°ü;
+package com.java.Nettyæ—¶é—´æœåŠ¡å™¨TCPç²˜åŒ…;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBuf;
@@ -35,7 +35,7 @@ public class TimeClient {
 				}
 			});
 
-			// ·¢ÆğÒì²½Á¬½Ó²Ù×÷
+			// å‘èµ·å¼‚æ­¥è¿æ¥æ“ä½œ
 			ChannelFuture f = b.connect(host, port).sync();
 			
 			
@@ -49,7 +49,7 @@ public class TimeClient {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			// ÓÅÑÅÍË³ö
+			// ä¼˜é›…é€€å‡º
 			cGroup.shutdownGracefully();
 		}
 

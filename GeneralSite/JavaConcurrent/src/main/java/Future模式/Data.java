@@ -1,4 +1,4 @@
-package Futureģʽ;
+package Future模式;
 
 public interface Data {
 	

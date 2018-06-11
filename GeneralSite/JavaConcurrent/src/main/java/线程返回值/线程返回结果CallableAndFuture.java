@@ -1,4 +1,4 @@
-package Ïß³Ì·µ»ØÖµ;
+package çº¿ç¨‹è¿”å›å€¼;
 
 import java.util.Random;
 import java.util.concurrent.Callable;
@@ -11,27 +11,27 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-public class Ïß³Ì·µ»Ø½á¹ûCallableAndFuture {
+public class çº¿ç¨‹è¿”å›ç»“æœCallableAndFuture {
 
 	public static void main(String[] args) throws TimeoutException {
 		
-		//´´½¨Ò»¸öµ¥ÊµÀıµÄÏß³Ì
+		//åˆ›å»ºä¸€ä¸ªå•å®ä¾‹çš„çº¿ç¨‹
 		ExecutorService e = Executors.newSingleThreadScheduledExecutor();
-		//Ê¹ÓÃFutureÀ´½ÓÊÕ·µ»ØÖµ
+		//ä½¿ç”¨Futureæ¥æ¥æ”¶è¿”å›å€¼
 		Future<String> f=
-		//´´½¨Ò»¸ö¿ÉÒÔ½øĞĞ·µ»ØÊı¾İµÄÏß³Ì
+		//åˆ›å»ºä¸€ä¸ªå¯ä»¥è¿›è¡Œè¿”å›æ•°æ®çš„çº¿ç¨‹
 		e.submit(new Callable<String>() {
 
 			public String call() throws Exception {
 				Thread.sleep(100);
-				return "ÄãºÃ£¬Ïß³Ì£¡";
+				return "ä½ å¥½ï¼Œçº¿ç¨‹ï¼";
 			}
 		});
 		
-		System.out.println("ÕıÔÚµÈ´ıÏß³Ì·µ»Ø½á¹û...");
+		System.out.println("æ­£åœ¨ç­‰å¾…çº¿ç¨‹è¿”å›ç»“æœ...");
 		try {
-			//System.out.println("ÒªÇóÏÖÔÚÔÚ1ÃëÄÚ·µ»ØÊı¾İ£º"+f.get(1, TimeUnit.SECONDS));
-			System.out.println("Ïß³Ì·µ»Ø½á¹û£º"+f.get());
+			//System.out.println("è¦æ±‚ç°åœ¨åœ¨1ç§’å†…è¿”å›æ•°æ®ï¼š"+f.get(1, TimeUnit.SECONDS));
+			System.out.println("çº¿ç¨‹è¿”å›ç»“æœï¼š"+f.get());
 		} catch (InterruptedException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -41,9 +41,9 @@ public class Ïß³Ì·µ»Ø½á¹ûCallableAndFuture {
 		}
 		
 		
-		//´´½¨10¸öÏß³Ì³ØÀ´Ö´ĞĞ
+		//åˆ›å»º10ä¸ªçº¿ç¨‹æ± æ¥æ‰§è¡Œ
 		ExecutorService e2=Executors.newFixedThreadPool(10);
-		//Ö´ĞĞ¶à¸öÏß³Ì²¢ÇÒ·µ»ØÖµ
+		//æ‰§è¡Œå¤šä¸ªçº¿ç¨‹å¹¶ä¸”è¿”å›å€¼
 		CompletionService<Integer> c = new ExecutorCompletionService<Integer>(e2);
 		
 		for(int i=0;i<10;i++){

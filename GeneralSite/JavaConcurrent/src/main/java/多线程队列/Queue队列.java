@@ -1,24 +1,24 @@
-package ¶àÏß³Ì¶ÓÁĞ;
+package å¤šçº¿ç¨‹é˜Ÿåˆ—;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
-public class Queue¶ÓÁĞ {
+public class Queueé˜Ÿåˆ— {
 
 	public static void main(String[] args) {
 
 		final BlockingQueue queue = new ArrayBlockingQueue(3);
 
-			// ´´½¨Á½¸öÏß³ÌÖ´ĞĞ¶Ô¶ÓÁĞµÄ²Ù×÷
+			// åˆ›å»ºä¸¤ä¸ªçº¿ç¨‹æ‰§è¡Œå¯¹é˜Ÿåˆ—çš„æ“ä½œ
 			new Thread(new Runnable() {
 
 				public void run() {
 					while (true) {
 						try {
 							Thread.sleep((long)Math.random()*10001);
-							System.out.println(Thread.currentThread().getName()+"ÎÒÒª×¼±¸Íù¶ÓÁĞÀïÃæ·ÅÊı¾İÁË");
+							System.out.println(Thread.currentThread().getName()+"æˆ‘è¦å‡†å¤‡å¾€é˜Ÿåˆ—é‡Œé¢æ”¾æ•°æ®äº†");
 							queue.put(1);
-							System.out.println(Thread.currentThread().getName()+"ÒÑ¾­³É¹¦Ïò¶ÓÁĞÖĞ·ÅÁËÒ»¸öÊı¾İ£¬µ±Ç°¶ÓÁĞÖĞÒÑ¾­ÓĞ" + queue.size() + "¸öÊı¾İ");
+							System.out.println(Thread.currentThread().getName()+"å·²ç»æˆåŠŸå‘é˜Ÿåˆ—ä¸­æ”¾äº†ä¸€ä¸ªæ•°æ®ï¼Œå½“å‰é˜Ÿåˆ—ä¸­å·²ç»æœ‰" + queue.size() + "ä¸ªæ•°æ®");
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -34,9 +34,9 @@ public class Queue¶ÓÁĞ {
 					while (true) {
 							try {
 								Thread.sleep(100);
-								System.out.println(Thread.currentThread().getName()+"ÎÒÒª´Ó¶ÓÁĞÖĞ»ñÈ¡Êı¾İÁË");
+								System.out.println(Thread.currentThread().getName()+"æˆ‘è¦ä»é˜Ÿåˆ—ä¸­è·å–æ•°æ®äº†");
 								queue.take();
-								System.out.println(Thread.currentThread().getName()+"ÒÑ¾­³É¹¦Ïò¶ÓÁĞÖĞ»ñÈ¡ÁËÒ»¸öÊı¾İ£¬µ±Ç°¶ÓÁĞÖĞÒÑ¾­ÓĞ" + queue.size() + "¸öÊı¾İ");
+								System.out.println(Thread.currentThread().getName()+"å·²ç»æˆåŠŸå‘é˜Ÿåˆ—ä¸­è·å–äº†ä¸€ä¸ªæ•°æ®ï¼Œå½“å‰é˜Ÿåˆ—ä¸­å·²ç»æœ‰" + queue.size() + "ä¸ªæ•°æ®");
 							} catch (InterruptedException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();

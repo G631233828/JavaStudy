@@ -1,6 +1,6 @@
-package ¶àÏß³Ì·½·¨ºÏ¼¯;
+package å¤šçº¿ç¨‹æ–¹æ³•åˆé›†;
 
-public class Ïß³ÌÔİÍ£Óë¼ÌĞø {
+public class çº¿ç¨‹æš‚åœä¸ç»§ç»­ {
 
 	
 	public static void main(String[] args) throws InterruptedException {
@@ -36,7 +36,7 @@ class MyThread extends Thread{
 
 		while(true){
 			if(MyThread.interrupted()){
-				System.out.println("Ïß³ÌÒÑ¾­ÔİÍ£ÁË¡£¡£¡£¡£");
+				System.out.println("çº¿ç¨‹å·²ç»æš‚åœäº†ã€‚ã€‚ã€‚ã€‚");
 				try {
 					Thread.sleep(2000);
 				} catch (InterruptedException e) {

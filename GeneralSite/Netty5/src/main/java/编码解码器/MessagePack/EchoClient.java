@@ -1,4 +1,4 @@
-package ±àÂë½âÂëÆ÷.MessagePack;
+package ç¼–ç è§£ç å™¨.MessagePack;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
@@ -13,40 +13,40 @@ import io.netty.handler.codec.LengthFieldPrepender;
 
 public class EchoClient {
 	 public void connect(String host, int port, final int sendNumber) throws Exception {
-	        // ÅäÖÃ¿Í»§¶ËNIOÏß³Ì×é
+	        // é…ç½®å®¢æˆ·ç«¯NIOçº¿ç¨‹ç»„
 	        EventLoopGroup group = new NioEventLoopGroup();
 	        try {
 	            Bootstrap b = new Bootstrap();
 	            b.group(group).channel(NioSocketChannel.class)
 	                .option(ChannelOption.TCP_NODELAY, true)
-	                // ÉèÖÃTCPÁ¬½Ó³¬Ê±Ê±¼ä
+	                // è®¾ç½®TCPè¿æ¥è¶…æ—¶æ—¶é—´
 	                .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 3000)
 	                .handler(new ChannelInitializer<SocketChannel>() {
 
 	                    @Override
 	                    protected void initChannel(SocketChannel ch) throws Exception {
-	                    	  // Ìí¼Ó³¤¶È×Ö¶Î½âÂëÆ÷
-	                        // ÔÚMessagePack½âÂëÆ÷Ö®Ç°Ôö¼ÓLengthFieldBasedFrameDecoder£¬ÓÃÓÚ´¦Àí°ë°üÏûÏ¢
-	                        // Ëü»á½âÎöÏûÏ¢Í·²¿µÄ³¤¶È×Ö¶ÎĞÅÏ¢£¬ÕâÑùºóÃæµÄMsgpackDecoder½ÓÊÕµ½µÄÓÀÔ¶ÊÇÕû°üÏûÏ¢
+	                    	  // æ·»åŠ é•¿åº¦å­—æ®µè§£ç å™¨
+	                        // åœ¨MessagePackè§£ç å™¨ä¹‹å‰å¢åŠ LengthFieldBasedFrameDecoderï¼Œç”¨äºå¤„ç†åŠåŒ…æ¶ˆæ¯
+	                        // å®ƒä¼šè§£ææ¶ˆæ¯å¤´éƒ¨çš„é•¿åº¦å­—æ®µä¿¡æ¯ï¼Œè¿™æ ·åé¢çš„MsgpackDecoderæ¥æ”¶åˆ°çš„æ°¸è¿œæ˜¯æ•´åŒ…æ¶ˆæ¯
 	                        ch.pipeline().addLast("frameDecoder", new LengthFieldBasedFrameDecoder(65535, 0, 2, 0, 2));
-	                        // Ìí¼ÓMesspagePack½âÂëÆ÷
+	                        // æ·»åŠ MesspagePackè§£ç å™¨
 	                        ch.pipeline().addLast("msgpack decoder", new MsgpackDecoder());
-	                        // Ìí¼Ó³¤¶È×Ö¶Î±àÂëÆ÷
-	                        // ÔÚMessagePack±àÂëÆ÷Ö®Ç°Ôö¼ÓLengthFieldPrepender£¬Ëü½«ÔÚByteBufÖ®Ç°Ôö¼Ó2¸ö×Ö½ÚµÄÏûÏ¢³¤¶È×Ö¶Î
+	                        // æ·»åŠ é•¿åº¦å­—æ®µç¼–ç å™¨
+	                        // åœ¨MessagePackç¼–ç å™¨ä¹‹å‰å¢åŠ LengthFieldPrependerï¼Œå®ƒå°†åœ¨ByteBufä¹‹å‰å¢åŠ 2ä¸ªå­—èŠ‚çš„æ¶ˆæ¯é•¿åº¦å­—æ®µ
 	                        ch.pipeline().addLast("frameEncoder", new LengthFieldPrepender(2));
-	                        // Ìí¼ÓMessagePack±àÂëÆ÷
+	                        // æ·»åŠ MessagePackç¼–ç å™¨
 	                        ch.pipeline().addLast("msgpack encoder", new MsgpackEncoder());
-	                        // Ìí¼ÓÒµÎñ´¦Àíhandler
+	                        // æ·»åŠ ä¸šåŠ¡å¤„ç†handler
 	                        ch.pipeline().addLast(new EchoClientHandler(sendNumber));
 	                    }
 	                });
-	            // ·¢ÆğÒì²½Á¬½Ó²Ù×÷
+	            // å‘èµ·å¼‚æ­¥è¿æ¥æ“ä½œ
 	            ChannelFuture f = b.connect(host, port).sync();
 
-	            // µÈ´ı¿Í»§¶ËÁ´Â·¹Ø±Õ
+	            // ç­‰å¾…å®¢æˆ·ç«¯é“¾è·¯å…³é—­
 	            f.channel().closeFuture().sync();
 	        } finally {
-	            // ÓÅÑÅÍË³ö£¬ÊÍ·ÅNIOÏß³Ì×é
+	            // ä¼˜é›…é€€å‡ºï¼Œé‡Šæ”¾NIOçº¿ç¨‹ç»„
 	            group.shutdownGracefully();
 	        }
 	    }
@@ -57,7 +57,7 @@ public class EchoClient {
 	            try {
 	                port = Integer.valueOf(port);
 	            } catch (NumberFormatException e) {
-	                // ²ÉÓÃÄ¬ÈÏÖµ
+	                // é‡‡ç”¨é»˜è®¤å€¼
 	            }
 	        }
 	        int sendNumber = 1000;

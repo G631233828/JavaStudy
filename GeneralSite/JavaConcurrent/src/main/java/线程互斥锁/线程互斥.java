@@ -1,10 +1,10 @@
-package Ïß³Ì»¥³âËø;
+package çº¿ç¨‹äº’æ–¥é”;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class Ïß³Ì»¥³â {
-	//Èç¹û²»µ÷ÓÃÏß³Ì°²È«µÄËø»á³öÏÖ½«Á½¸önameÊä³öÔÚÒ»ĞĞÖĞ
+public class çº¿ç¨‹äº’æ–¥ {
+	//å¦‚æœä¸è°ƒç”¨çº¿ç¨‹å®‰å…¨çš„é”ä¼šå‡ºç°å°†ä¸¤ä¸ªnameè¾“å‡ºåœ¨ä¸€è¡Œä¸­
 	public static void main(String[] args) {
 		
 		ExecutorService e =  Executors.newFixedThreadPool(2);
@@ -31,7 +31,7 @@ class  t01 implements Runnable{
 	}
 	
 	public void run() {
-		synchronized (t01.class) {//Ìí¼ÓÍ¬²½
+		synchronized (t01.class) {//æ·»åŠ åŒæ­¥
 			OutPut.out(name);
 		}
 	
@@ -48,7 +48,7 @@ class t02 implements Runnable{
 	
 	public void run() {
 		
-		synchronized (t02.class) {//Ìí¼ÓÍ¬²½
+		synchronized (t02.class) {//æ·»åŠ åŒæ­¥
 			OutPut.out(name);
 		}
 		

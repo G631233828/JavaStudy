@@ -11,7 +11,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.Date;
 
-public class TCPÍ¼Æ¬ÉÏ´«²¢·¢°æ±¾ {
+public class TCPå›¾ç‰‡ä¸Šä¼ å¹¶å‘ç‰ˆæœ¬ {
 	
 	
 	public static void main(String[] args) throws IOException {
@@ -40,7 +40,7 @@ class TCPUploadClientThreads {
 		File f = new File("d://1.iso");
 
 		FileInputStream fis = new FileInputStream(f);
-		// ÉÏ´«Êı¾İ
+		// ä¸Šä¼ æ•°æ®
 		OutputStream out = socket.getOutputStream();
 
 		int len = 0;
@@ -53,10 +53,10 @@ class TCPUploadClientThreads {
 
 		}
 
-		// ¸æËß·şÎñÆ÷ÒÑ¾­Íê³ÉÁËÉÏ´«
+		// å‘Šè¯‰æœåŠ¡å™¨å·²ç»å®Œæˆäº†ä¸Šä¼ 
 		socket.shutdownOutput();
-		// Íê³ÉÉÏ´«
-		// »ñÈ¡·şÎñÆ÷·´À¡
+		// å®Œæˆä¸Šä¼ 
+		// è·å–æœåŠ¡å™¨åé¦ˆ
 		InputStream in = socket.getInputStream();
 
 		byte[] inb = new byte[1024];
@@ -102,7 +102,7 @@ class TCPUploadServerThreads implements Runnable {
 			
 			OutputStream out = s.getOutputStream();
 
-			out.write("ÉÏ´«³É¹¦".getBytes());
+			out.write("ä¸Šä¼ æˆåŠŸ".getBytes());
 			fos.close();
 			out.close();
 			in.close();

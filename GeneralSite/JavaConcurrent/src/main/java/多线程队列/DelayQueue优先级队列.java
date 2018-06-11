@@ -1,11 +1,11 @@
-package ¶àÏß³Ì¶ÓÁĞ;
+package å¤šçº¿ç¨‹é˜Ÿåˆ—;
 
 import java.util.Calendar;
 import java.util.concurrent.DelayQueue;
 import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;
 
-public class DelayQueueÓÅÏÈ¼¶¶ÓÁĞ extends Thread {
+public class DelayQueueä¼˜å…ˆçº§é˜Ÿåˆ— extends Thread {
 	
 
 		final static  DelayQueue<wangba> queue = new DelayQueue<wangba>();
@@ -13,11 +13,11 @@ public class DelayQueueÓÅÏÈ¼¶¶ÓÁĞ extends Thread {
 		 public void onCumputer(Integer id, String name, Integer money) {
 			 wangba w = new wangba(id, name, money);
 		        queue.put(w);
-		        System.out.println("Éí·İÖ¤£º" + id + "ĞÕÃû£º" + name + "ÉÏ»úÊ±¼ä" + money);
+		        System.out.println("èº«ä»½è¯ï¼š" + id + "å§“åï¼š" + name + "ä¸Šæœºæ—¶é—´" + money);
 		    }
 
 		    public void outCumputer(wangba w) {
-		        System.out.println("Éí·İÖ¤£º" + w.getId() + "ĞÕÃû£º" + w.getName() + "ÏÂ»ú");
+		        System.out.println("èº«ä»½è¯ï¼š" + w.getId() + "å§“åï¼š" + w.getName() + "ä¸‹æœº");
 		    }
 
 		    public void run() {
@@ -34,21 +34,21 @@ public class DelayQueueÓÅÏÈ¼¶¶ÓÁĞ extends Thread {
 
 		    public static void main(String[] args) {
 
-		    	DelayQueueÓÅÏÈ¼¶¶ÓÁĞ queueTest = new DelayQueueÓÅÏÈ¼¶¶ÓÁĞ();
-		        System.out.println("Ò»ÈºÈËÈ¥Íø°É¿ª¿¨¡£¡£¡£");
+		    	DelayQueueä¼˜å…ˆçº§é˜Ÿåˆ— queueTest = new DelayQueueä¼˜å…ˆçº§é˜Ÿåˆ—();
+		        System.out.println("ä¸€ç¾¤äººå»ç½‘å§å¼€å¡ã€‚ã€‚ã€‚");
 		        new Thread(queueTest).start();
-		        queueTest.onCumputer(123, "ÕÅÈı", 3);
-		        queueTest.onCumputer(124, "ÀîËÄ", 5);
-		        queueTest.onCumputer(126, "ÍõÎå", 10);
+		        queueTest.onCumputer(123, "å¼ ä¸‰", 3);
+		        queueTest.onCumputer(124, "æå››", 5);
+		        queueTest.onCumputer(126, "ç‹äº”", 10);
 	}
 
 }
 
 class wangba implements Delayed {
 
-	// Éí·İÖ¤ºÅ
+	// èº«ä»½è¯å·
 	private Integer id;
-	// ĞÕÃû
+	// å§“å
 	private String name;
 
 	public Integer getId() {
@@ -67,7 +67,7 @@ class wangba implements Delayed {
 		this.name = name;
 	}
 
-	// ÏÂ»úÊ±¼ä Ò»ÔªÒ»Ãë
+	// ä¸‹æœºæ—¶é—´ ä¸€å…ƒä¸€ç§’
 	private long endTime;
 
 	public wangba(Integer id, String name, Integer money) {
@@ -76,13 +76,13 @@ class wangba implements Delayed {
 		this.endTime = money * 1000 + System.currentTimeMillis();
 	}
 
-	// ÉèÖÃÓÅÏÈ¼¶
+	// è®¾ç½®ä¼˜å…ˆçº§
 	public int compareTo(Delayed o) {
 		wangba c = (wangba) o;
 		return this.endTime - c.endTime > 0 ? 1 : (this.endTime - c.endTime < 0 ? -1 : 0);
 	}
 
-	// ÅĞ¶Ï¹ıÆÚÊ±¼ä
+	// åˆ¤æ–­è¿‡æœŸæ—¶é—´
 	public long getDelay(TimeUnit unit) {
 
 		return this.endTime - System.currentTimeMillis();

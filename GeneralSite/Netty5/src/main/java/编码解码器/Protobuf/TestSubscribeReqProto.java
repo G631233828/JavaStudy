@@ -1,4 +1,4 @@
-package ±àÂë½âÂëÆ÷.Protobuf;
+package ç¼–ç è§£ç å™¨.Protobuf;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,9 +25,9 @@ public class TestSubscribeReqProto {
 	        builder.setUserName("zhouzhigang");  
 	        builder.setProductName("Netty Book");  
 	        List<String> address=new ArrayList<String>();  
-	        address.add("ºşÄÏ³¤É³");  
-	        address.add("ºşÄÏÖêÖŞ");  
-	        address.add("ºşÄÏÏæÌ¶");  
+	        address.add("æ¹–å—é•¿æ²™");  
+	        address.add("æ¹–å—æ ªæ´²");  
+	        address.add("æ¹–å—æ¹˜æ½­");  
 	        builder.addAllAddress(address);  
 	        return builder.build();  
 	  

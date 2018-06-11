@@ -5,9 +5,9 @@ import javax.jms.JMSException;
 public class main {
 	
 	public static void main(String[] args) {
-		¶©ÔÄÕß1  d1 = new ¶©ÔÄÕß1();
-		¶©ÔÄÕß2  d2 = new ¶©ÔÄÕß2();
-		¶©ÔÄÕß3  d3 = new ¶©ÔÄÕß3();
+		è®¢é˜…è€…1  d1 = new è®¢é˜…è€…1();
+		è®¢é˜…è€…2  d2 = new è®¢é˜…è€…2();
+		è®¢é˜…è€…3  d3 = new è®¢é˜…è€…3();
 		try {
 			d1.receive();
 			d2.receive();

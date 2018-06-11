@@ -1,6 +1,6 @@
-package ¶àÏß³ÌÖÕÖ¹;
+package å¤šçº¿ç¨‹ç»ˆæ­¢;
 
-public class Ê¹ÓÃinterruptÍ£Ö¹Ïß³Ì {
+public class ä½¿ç”¨interruptåœæ­¢çº¿ç¨‹ {
 
 	public static void main(String[] args) {
 
