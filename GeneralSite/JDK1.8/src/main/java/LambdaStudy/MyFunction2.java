@@ -1,4 +1,4 @@
-package Lambda表达式学习;
+package LambdaStudy;
 
 public interface MyFunction2<T, R> {
 

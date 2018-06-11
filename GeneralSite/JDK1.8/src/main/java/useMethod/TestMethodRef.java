@@ -1,4 +1,4 @@
-package 方法引用;
+package useMethod;
 
 import java.io.PrintStream;
 import java.util.Comparator;
@@ -7,10 +7,9 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-
-
-import Lambda表达式学习.Employee;
 import org.junit.Test;
+
+import LambdaStudy.Employee;
 
 /**
  * 

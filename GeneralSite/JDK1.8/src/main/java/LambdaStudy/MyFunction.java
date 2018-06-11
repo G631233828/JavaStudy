@@ -1,4 +1,4 @@
-package Lambda表达式学习;
+package LambdaStudy;
 
 /**
  * 函数式接口需要适应@FunctionalInterface

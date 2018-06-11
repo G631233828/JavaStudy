@@ -1,4 +1,4 @@
-package Lambda表达式学习;
+package LambdaStudy;
 
 public class Employee {
 

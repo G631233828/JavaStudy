@@ -1,4 +1,4 @@
-package 内置的核心函数式接口;
+package functionInterface;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package Lambda表达式学习;
+package LambdaStudy;
 
 import java.util.Arrays;
 import java.util.Collections;
