@@ -1,6 +1,5 @@
 package 多消费者处理订单;
 
-
 import java.util.Random;
 import java.util.concurrent.CountDownLatch;
 

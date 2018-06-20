@@ -154,5 +154,7 @@
 <module>Disruptor</module>
 <module>JDK1.8</module>
 	<module>JVM</module>
+	<module>WeChat</module>
+	<module>Redis</module>
 </modules>
 		</project>
