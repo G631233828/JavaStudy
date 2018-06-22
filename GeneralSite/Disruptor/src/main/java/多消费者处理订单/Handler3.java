@@ -1,7 +1,5 @@
 package 多消费者处理订单;
 
-
-
 import com.lmax.disruptor.EventHandler;
 
 import 模拟交易.Trade;
