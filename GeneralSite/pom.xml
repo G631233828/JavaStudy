@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.general</groupId>
 	<artifactId>GeneralSite</artifactId>
@@ -7,11 +7,13 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
+
+
 			<!-- https://mvnrepository.com/artifact/com.sun.syndication/rome -->
 			<dependency>
 				<groupId>com.sun.syndication</groupId>
@@ -26,7 +28,6 @@
 				<version>1.0</version>
 			</dependency>
 
-
 			<!-- activemq 5.15.3jar -->
 			<!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-all -->
 			<dependency>
@@ -38,7 +39,7 @@
 
 			<!-- 添加netty包 -->
 			<!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
-			<!-- <dependency> <groupId>io.netty</groupId> <artifactId>netty-all</artifactId>
+			<!-- <dependency> <groupId>io.netty</groupId> <artifactId>netty-all</artifactId> 
 				<version>4.1.17.Final</version> </dependency> -->
 			<dependency>
 				<groupId>io.netty</groupId>
@@ -86,7 +87,7 @@
 				<artifactId>jboss-marshalling</artifactId>
 				<version>2.0.5.Final</version>
 			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.jboss.marshalling/jboss-marshalling-serial -->
+
 			<!-- https://mvnrepository.com/artifact/org.jboss.marshalling/jboss-marshalling-serial -->
 			<dependency>
 				<groupId>org.jboss.marshalling</groupId>
@@ -110,51 +111,64 @@
 				<scope>test</scope>
 			</dependency>
 
+			<!-- java使用redis 需要的jar-->
+			<!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
+			<dependency>
+				<groupId>redis.clients</groupId>
+				<artifactId>jedis</artifactId>
+				<version>2.7.2</version>
+			</dependency>
+
+
+
+
+
+
 		</dependencies>
 
 	</dependencyManagement>
 
 
-<build>
+	<build>
 
-	<plugins>
-		<plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-compiler-plugin</artifactId>
-			<version>2.3.1</version>
-			<configuration>
-				<source>1.8</source>
-				<target>1.8</target>
-				<encoding>utf8</encoding>
-			</configuration>
-		</plugin>
-	</plugins>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>utf8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
 
-</build>
-
-
+	</build>
 
 
 
 
 
 
-<modules>
-<module>JaveNet</module>
-<module>JavaConcurrent</module>
-<module>JavaRss</module>
-<module>ActiveMQ</module>
-<module>RabbitMQ</module>
-<module>kafaka</module>
-<module>Netty5</module>
-<module>Algorithm</module>
-<module>JavaNIO</module>
-<module>JavaAIO</module>
-<module>JavaBIO</module>
-<module>Disruptor</module>
-<module>JDK1.8</module>
-	<module>JVM</module>
-	<module>WeChat</module>
-	<module>Redis</module>
-</modules>
-		</project>
+
+
+	<modules>
+		<module>JaveNet</module>
+		<module>JavaConcurrent</module>
+		<module>JavaRss</module>
+		<module>ActiveMQ</module>
+		<module>RabbitMQ</module>
+		<module>kafaka</module>
+		<module>Netty5</module>
+		<module>Algorithm</module>
+		<module>JavaNIO</module>
+		<module>JavaAIO</module>
+		<module>JavaBIO</module>
+		<module>Disruptor</module>
+		<module>JDK1.8</module>
+		<module>JVM</module>
+		<module>WeChat</module>
+		<module>Redis</module>
+	</modules>
+</project>
