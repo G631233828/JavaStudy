@@ -111,7 +111,7 @@
 				<scope>test</scope>
 			</dependency>
 
-			<!-- java使用redis 需要的jar-->
+			<!-- java使用redis 需要的jar -->
 			<!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
 			<dependency>
 				<groupId>redis.clients</groupId>
@@ -119,8 +119,19 @@
 				<version>2.7.2</version>
 			</dependency>
 
+			<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>1.2.47</version>
+			</dependency>
 
-
+			<!-- Jackson Json处理工具包 -->
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>2.4.2</version>
+			</dependency>
 
 
 

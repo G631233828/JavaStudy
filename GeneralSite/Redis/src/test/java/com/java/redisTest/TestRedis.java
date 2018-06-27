@@ -61,7 +61,10 @@ public class TestRedis {
 		//第一个参数是存入redis中map对象的key，后面的是放入map中的对象key，后面的key可以跟多个，是可变参数
 		List<String> rsmap = jedis.hmget("map1","a", "b","c");
 		System.out.println(rsmap);
-		
+		//删除map中的某个键值
+		jedis.hdel("map1","b");
+		List<String> result =jedis.hmget("map1","a","b");
+		System.out.println(result); //输出[a, null] 因为b被删除了
 		
 	}
 	
@@ -70,6 +73,7 @@ public class TestRedis {
 	
 	
 	
+	 
 	
 	
 	
