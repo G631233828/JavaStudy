@@ -1,4 +1,4 @@
-package com.java.redis;
+package com.java.redis.Test;
 
 import java.util.Arrays;
 import java.util.HashMap;
