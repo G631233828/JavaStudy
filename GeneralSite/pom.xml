@@ -224,6 +224,40 @@
 				<version>2.9.5</version>
 			</dependency>
 
+			<!-- spring boot -->
+			<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot</artifactId>
+				<version>1.5.9.RELEASE</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-parent</artifactId>
+				<version>1.5.9.RELEASE</version>
+				<type>pom</type>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>1.5.9.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+				<version>1.5.9.RELEASE</version>
+			</dependency>
+
+
+
+
 
 
 		</dependencies>
@@ -272,5 +306,6 @@
 		<module>JVM</module>
 		<module>WeChat</module>
 		<module>Redis</module>
+		<module>SpringBoot</module>
 	</modules>
 </project>
