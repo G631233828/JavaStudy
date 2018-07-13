@@ -9,7 +9,7 @@ package 队列;
 public class 优先级队列 {
 	private long[] a = null;
 	private int nItems = 0;
-	private int maxSize = 0;
+	private int maxSize = 0;//꧁
 
 	public 优先级队列(int maxSize) {  
 	        a = new long[maxSize];  
@@ -18,7 +18,7 @@ public class 优先级队列 {
 	    }
 
 	public void insert(long l) {
-		// 优先级队列的插入不是队尾,而是选择一个合适的按照某种顺序插入的
+		// ꧁优先级队列的插入不是队尾,而是选择一个合适的按照某种顺序插入的
 		// 当队列长度为0时，如下
 		// 不为0时,将所有比要插入的数小的数据后移,这样大的数就在队列的头部了
 		int i = 0;
