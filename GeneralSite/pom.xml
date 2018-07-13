@@ -254,11 +254,30 @@
 				<artifactId>spring-boot-starter-web</artifactId>
 				<version>1.5.9.RELEASE</version>
 			</dependency>
-
-
-
-
-
+			<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>1.2.17</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-logging -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-logging</artifactId>
+				<version>1.5.9.RELEASE</version>
+			</dependency>
+			<!-- webjars引入静态文件 -->
+			<dependency>
+				<groupId>org.webjars</groupId>
+				<artifactId>jquery</artifactId>
+				<version>3.3.1-1</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-thymeleaf</artifactId>
+				<version>1.5.9.RELEASE</version>
+			</dependency>
 
 		</dependencies>
 
@@ -285,10 +304,6 @@
 
 
 
-
-
-
-
 	<modules>
 		<module>JaveNet</module>
 		<module>JavaConcurrent</module>
@@ -307,5 +322,7 @@
 		<module>WeChat</module>
 		<module>Redis</module>
 		<module>SpringBoot</module>
+		<module>SpringBootWeb</module>
+		<module>SpringBootGeneralSite</module>
 	</modules>
 </project>
