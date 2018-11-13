@@ -5,6 +5,11 @@
     <artifactId>GeneralSite</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>SpringBootGeneralSite</artifactId>
-  <packaging>pom</packaging>
+  <artifactId>HttpClient</artifactId>
+  <dependencies>
+  	<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpclient</artifactId>
+			</dependency>
+  </dependencies>
 </project>
