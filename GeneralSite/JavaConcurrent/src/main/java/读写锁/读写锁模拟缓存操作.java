@@ -10,15 +10,8 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 public class 读写锁模拟缓存操作 {
 
 	private Map<String, Object> cache = new HashMap<String, Object>();
-	
-	
-	
-
 		public static void main(String[] args) {  
 		   
-			
-			
-		  
 		
 	}
 
